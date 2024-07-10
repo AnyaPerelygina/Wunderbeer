@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-export default function Index() {
+export default function MainPage() {
   return (
     <React.Fragment>
       <p>Главная страница</p>

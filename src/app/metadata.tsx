@@ -12,7 +12,6 @@ export default function MetaData() {
       <title>Wunderbeer</title>
       <link
         rel='icon'
-        type='image/svg+xml'
         href={`${basePath}/favicon.ico`}
       />
     </head>

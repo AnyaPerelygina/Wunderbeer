@@ -72,7 +72,7 @@ export default function RootLayout({
       <body className={font.className}>
         <div className="wrapper">
           {getHeaderContent()}
-        <Layout>{children}</Layout>
+          <Layout>{children}</Layout>
           {getFooterContent()}
         </div>
       </body>
