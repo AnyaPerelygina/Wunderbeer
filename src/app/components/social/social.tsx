@@ -18,7 +18,7 @@ export default function Social({ SocialLinks, onLinkClick }: { SocialLinks: Soci
           <li key={link} className='social__item'>
             <Link onClick={onLinkClick} href={link} className='social__link'>
               <div className='social__icon'>
-                <Image src={`${basePath}/${icon}`} width={width} height={height} alt={text} />
+                <Image src={`${basePath}/svg/${icon}`} width={width} height={height} alt={text} />
               </div>
             </Link>
           </li>
