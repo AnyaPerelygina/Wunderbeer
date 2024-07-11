@@ -13,21 +13,21 @@ export default function Header() {
     {
       link: '#',
       text: 'instagram',
-      icon: `./svg/instagram.svg`,
+      icon: `instagram.svg`,
       width: 30,
       height: 30,
     },
     {
       link: '#',
       text: 'vk',
-      icon: `./svg/vk.svg`,
+      icon: `vk.svg`,
       width: 30,
       height: 30,
     },
     {
       link: '#',
       text: 'facebook',
-      icon: `./svg/facebook.svg`,
+      icon: `facebook.svg`,
       width: 30,
       height: 30,
     }
@@ -102,8 +102,8 @@ export default function Header() {
           <div ref={headerRef} className={`header__wrapper${isOpen ? ' is-opened' : ''}`}>
             <Logo />
             <button className={`toggle${isOpen ? ' is-opened' : ''}`} onClick={() => setIsOpen(!isOpen)}>
-              <Image className='toggle__opened' src={`${basePath}/svg/burger-open.svg`} width={24} height={15} alt={'Открыть меню.'} />
-              <Image className='toggle__closed' src={`${basePath}/svg/burger-close.svg`} width={20} height={21} alt={'Закрыть меню.'} />
+              <Image className='toggle__opened' src={`${basePath}/burger-open.svg`} width={24} height={15} alt={'Открыть меню.'} />
+              <Image className='toggle__closed' src={`${basePath}/burger-close.svg`} width={20} height={21} alt={'Закрыть меню.'} />
             </button>
             <div className={ 'header__menu' + (isOpen ? ' is-opened' : '')}>
               <ShoppingBasket />

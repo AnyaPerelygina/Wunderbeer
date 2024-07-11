@@ -5,7 +5,7 @@ export default function Logo() {
   return (
     <div className='logo'>
       <Image
-        src={`${basePath}/logo/logo.png`}
+        src={`${basePath}/logo.png`}
         width={94}
         height={111}
         alt="Логотип Wunderbeer."
