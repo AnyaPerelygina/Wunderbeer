@@ -1,0 +1,26 @@
+.toggle {
+  width: 24px;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0 0 18px;
+  justify-self: end;
+  position: absolute;
+  right: 15px;
+
+  @include hover-focus {
+    opacity: 0.8;
+  }
+
+  &__closed {
+    display: none;
+  }
+
+  &.is-opened .toggle__closed {
+    display: inline-block;
+  }
+
+  &.is-opened .toggle__opened {
+    display: none;
+  }
+}

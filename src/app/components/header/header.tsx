@@ -3,9 +3,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { basePath } from '@/const';
 import Image from 'next/image';
-import Link from 'next/link';
 import Social from "../social/social";
 import Logo from "../logo/logo";
+import ShoppingBasket from './shopping-basket';
 import Nav from './nav';
 
 export default function Header() {
@@ -13,21 +13,21 @@ export default function Header() {
     {
       link: '#',
       text: 'instagram',
-      icon: './svg/instagram.svg',
+      icon: `./svg/instagram.svg`,
       width: 30,
       height: 30,
     },
     {
       link: '#',
       text: 'vk',
-      icon: './svg/vk.svg',
+      icon: `./svg/vk.svg`,
       width: 30,
       height: 30,
     },
     {
-      link: 'facebook',
+      link: '#',
       text: 'facebook',
-      icon: './svg/facebook.svg',
+      icon: `./svg/facebook.svg`,
       width: 30,
       height: 30,
     }
@@ -56,6 +56,7 @@ export default function Header() {
     },
   ]
 
+  const [isMobileScreen, setIsMobileScreen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const headerRef = useRef<HTMLDivElement>(null);
 
@@ -71,6 +72,16 @@ export default function Header() {
     };
   }, [headerRef]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileScreen(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const handleLinkClick = () => {
     setIsOpen(false);
   };
@@ -78,16 +89,29 @@ export default function Header() {
   return (
     <header className='header'>
       <div className='container'>
-        <div className='header__wrapper'>
-          <Social { ...{ SocialLinks }} onLinkClick={handleLinkClick}/>
-          <Logo />
-          <div className='shopping-backet'>
-            <Link href={'/#'}>
-              <Image src={`${basePath}/svg/shopping-backet.svg`} width={28} height={30} alt={'Корзина с товарами.'} />
-            </Link>
+        {!isMobileScreen && (
+          <div className='header__wrapper'>
+            <Social SocialLinks={SocialLinks} onLinkClick={handleLinkClick}/>
+            <Logo />
+            <ShoppingBasket />
+            <Nav navLinks={navLinks} onLinkClick={handleLinkClick}/>
           </div>
-          <Nav { ...{ navLinks }} onLinkClick={handleLinkClick}/>
-        </div>
+        )}
+
+        {isMobileScreen && (
+          <div ref={headerRef} className={`header__wrapper${isOpen ? ' is-opened' : ''}`}>
+            <Logo />
+            <button className={`toggle${isOpen ? ' is-opened' : ''}`} onClick={() => setIsOpen(!isOpen)}>
+              <Image className='toggle__opened' src={`${basePath}/svg/burger-open.svg`} width={24} height={15} alt={'Открыть меню.'} />
+              <Image className='toggle__closed' src={`${basePath}/svg/burger-close.svg`} width={20} height={21} alt={'Закрыть меню.'} />
+            </button>
+            <div className={ 'header__menu' + (isOpen ? ' is-opened' : '')}>
+              <ShoppingBasket />
+              <Nav navLinks={navLinks} onLinkClick={handleLinkClick}/>
+              <Social SocialLinks={SocialLinks} onLinkClick={handleLinkClick}/>
+            </div>
+          </div>
+        )}
       </div>
     </header>
   )
