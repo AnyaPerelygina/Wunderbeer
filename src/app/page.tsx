@@ -9,7 +9,7 @@ export default function Main() {
     <main>
       <div>
         <div>
-          {isProd && redirect('/main-page')}
+          {isProd && redirect('/')}
           {!isProd && <Sitemap />}
         </div>
       </div>
