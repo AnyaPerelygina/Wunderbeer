@@ -1,9 +1,13 @@
 import { basePath } from "@/const";
 import Image from "next/image";
 
-export default function Logo() {
+type LogoProps = {
+  className?: string;
+};
+
+export default function Logo({ className }: LogoProps) {
   return (
-    <div className='logo'>
+    <div className={className}>
       <Image
         src={`${basePath}/logo/logo.png`}
         width={94}
@@ -12,5 +16,5 @@ export default function Logo() {
       />
       <span>Wunderbeer</span>
     </div>
-  )
+  );
 }

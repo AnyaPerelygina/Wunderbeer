@@ -1,0 +1,75 @@
+.footer {
+  background-color: $color-aubergine;
+  background-image: url('../../../public/svg/hops-line.svg');
+  background-repeat: repeat-x;
+  background-position: 0 264px;
+
+  padding: 30px 0 18px;
+  overflow: hidden;
+
+  @include vp-1023 {
+    background-position: 0 634px;
+    padding: 21px 0 19px;
+  }
+
+  &__wrapper {
+    max-width: 1111px;
+
+    display: grid;
+    grid-template-columns: 350px 254px auto;
+    justify-content: space-between;
+    margin: 0 auto;
+
+    @include vp-1023 {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+    }
+  }
+
+  p {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 18px;
+    color: $color-default-white;
+
+    margin: 0 0 42px;
+
+    @include vp-1023 {
+      font-size: 14px;
+      line-height: 17px;
+      margin: 0 0 17px;
+      max-width: 663px;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    grid-column: 1 / 4;
+
+    padding: 69px 0 0;
+
+    span {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 17px;
+      text-align: start;
+      color: $color-default-white;
+    }
+
+    @include vp-1023 {
+      flex-direction: column;
+      justify-content: center;
+      padding: 0;
+      gap: 12px;
+
+      span {
+        font-size: 13px;
+        line-height: 16px;
+        text-align: center;
+      }
+    }
+  }
+}

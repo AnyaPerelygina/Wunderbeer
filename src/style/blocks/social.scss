@@ -3,6 +3,7 @@
 
   @include vp-767 {
     grid-column: span 2;
+    margin: 0 0 22px;
   }
 
   &__list {
@@ -22,5 +23,11 @@
     @include hover-focus {
       opacity: 0.8;
     }
+  }
+}
+
+.social-footer {
+  .social__list {
+    gap: 20px;
   }
 }

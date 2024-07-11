@@ -6,56 +6,9 @@ import Image from 'next/image';
 import Social from "../social/social";
 import Logo from "../logo/logo";
 import ShoppingBasket from './shopping-basket';
-import Nav from './nav';
+import Nav from '../nav/nav';
 
 export default function Header() {
-  const SocialLinks = [
-    {
-      link: '#',
-      text: 'instagram',
-      icon: `instagram.svg`,
-      width: 30,
-      height: 30,
-    },
-    {
-      link: '#',
-      text: 'vk',
-      icon: `vk.svg`,
-      width: 30,
-      height: 30,
-    },
-    {
-      link: '#',
-      text: 'facebook',
-      icon: `facebook.svg`,
-      width: 30,
-      height: 30,
-    }
-  ];
-
-  const navLinks = [
-    {
-      href: '#',
-      label: 'Каталог',
-    },
-    {
-      href: '#',
-      label: 'Дистрибуция',
-    },
-    {
-      href: '#',
-      label: 'Комплектация магазинов',
-    },
-    {
-      href: '#',
-      label: 'О компании',
-    },
-    {
-      href: '#',
-      label: 'Контакты',
-    },
-  ]
-
   const [isMobileScreen, setIsMobileScreen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const headerRef = useRef<HTMLDivElement>(null);
@@ -91,24 +44,24 @@ export default function Header() {
       <div className='container'>
         {!isMobileScreen && (
           <div className='header__wrapper'>
-            <Social SocialLinks={SocialLinks} onLinkClick={handleLinkClick}/>
-            <Logo />
+            <Social className={'social'} SocialLinks={[]} onLinkClick={handleLinkClick}/>
+            <Logo className={'logo'} />
             <ShoppingBasket />
-            <Nav navLinks={navLinks} onLinkClick={handleLinkClick}/>
+            <Nav className={'nav'} navLinks={[]} onLinkClick={handleLinkClick}/>
           </div>
         )}
 
         {isMobileScreen && (
           <div ref={headerRef} className={`header__wrapper${isOpen ? ' is-opened' : ''}`}>
-            <Logo />
+            <Logo className={'logo'} />
             <button className={`toggle${isOpen ? ' is-opened' : ''}`} onClick={() => setIsOpen(!isOpen)}>
               <Image className='toggle__opened' src={`${basePath}/svg/burger-open.svg`} width={24} height={15} alt={'Открыть меню.'} />
               <Image className='toggle__closed' src={`${basePath}/svg/burger-close.svg`} width={20} height={21} alt={'Закрыть меню.'} />
             </button>
             <div className={ 'header__menu' + (isOpen ? ' is-opened' : '')}>
               <ShoppingBasket />
-              <Nav navLinks={navLinks} onLinkClick={handleLinkClick}/>
-              <Social SocialLinks={SocialLinks} onLinkClick={handleLinkClick}/>
+              <Nav className={'nav'} navLinks={[]} onLinkClick={handleLinkClick}/>
+              <Social className={'social'} SocialLinks={[]} onLinkClick={handleLinkClick} />
             </div>
           </div>
         )}
