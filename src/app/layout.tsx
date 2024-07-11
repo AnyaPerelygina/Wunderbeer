@@ -41,6 +41,11 @@ const font = localFont({
       path: './fonts/fira-sans-800.woff2',
       weight: '800',
       style: 'normal'
+    },
+    {
+      path: './fonts/roboto-400.woff2',
+      weight: '400',
+      style: 'normal'
     }
   ]
 })

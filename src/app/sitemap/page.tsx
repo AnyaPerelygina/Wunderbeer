@@ -7,8 +7,8 @@ export default function Sitemap() {
     <div className="sitemap">
       <Image
         src={`${basePath}/logo/logo.png`}
-        width={50}
-        height={50}
+        width={94}
+        height={111}
         alt="Логотип Wunderbeer."
       />
       <br /><br />

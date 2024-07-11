@@ -1,0 +1,19 @@
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin: 0 26px 0 0;
+  user-select: none;
+
+  span {
+    font-family: $ff-roboto;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 41px;
+    letter-spacing: -1px;
+    color: $color-default-white;
+    text-transform: uppercase;
+  }
+}

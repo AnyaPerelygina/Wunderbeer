@@ -1,0 +1,16 @@
+.header {
+  background-color: $color-aubergine;
+  padding: 12px 0;
+
+  &__wrapper {
+    max-width: 1120px;
+
+    display: grid;
+    grid-template-columns: 120px 250px auto;
+    justify-content: space-between;
+    align-items: center;
+    gap: 19px;
+
+    margin: 0 auto;
+  }
+}

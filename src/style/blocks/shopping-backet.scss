@@ -1,0 +1,13 @@
+.shopping-backet {
+  justify-self: end;
+  margin: 0 11px 10px 0;
+
+  a {
+    opacity: 1;
+    transition: opacity $trans-default;
+
+    @include hover-focus {
+      opacity: 0.8;
+    }
+  }
+}
