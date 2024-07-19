@@ -6,6 +6,11 @@
     opacity: 1;
     transition: opacity $trans-default;
 
+    img {
+      width: auto;
+      height: auto;
+    }
+
     @include hover-focus {
       opacity: 0.8;
     }

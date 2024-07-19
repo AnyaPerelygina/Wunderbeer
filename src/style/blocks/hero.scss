@@ -1,0 +1,67 @@
+.hero {
+  margin: -224px 0 0;
+  min-height: 1007px;
+
+  .container {
+    padding: 0;
+    max-width: 100%;
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__text {
+    width: 100%;
+    max-width: 920px;
+
+    position: absolute;
+    top: 529px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 2;
+
+    margin: 0 auto;
+
+    color: $color-default-white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 80px;
+    font-weight: 600;
+    line-height: 75px;
+    text-align: center;
+    padding: 0 0 29px;
+
+    p {
+      margin: 0;
+    }
+
+    span {
+      color: $color-kournikova;
+      margin: 0;
+    }
+  }
+
+  &__description {
+    p {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 22px;
+      text-align: center;
+      margin: 0;
+    }
+
+    padding: 0 0 53px;
+  }
+
+  &__button {
+    padding: 15px 59px;
+    margin: 0 auto;
+  }
+}

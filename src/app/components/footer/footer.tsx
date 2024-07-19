@@ -9,7 +9,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className='footer'>
+    <footer className='footer' id='#footer'>
       <div className='container'>
         <div className='footer__wrapper'>
           <Logo className={'logo logo-footer'}/>

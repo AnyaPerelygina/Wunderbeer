@@ -11,21 +11,21 @@ type SocialProps = {
 export default function Social({ onLinkClick, className = '' }: SocialProps) {
   const SocialLinks = [
     {
-      link: '#',
+      href: 'https://www.instagram.com/wunder.beer/',
       text: 'instagram',
       icon: `instagram.svg`,
       width: 30,
       height: 30,
     },
     {
-      link: '#',
+      href: 'https://vk.com/wunderbeer?ysclid=lyiltfdom7544979718',
       text: 'vk',
       icon: `vk.svg`,
       width: 30,
       height: 30,
     },
     {
-      link: '#',
+      href: '#',
       text: 'facebook',
       icon: `facebook.svg`,
       width: 30,
@@ -36,11 +36,15 @@ export default function Social({ onLinkClick, className = '' }: SocialProps) {
   return (
     <div className={className}>
       <ul className='social__list'>
-        {SocialLinks.map(({ link, text, icon, width, height, }) => (
-          <li key={link} className='social__item'>
-            <Link onClick={onLinkClick} href={link} className='social__link'>
+        {SocialLinks.map(({ href, text, icon, width, height, }) => (
+          <li key={href} className='social__item'>
+            <Link onClick={onLinkClick} href={href} className='social__link'>
               <div className='social__icon'>
-                <Image src={`${basePath}/svg/${icon}`} width={width} height={height} alt={text} />
+                <Image
+                  src={`${basePath}/svg/${icon}`}
+                  width={width}
+                  height={height}
+                  alt={text} />
               </div>
             </Link>
           </li>

@@ -12,23 +12,23 @@ type NavProps = {
 export default function Nav({ onLinkClick, className = '' }: NavProps) {
   const navLinks = [
     {
-      href: '#',
+      href: '/catalog',
       label: 'Каталог',
     },
     {
-      href: '#',
+      href: '/distribution',
       label: 'Дистрибуция',
     },
     {
-      href: '#',
+      href: '/store',
       label: 'Комплектация магазинов',
     },
     {
-      href: '#',
+      href: '/about',
       label: 'О компании',
     },
     {
-      href: '#',
+      href: '/contacts',
       label: 'Контакты',
     },
   ]
