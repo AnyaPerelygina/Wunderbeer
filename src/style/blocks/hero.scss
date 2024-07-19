@@ -58,6 +58,10 @@
     }
 
     padding: 0 0 53px;
+
+    @media (min-width: 1024px) and (max-width: 1199px) {
+      max-width: 750px;
+    }
   }
 
   &__button {

@@ -40,7 +40,7 @@ export default function Header() {
   };
 
   return (
-    <header className='header'>
+    <header className={`header${isOpen ? ' is-opened' : ''}`}>
       <div className='container'>
         {!isMobileScreen && (
           <div className='header__wrapper'>

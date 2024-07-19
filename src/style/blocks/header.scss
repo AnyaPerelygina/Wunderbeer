@@ -5,6 +5,12 @@
   position: relative;
   z-index: 666;
 
+  transition: background-color $trans-default;
+
+  &.is-opened {
+    background-color: $color-aubergine;
+  }
+
   &__wrapper {
     max-width: 1120px;
 
