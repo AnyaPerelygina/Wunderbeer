@@ -2,6 +2,10 @@
   margin: -224px 0 0;
   min-height: 1007px;
 
+  @include vp-1023 {
+    min-height: 688px;
+  }
+
   .container {
     padding: 0;
     max-width: 100%;
@@ -29,6 +33,17 @@
     flex-direction: column;
     justify-content: start;
     align-items: center;
+
+    @include vp-1023 {
+      max-width: unset;
+      padding: 0 40px;
+      top: 407px;
+      align-items: start;
+    }
+
+    @include vp-767 {
+      padding: 0 15px;
+    }
   }
 
   &__title {
@@ -46,6 +61,14 @@
       color: $color-kournikova;
       margin: 0;
     }
+
+    @include vp-1023 {
+      font-size: 35px;
+      line-height: 33px;
+      text-align: start;
+
+      padding: 0 0 15px;
+    }
   }
 
   &__description {
@@ -55,6 +78,12 @@
       line-height: 22px;
       text-align: center;
       margin: 0;
+
+      @include vp-1023 {
+        font-size: 14px;
+        line-height: 20px;
+        text-align: start;
+      }
     }
 
     padding: 0 0 53px;
@@ -62,10 +91,19 @@
     @media (min-width: 1024px) and (max-width: 1199px) {
       max-width: 750px;
     }
+
+    @include vp-1023 {
+      padding: 0 0 28px;
+    }
   }
 
   &__button {
     padding: 15px 59px;
     margin: 0 auto;
+
+    @include vp-1023 {
+      padding: 8px 35px;
+      margin: 0;
+    }
   }
 }

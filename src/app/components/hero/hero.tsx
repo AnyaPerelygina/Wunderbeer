@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay} from 'swiper/modules';
 import { basePath } from "@/const";
 import MouseButton from "./mouse-button";
 
@@ -34,6 +34,17 @@ export default function Hero() {
   ];
 
   const [currentSlide] = useState(0);
+  const [isMobileScreen, setIsMobileScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileScreen(window.innerWidth < 1024);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div className='hero'>
@@ -48,7 +59,8 @@ export default function Hero() {
             </div>
             <Button className={'hero__button btn'} href={'/catalog'}>Перейти в&nbsp;каталог</Button>
           </div>
-          <Swiper
+          {!isMobileScreen && (
+            <Swiper
             className='hero__swiper swiper'
             modules={[Navigation, Pagination, Autoplay]}
             slidesPerView={1}
@@ -72,6 +84,32 @@ export default function Hero() {
               ))}
             </ul>
           </Swiper>
+          )}
+          {isMobileScreen && (
+            <Swiper
+              className='hero__swiper swiper'
+              modules={[Navigation, Pagination]}
+              slidesPerView={1}
+              speed={1500}
+              loop={true}
+              effect={'fade'}
+              navigation
+              pagination={{ clickable: true }}
+            >
+              <ul className='swiper__wrapper'>
+                {HeroImgList.map((img, index) => (
+                  <SwiperSlide className={`swiper__slide ${index === currentSlide ? 'active' : ''}`} key={index}>
+                    <Image
+                      src={`${basePath}/hero/${img.link}`}
+                      width={img.width}
+                      height={img.height}
+                      alt={img.alt}
+                    />
+                  </SwiperSlide>
+                ))}
+              </ul>
+            </Swiper>
+          )}
           <MouseButton />
         </div>
       </div>

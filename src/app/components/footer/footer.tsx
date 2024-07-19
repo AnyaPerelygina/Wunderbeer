@@ -18,7 +18,7 @@ export default function Footer() {
           <Contacts className={'contacts'} navLinks={[]} onLinkClick={handleLinkClick} />
           <Nav className={'nav nav-footer'} navLinks={[]} onLinkClick={handleLinkClick} />
           <div className='footer__copyright'>
-            <span>ООО “Вундербир” 2010 - 2020</span>
+            <span>ООО “Вундербир” 2010 - 2024</span>
             <span>Все права защищены ©</span>
           </div>
         </div>

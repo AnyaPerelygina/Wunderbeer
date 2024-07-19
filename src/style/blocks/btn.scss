@@ -11,4 +11,8 @@
   @include hover-focus {
     background-color: $color-default-white;
   }
+
+  @include vp-1023 {
+    font-size: 14px;
+  }
 }
