@@ -9,7 +9,7 @@ export default function Logo({ className }: LogoProps) {
   return (
     <a className={className} href="/main-page">
       <Image
-        src={`${basePath}/logo/logo.webp`}
+        src={`${basePath}/logo/logo.png`}
         width={94}
         height={111}
         alt="Логотип Wunderbeer."
