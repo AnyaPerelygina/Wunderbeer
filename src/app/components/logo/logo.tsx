@@ -1,5 +1,4 @@
-// import { basePath } from "@/const";
-import { basePath } from "../../../const";
+import { basePath } from "@/const";
 import Image from "next/image";
 
 type LogoProps = {
