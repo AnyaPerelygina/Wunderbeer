@@ -1,2 +1,2 @@
 export const isProd = process.env.NODE_ENV === 'production';
-export const basePath = isProd ? '/wunderbeer/public' : '';
+export const basePath = isProd ? '/WUNDERBEER' : '';
