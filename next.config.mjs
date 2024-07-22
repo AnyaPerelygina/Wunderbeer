@@ -5,7 +5,7 @@ const isProd = process.env.NODE_ENV === 'production';
 const nextConfig = {
   output: 'export',
   reactStrictMode: true,
-  basePath: isProd ? '/public' : '',
+  basePath: isProd ? '/wunderbeer/public' : '',
   distDir: 'out',
   images: {
     unoptimized: true,
