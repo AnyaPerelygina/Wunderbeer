@@ -9,7 +9,7 @@ export default function ShoppingBasket() {
     <div className='shopping-basket'>
       <Link href={'#'}>
         <Image
-          src={'../../svg/shopping-basket.svg'}
+          src={'../../../../svg/shopping-basket.svg'}
           width={28}
           height={30}
           alt={'Корзина с товарами.'} />
