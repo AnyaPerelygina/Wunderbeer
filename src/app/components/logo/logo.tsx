@@ -7,7 +7,7 @@ type LogoProps = {
 
 export default function Logo({ className }: LogoProps) {
   return (
-    <div className={className}>
+    <a className={className} href="/main-page">
       <Image
         src={`${basePath}/logo/logo.webp`}
         width={94}
@@ -15,6 +15,6 @@ export default function Logo({ className }: LogoProps) {
         alt="Логотип Wunderbeer."
       />
       <span>Wunderbeer</span>
-    </div>
+    </a>
   );
 }
