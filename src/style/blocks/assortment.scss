@@ -1,0 +1,148 @@
+.assortment {
+  max-width: 100%;
+
+  .container {
+    padding: 40px 0 34px;
+    position: relative;
+    max-width: 100%;
+  }
+
+  &__titleWrapper {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    column-gap: 32px;
+    row-gap: 5px;
+    margin: 0 auto;
+
+    img {
+      &:first-child {
+        justify-self: end;
+      }
+
+      &:last-of-type {
+        transform: rotate(180deg);
+      }
+    }
+
+    .title {
+      color: $color-default-white;
+      padding: 0 0 35px;
+      grid-column: 1/3;
+    }
+  }
+
+  &__background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: $color-aubergine;
+
+    object-fit: cover;
+
+    width: 100%;
+    height: 100%;
+
+    picture {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        background-color: $color-nero;
+        opacity: 0.6;
+        height: 100%;
+        width: 100%;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__list {
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: start;
+    column-gap: 75px;
+    row-gap: 56px;
+
+    max-width: 603px;
+    width: 100%;
+
+    @media (min-width: 1024px) and (max-width: 1319px) {
+      column-gap: 27px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    gap: 19px;
+
+    span {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 29px;
+      text-align: center;
+      color: $color-default-white;
+    }
+  }
+
+  &__img1 {
+    position: absolute;
+    content: "";
+    top: 219px;
+    left: 0;
+    width: 241px;
+    height: 367px;
+
+    @media (min-width: 1024px) and (max-width: 1319px) {
+      top: 310px;
+      width: 183px;
+      height: 260px;
+    }
+  }
+
+  &__img2 {
+    position: absolute;
+    content: "";
+    top: -28px;
+    left: 0;
+    width: 445px;
+    height: 467px;
+
+    @media (min-width: 1024px) and (max-width: 1319px) {
+      top: 95px;
+      width: 371px;
+      height: 467px;
+    }
+  }
+
+  &__img3 {
+    position: absolute;
+    content: "";
+    bottom: 115px;
+    right: 0;
+    width: 324px;
+    height: 427px;
+
+    @media (min-width: 1024px) and (max-width: 1319px) {
+      width: 230px;
+      height: 340px;
+    }
+  }
+}
