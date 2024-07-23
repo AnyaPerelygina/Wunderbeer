@@ -161,5 +161,18 @@
 
   .swiper-pagination-bullet-active {
     background: $color-kournikova;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: -4px;
+      left: -4px;
+      width: 19px;
+      height: 19px;
+      background-color: transparent;
+      border: 1px solid $color-kournikova;
+      border-radius: 50%;
+    }
   }
 }
