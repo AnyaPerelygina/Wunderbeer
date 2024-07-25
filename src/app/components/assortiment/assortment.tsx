@@ -85,7 +85,6 @@ export default function Assortment() {
         </ul>
         <div className="assortment__img1">
           <picture>
-            <source type="image/webp" media="(max-width: 767px)" srcSet={`${basePath}/assortment/leaf-mobile.webp, ${basePath}/assortment/leaf-mobile@2x.webp 2x`} />
             <source type="image/webp" media="(min-width: 768px)" srcSet={`${basePath}/assortment/leaf.webp, ${basePath}/assortment/leaf@2x.webp 2x`} />
             <Image
               src={`${basePath}/assortment/leaf.png`}
@@ -97,7 +96,6 @@ export default function Assortment() {
         </div>
         <div className="assortment__img2">
           <picture>
-            <source type="image/webp" media="(max-width: 767px)" srcSet={`${basePath}/assortment/wheat-mobile.webp, ${basePath}/assortment/wheat-mobile@2x.webp 2x`} />
             <source type="image/webp" media="(min-width: 768px)" srcSet={`${basePath}/assortment/wheat.webp, ${basePath}/assortment/wheat@2x.webp 2x`} />
             <Image
               src={`${basePath}/assortment/wheat.png`}
@@ -109,7 +107,6 @@ export default function Assortment() {
         </div>
         <div className="assortment__img3">
           <picture>
-            <source type="image/webp" media="(max-width: 767px)" srcSet={`${basePath}/assortment/beer-mobile.webp, ${basePath}/assortment/beer-mobile@2x.webp 2x`} />
             <source type="image/webp" media="(min-width: 768px)" srcSet={`${basePath}/assortment/beer.webp, ${basePath}/assortment/beer@2x.webp 2x`} />
             <Image
               src={`${basePath}/assortment/beer.png`}

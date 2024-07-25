@@ -5,6 +5,10 @@
     padding: 40px 0 34px;
     position: relative;
     max-width: 100%;
+
+    @include vp-1023 {
+      padding: 52px 0 70px;
+    }
   }
 
   &__titleWrapper {
@@ -14,6 +18,11 @@
     column-gap: 32px;
     row-gap: 5px;
     margin: 0 auto;
+    padding: 0 0 35px;
+
+    @include vp-1023 {
+      padding: 0 0 92px;
+    }
 
     img {
       &:first-child {
@@ -27,7 +36,6 @@
 
     .title {
       color: $color-default-white;
-      padding: 0 0 35px;
       grid-column: 1/3;
     }
   }
@@ -84,14 +92,35 @@
     @media (min-width: 1024px) and (max-width: 1319px) {
       column-gap: 27px;
     }
+
+    @include vp-1023 {
+      column-gap: 50px;
+      row-gap: 47px;
+      padding: 0 20px;
+    }
   }
 
   &__item {
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: start;
     align-items: center;
-    gap: 19px;
+    max-height: 180px;
+
+    @include vp-1023 {
+      max-height: 140px;
+      max-width: 100px;
+    }
+
+    img {
+      margin: 0 0 23px;
+      max-height: 130px;
+
+      @include vp-1023 {
+        margin: 0 0 18px;
+        max-height: 100px;
+      }
+    }
 
     span {
       font-size: 24px;
@@ -99,6 +128,11 @@
       line-height: 29px;
       text-align: center;
       color: $color-default-white;
+
+      @include vp-1023 {
+        font-size: 18px;
+        line-height: 22px;
+      }
     }
   }
 
@@ -115,6 +149,13 @@
       width: 183px;
       height: 260px;
     }
+
+    @include vp-1023 {
+      top: 90px;
+      left: -36px;
+      width: 92px;
+      height: 92px;
+    }
   }
 
   &__img2 {
@@ -130,12 +171,19 @@
       width: 371px;
       height: 467px;
     }
+
+    @include vp-1023 {
+      top: 2px;
+      left: -33px;
+      width: 163px;
+      height: 204px;
+    }
   }
 
   &__img3 {
     position: absolute;
     content: "";
-    bottom: 115px;
+    bottom: 101px;
     right: 0;
     width: 324px;
     height: 427px;
@@ -143,6 +191,13 @@
     @media (min-width: 1024px) and (max-width: 1319px) {
       width: 230px;
       height: 340px;
+    }
+
+    @include vp-1023 {
+      bottom: 52px;
+      right: -6px;
+      width: 97px;
+      height: 97px;
     }
   }
 }

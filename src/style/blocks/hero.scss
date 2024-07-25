@@ -20,12 +20,12 @@
     max-width: 920px;
 
     position: absolute;
-    top: 529px;
+    top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     z-index: 2;
 
-    margin: 0 auto;
+    margin: 24px auto 0;
 
     color: $color-default-white;
 
@@ -37,7 +37,8 @@
     @include vp-1023 {
       max-width: unset;
       padding: 0 40px;
-      top: 407px;
+      margin: 62px auto 0;
+      top: 50%;
       align-items: start;
     }
 
