@@ -143,10 +143,12 @@
   &__img1 {
     position: absolute;
     content: "";
-    top: 219px;
+    top: 194px;
     left: 0;
     width: 241px;
     height: 367px;
+
+    transform: rotate(31deg);
 
     @media (min-width: 1024px) and (max-width: 1319px) {
       top: 310px;
@@ -155,15 +157,15 @@
     }
 
     @include vp-1023 {
-      top: 84px;
-      left: -22px;
+      top: 72px;
+      left: -14px;
       width: 125px;
       height: 93px;
     }
 
     @include vp-767 {
-      top: 90px;
-      left: -36px;
+      top: 82px;
+      left: -33px;
       width: 92px;
       height: 92px;
     }
