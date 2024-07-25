@@ -155,6 +155,13 @@
     }
 
     @include vp-1023 {
+      top: 84px;
+      left: -22px;
+      width: 125px;
+      height: 93px;
+    }
+
+    @include vp-767 {
       top: 90px;
       left: -36px;
       width: 92px;
@@ -177,6 +184,13 @@
     }
 
     @include vp-1023 {
+      top: -32px;
+      left: -11px;
+      width: 215px;
+      height: 204px;
+    }
+
+    @include vp-767 {
       top: 2px;
       left: -33px;
       width: 163px;
@@ -198,6 +212,12 @@
     }
 
     @include vp-1023 {
+      bottom: 0;
+      width: 170px;
+      height: 262px;
+    }
+
+    @include vp-767 {
       bottom: 52px;
       right: -6px;
       width: 97px;
