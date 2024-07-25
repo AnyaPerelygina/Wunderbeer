@@ -1,6 +1,10 @@
 .assortment {
   max-width: 100%;
 
+  @include vp-767 {
+    margin: -1px 0 0;
+  }
+
   .container {
     padding: 40px 0 34px;
     position: relative;
