@@ -1,5 +1,10 @@
 import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { basePath } from "@/const";
+import { useRef, useEffect } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Assortment() {
   const AssortmentList = [
@@ -38,10 +43,74 @@ export default function Assortment() {
       alt: 'Изображение лимонада.',
       text: 'Лимонад',
     }
-  ]
+  ];
+
+  const assortmentRef = useRef<HTMLDivElement>(null);
+  const assortmentImg1Ref = useRef<HTMLDivElement>(null);
+  const assortmentImg2Ref = useRef<HTMLDivElement>(null);
+  const assortmentImg3Ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (assortmentImg1Ref.current) {
+      gsap.fromTo(
+        assortmentImg1Ref.current,
+        { x: -100, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          delay: 0.5,
+          scrollTrigger: {
+            trigger: assortmentRef.current,
+            start: "top center",
+            toggleActions: "play none none none",
+            onEnter: () => {
+              gsap.to(assortmentImg1Ref.current, { x: 0, opacity: 1, duration: 1, delay: 0.5 });
+            },
+          },
+        }
+      );
+    }
+
+    if (assortmentImg2Ref.current) {
+      gsap.fromTo(
+        assortmentImg2Ref.current,
+        { x: -100, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          scrollTrigger: {
+            trigger: assortmentRef.current,
+            start: "top center",
+            toggleActions: "play none none none",
+            onEnter: () => {
+              gsap.to(assortmentImg2Ref.current, { x: 0, opacity: 1, duration: 1 });
+            },
+          },
+        }
+      );
+    }
+    if (assortmentImg3Ref.current) {
+      gsap.fromTo(
+        assortmentImg3Ref.current,
+        { x: 100, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          scrollTrigger: {
+            trigger: assortmentRef.current,
+            start: "top center",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }
+  }, []);
 
   return (
-    <section className="assortment">
+    <section className="assortment" ref={assortmentRef}>
       <div className="container">
         <div className="assortment__background-img">
           <picture>
@@ -83,7 +152,7 @@ export default function Assortment() {
             </li>
           ))}
         </ul>
-        <div className="assortment__img1">
+        <div className="assortment__img1" ref={assortmentImg1Ref}>
           <picture>
             <source type="image/webp" media="(min-width: 768px)" srcSet={`${basePath}/assortment/leaf.webp, ${basePath}/assortment/leaf@2x.webp 2x`} />
             <Image
@@ -94,7 +163,7 @@ export default function Assortment() {
             />
           </picture>
         </div>
-        <div className="assortment__img2">
+        <div className="assortment__img2" ref={assortmentImg2Ref}>
           <picture>
             <source type="image/webp" media="(min-width: 768px)" srcSet={`${basePath}/assortment/wheat.webp, ${basePath}/assortment/wheat@2x.webp 2x`} />
             <Image
@@ -105,7 +174,7 @@ export default function Assortment() {
             />
           </picture>
         </div>
-        <div className="assortment__img3">
+        <div className="assortment__img3" ref={assortmentImg3Ref}>
           <picture>
             <source type="image/webp" media="(min-width: 768px)" srcSet={`${basePath}/assortment/beer.webp, ${basePath}/assortment/beer@2x.webp 2x`} />
             <Image
@@ -118,5 +187,5 @@ export default function Assortment() {
         </div>
       </div>
     </section>
-  )
+  );
 }
