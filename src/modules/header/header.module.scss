@@ -1,0 +1,20 @@
+@use '@styles/func';
+@use '@styles/mixins';
+
+.root {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-white-default);
+
+  strong {
+    font-weight: 500;
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: func.rem(32);
+  padding-bottom: func.rem(32);
+}

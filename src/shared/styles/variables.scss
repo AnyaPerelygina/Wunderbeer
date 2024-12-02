@@ -1,0 +1,15 @@
+// breakpoints
+$desktop: 1024px;
+$tablet: 1023px;
+$tablet-small: 768px;
+$mobile-large: 767px;
+$mobile: 320px;
+
+// retina
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;
+
+// transitions
+$transition-duration: 0.3s;
+$transition-timing-function: ease;
+$transition: $transition-duration $transition-timing-function;
