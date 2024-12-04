@@ -7,101 +7,40 @@
   }
 }
 
-@mixin desktop-small {
-  @media (max-width: $desktop - 1px) {
-    @content;
-  }
-}
-
-@mixin tablet {
-  @media (max-width: $tablet - 0.1px) {
-    @content;
-  }
-}
-
-@mixin tablet-small {
-  @media (max-width: $tablet-small - 0.1px) {
-    @content;
-  }
-}
-
-@mixin mobile-large {
-  @media (max-width: $mobile-large) {
-    @content;
-  }
-}
-
 @mixin mobile {
   @media (max-width: $mobile) {
     @content;
   }
 }
 
-@mixin desktop-only {
-  @media (min-width: $tablet) {
-    @content;
-  }
-}
-
-@mixin retina {
-  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    @content;
-  }
-}
-
 @mixin h1 {
-  font-weight: 400;
-  font-size: rem(96);
-  line-height: 1.04;
+  font-weight: 500;
+  font-size: rem(50);
+  line-height: rem(60);
 
-  @include mobile-large {
+  @include mobile {
     font-size: rem(38);
   }
 }
 
 @mixin h2 {
-  font-weight: 400;
-  font-size: rem(80);
-  line-height: 0.9;
+  font-weight: 500;
+  font-size: rem(32);
+  line-height: rem(42);
 
-  @include mobile-large {
+  @include mobile {
     font-size: rem(32);
   }
 }
 
 @mixin h3 {
-  font-weight: 400;
-  font-size: rem(30);
-  line-height: 1.33;
+  font-weight: 500;
+  font-size: rem(22);
+  line-height: rem(26);
 
-  @include mobile-large {
+  @include mobile {
     font-size: rem(24);
   }
-}
-
-@mixin h4 {
-  font-weight: 400;
-  font-size: rem(20);
-  line-height: 1.2;
-
-  @include mobile-large {
-    font-size: rem(18);
-  }
-}
-
-@mixin text {
-  font-weight: 400;
-  font-size: rem(20);
-  line-height: rem(20);
-}
-
-@mixin reset-btn {
-  font-family: inherit;
-  padding: 0;
-  background-color: var(--color-transparent);
-  border: none;
-  outline: none;
-  cursor: pointer;
 }
 
 @mixin visually-hidden {

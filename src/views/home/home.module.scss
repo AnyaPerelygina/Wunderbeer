@@ -20,7 +20,7 @@
   height: auto;
   margin: 0 auto;
 
-  @include mixins.tablet-small {
+  @include mixins.mobile {
     max-width: func.rem(400);
   }
 }

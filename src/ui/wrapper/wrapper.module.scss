@@ -8,7 +8,7 @@
   padding-left: func.rem(64);
   margin: 0 auto;
 
-  @include mixins.tablet-small {
+  @include mixins.mobile {
     padding-right: func.rem(20);
     padding-left: func.rem(20);
   }

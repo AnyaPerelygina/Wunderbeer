@@ -3,7 +3,6 @@
 @use '@styles/mixins';
 
 .root {
-  @include mixins.reset-btn;
   position: relative;
   display: flex;
   align-items: center;
@@ -28,7 +27,7 @@
     height: func.rem(60);
     padding: func.rem(20) func.rem(50);
 
-    @include mixins.tablet {
+    @include mixins.mobile {
       height: func.rem(50);
       padding: func.rem(15) func.rem(50);
     }

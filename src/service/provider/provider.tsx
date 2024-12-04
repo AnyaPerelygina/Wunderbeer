@@ -11,7 +11,7 @@ const ScalingLayout: FC<{ children: ReactNode }> = ({ children }) => {
 
   useScaling({
     deviceBreakpoints: {
-      tablet: DeviceSize.Tablet.PORTRAIT,
+      mobile: DeviceSize.Mobile.SMALL,
       desktop: DeviceSize.Desktop.SMALL
     },
     scalingBreakpoints: SCALING_BREAKPOINTS

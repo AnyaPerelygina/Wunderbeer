@@ -7,14 +7,14 @@ import { useSetAtom } from 'jotai'
 
 const getDeviceType = (
   windowWidth: number,
-  breakpoints: { tablet: number; desktop: number }
+  breakpoints: { mobile: number; desktop: number }
 ): DeviceAtomType => {
-  if (windowWidth < breakpoints.tablet) {
+  if (windowWidth < breakpoints.mobile) {
     return 'mobile'
   }
 
   if (windowWidth < breakpoints.desktop) {
-    return 'tablet'
+    return 'mobile'
   }
 
   return 'desktop'
@@ -53,7 +53,7 @@ export const useScaling = ({
   deviceBreakpoints,
   scalingBreakpoints
 }: {
-  deviceBreakpoints: { tablet: number; desktop: number }
+  deviceBreakpoints: { mobile: number; desktop: number }
   scalingBreakpoints: ScalingBreakpoint[]
 }) => {
   const setDevice = useSetAtom(deviceWriteAtom)

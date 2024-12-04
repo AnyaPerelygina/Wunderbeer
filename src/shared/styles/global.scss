@@ -1,4 +1,6 @@
 @import 'mixins';
+@import 'variables';
+@import 'func';
 
 :root {
   // colors
@@ -32,9 +34,17 @@ body {
 }
 
 body {
-  @include text;
+  font-family: $ff-fira;
+  font-size: rem(16);
+  font-weight: 400;
+  line-height: rem(24);
   color: var(--color-black-default);
   overflow-x: hidden;
+
+  @include mobile {
+    font-size: rem(14);
+    line-height: rem(20);
+  }
 }
 
 a {
@@ -42,7 +52,7 @@ a {
   text-decoration: none;
   transition: opacity $transition;
 
-  @include desktop-only {
+  @include desktop {
     &:hover,
     &:focus-visible {
       opacity: 0.7;
@@ -69,7 +79,8 @@ blockquote {
 }
 
 button {
-  @include reset-btn;
+  cursor: pointer;
+  border: none;
 }
 
 .visually-hidden {

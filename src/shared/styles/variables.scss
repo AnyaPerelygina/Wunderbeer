@@ -1,9 +1,6 @@
 // breakpoints
-$desktop: 1024px;
-$tablet: 1023px;
-$tablet-small: 768px;
-$mobile-large: 767px;
-$mobile: 320px;
+$desktop: 1440px;
+$mobile: 1023px;
 
 // retina
 $retina-dpi: 144dpi;
@@ -13,3 +10,8 @@ $retina-dppx: 1.5dppx;
 $transition-duration: 0.3s;
 $transition-timing-function: ease;
 $transition: $transition-duration $transition-timing-function;
+
+// typograph
+$ff-fira: "Fira Sans", "Arial", sans-serif;
+$ff-roboto: "Roboto", "Arial", sans-serif;
+$ff-rouble: "Rouble", "Arial", sans-serif;

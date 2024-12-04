@@ -25,7 +25,7 @@
     -moz-appearance: textfield;
   }
 
-  @include mixins.tablet {
+  @include mixins.mobile {
     height: func.rem(50);
     padding: func.rem(15) func.rem(20);
     border-radius: func.rem(8);

@@ -13,11 +13,6 @@ const font = localFont({
       path: './fonts/fira-sans-300.woff2',
       weight: '300',
       style: 'normal'
-    },
-    {
-      path: './fonts/fira-sans-300.woff2',
-      weight: '300',
-      style: 'normal'
     },    {
       path: './fonts/fira-sans-400.woff2',
       weight: '400',
