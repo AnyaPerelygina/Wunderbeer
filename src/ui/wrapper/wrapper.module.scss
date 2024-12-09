@@ -2,14 +2,14 @@
 @use '@styles/mixins';
 @use '@styles/variables';
 
-.root {
-  max-width: func.rem(1568);
-  padding-right: func.rem(64);
-  padding-left: func.rem(64);
+.wrapper {
+  max-width: func.rem(1920);
+  padding-right: func.rem(60);
+  padding-left: func.rem(60);
   margin: 0 auto;
 
   @include mixins.mobile {
-    padding-right: func.rem(20);
-    padding-left: func.rem(20);
+    padding-right: func.rem(15);
+    padding-left: func.rem(15);
   }
 }

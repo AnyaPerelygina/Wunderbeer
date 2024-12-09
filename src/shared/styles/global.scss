@@ -12,6 +12,7 @@
   --color-aubergine: #262022;
   --color-kournikova: #FDCF55;
   --color-nero: #292929;
+  --color-black: #110D0B;;
 }
 
 * {
@@ -21,7 +22,7 @@
 }
 
 html {
-  font-size: 20px;
+  font-size: rem(20);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizelegibility;

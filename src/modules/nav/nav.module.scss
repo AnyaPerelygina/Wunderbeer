@@ -1,0 +1,52 @@
+@use '@styles/func';
+@use '@styles/mixins';
+@use '@styles/variables';
+
+.nav {
+  grid-column: span 3;
+
+  @include mixins.mobile {
+    grid-column: span 2;
+  }
+
+  &__list {
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: func.rem(761);
+    width: 100%;
+    margin: 0 auto;
+
+    @include mixins.mobile {
+      max-width: unset;
+      flex-direction: column;
+      align-items: start;
+      gap: func.rem(25);
+    }
+  }
+
+  a {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    color: var(--color-white-default);
+    transition: color variables.$transition;
+
+    @include mixins.hover-focus {
+      color: var(--color-kournikova);
+    }
+
+    @include mixins.mobile {
+      color: var(--color-kournikova);
+
+      @include mixins.hover-focus {
+        opacity: 0.8;
+      }
+    }
+  }
+}

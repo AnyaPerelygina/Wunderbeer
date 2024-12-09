@@ -1,0 +1,35 @@
+@use '@styles/func';
+@use '@styles/mixins';
+@use '@styles/variables';
+
+.social {
+  justify-self: start;
+
+  @include mixins.mobile {
+    grid-column: span 2;
+    margin: 0 0 func.rem(12);
+  }
+
+  &__list {
+    margin: 0 0 func.rem(10) 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: func.rem(15);
+
+    @include mixins.mobile {
+      gap: func.rem(20);
+    }
+  }
+
+  &__icon {
+    transition: opacity variables.$transition;
+
+    @include mixins.hover-focus {
+      opacity: 0.8;
+    }
+  }
+}
