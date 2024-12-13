@@ -7,7 +7,7 @@ export default function Main() {
     <main>
       <div>
         <div>
-          {isProd && redirect('/')}
+          {isProd && redirect('/home')}
           {!isProd && <Sitemap />}
         </div>
       </div>
