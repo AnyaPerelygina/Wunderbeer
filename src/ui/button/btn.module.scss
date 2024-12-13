@@ -1,0 +1,32 @@
+@import '../../style/variables.scss';
+@import '../../style/mixins.scss';
+
+.btn {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: center;
+  border: none;
+  border-radius: 50px;
+  background-color: $color-kournikova;
+  color: $color-default-black;
+
+  padding: 15px 59px;
+
+  @include hover-focus {
+    color: $color-kournikova;
+    background-color: transparent;
+
+    border: 3px solid $color-kournikova;
+    padding: 12px 56px;
+
+    @include vp-1023 {
+      padding: 5px 53px;
+    }
+  }
+
+  @include vp-1023 {
+    font-size: 14px;
+    padding: 8px 35px;
+  }
+}

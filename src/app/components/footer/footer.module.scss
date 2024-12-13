@@ -1,0 +1,168 @@
+@import '../../../style/variables.scss';
+@import '../../../style/mixins.scss';
+
+.footer {
+  background-color: $color-aubergine;
+  padding: 30px 0 18px;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: -50px;
+    z-index: -1;
+    background-image: url('../../../../public/svg/hops-line.svg');
+    background-repeat: repeat-x;
+    background-size: 641px 100%;
+    background-position: center bottom;
+    height: 195px;
+    width: 100%;
+  }
+
+  @include vp-1023 {
+    background-position: 0 634px;
+    padding: 21px 0 19px;
+
+    &::after {
+      bottom: 0;
+    }
+  }
+
+  &__wrapper {
+    max-width: 1111px;
+
+    display: grid;
+    grid-template-columns: 350px 254px auto;
+    justify-content: space-between;
+    margin: 0 auto;
+
+    @include vp-1023 {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+    }
+  }
+
+  p {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 18px;
+    color: $color-default-white;
+
+    margin: 0 0 42px;
+
+    @include vp-1023 {
+      font-size: 14px;
+      line-height: 17px;
+      margin: 0 0 17px;
+      max-width: 663px;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    grid-column: 1 / 4;
+
+    padding: 69px 0 0;
+
+    span {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 17px;
+      text-align: start;
+      color: $color-default-white;
+    }
+
+    @include vp-1023 {
+      flex-direction: column;
+      justify-content: center;
+      padding: 0;
+      gap: 12px;
+
+      span {
+        font-size: 13px;
+        line-height: 16px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.logoFooter {
+  flex-direction: row;
+  justify-content: start;
+  gap: 11px;
+  margin: 0 0 26px;
+
+  img {
+    width: 82px;
+    height: 97px;
+  }
+
+  span {
+    font-size: 40px;
+    line-height: 46px;
+    color: $color-kournikova;
+  }
+
+  @include vp-1023 {
+    gap: 6px;
+    margin: 0 0 15px;
+
+    img {
+      width: 49px;
+      height: 58px;
+    }
+
+    span {
+      font-size: 24px;
+      line-height: 36px;
+    }
+  }
+}
+
+.socialFooter {
+  ul {
+    gap: 20px;
+  }
+}
+
+.navFooter {
+  grid-column: 3 / 4;
+  grid-row: 1 / 4;
+  padding: 30px 0 0;
+  margin: 0 38px 0 0;
+
+  ul {
+    flex-direction: column;
+    align-items: start;
+    gap: 18px;
+  }
+
+  a {
+    color: $color-kournikova;
+    letter-spacing: 1.1px;
+
+    @include hover-focus {
+      opacity: 0.8;
+    }
+  }
+
+  @include vp-1023 {
+    padding: 0;
+    margin: 0 0 82px;
+
+    ul {
+      gap: 10px;
+      margin: 0;
+    }
+
+    a {
+      letter-spacing: 0;
+    }
+  }
+}

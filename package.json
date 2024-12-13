@@ -1,0 +1,55 @@
+{
+  "name": "wunderbeer",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "stylelint": "stylelint src/**/*.scss",
+    "prettier": "prettier -w src/**/*.{ts,tsx} --config .prettierrc",
+    "check": "prettier -w src/**/*.{ts,tsx} --config .prettierrc && next lint && stylelint src/**/*.scss"
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.1",
+    "axios": "^1.7.2",
+    "gsap": "^3.12.5",
+    "immer": "^10.1.1",
+    "jotai": "^2.10.2",
+    "next": "^14.2.5",
+    "postcss": "^8.4.38",
+    "react": "^18.3.1",
+    "react-datepicker": "^7.1.0",
+    "react-dom": "^18",
+    "react-range": "^1.8.14",
+    "react-router-dom": "^6.23.1",
+    "sass": "^1.77.4",
+    "sass-loader": "^14.2.1",
+    "swiper": "^11.1.14",
+    "use-ssr": "^1.0.25",
+    "usehooks-ts": "^3.1.0",
+    "zustand": "^4.5.2"
+  },
+  "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.2.1",
+    "@types/node": "^20",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.10.0",
+    "@typescript-eslint/parser": "^7.10.0",
+    "camelcase": "^8.0.0",
+    "chalk": "^5.3.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.2.5",
+    "stylelint": "^16.5.0",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-scss": "^6.3.0",
+    "typescript": "^5.5.3"
+  },
+  "engines": {
+    "node": "^20"
+  }
+}
