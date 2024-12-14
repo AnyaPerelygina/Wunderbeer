@@ -4,7 +4,7 @@
 .social {
   justify-self: start;
 
-  @include vp-767 {
+  @include vp-1023 {
     grid-column: span 2;
     margin: 0 0 22px;
   }

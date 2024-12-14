@@ -52,7 +52,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className={styles.hero}>
+    <section className={styles.root}>
       <Container className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.text}>
@@ -66,7 +66,7 @@ export default function Hero() {
           </div>
           {!isMobileScreen && (
             <Swiper
-              className={styles.hero__swiper}
+              className={styles.swiper}
               modules={[Navigation, Pagination, Autoplay]}
               slidesPerView={1}
               speed={1500}
@@ -92,7 +92,7 @@ export default function Hero() {
           )}
           {isMobileScreen && (
             <Swiper
-              className='hero__swiper swiper'
+              className={styles.swiper}
               modules={[Navigation, Pagination]}
               slidesPerView={1}
               speed={1500}
@@ -103,7 +103,7 @@ export default function Hero() {
             >
               <ul className={styles.swiper__wrapper}>
                 {HeroImgList.map((img, index) => (
-                  <SwiperSlide className={`swiper__slide ${index === currentSlide ? 'active' : ''}`} key={index}>
+                  <SwiperSlide className={`${styles.swiperSlide} ${index === currentSlide ? 'active' : ''}`} key={index}>
                     <Image
                       src={`${basePath}/hero/${img.link}`}
                       width={img.width}

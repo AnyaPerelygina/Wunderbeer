@@ -30,7 +30,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobileScreen(window.innerWidth < 768);
+      setIsMobileScreen(window.innerWidth < 1024);
     };
 
     handleResize();
