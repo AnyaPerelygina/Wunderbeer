@@ -1,0 +1,108 @@
+@import '../../../style/variables.scss';
+@import '../../../style/mixins.scss';
+
+.reasons {
+  position: relative;
+  padding: 55px 0 139px;
+
+  @include vp-1023 {
+    padding: 36px 0 92px;
+  }
+}
+
+.reasonsImg {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.reasonsTitle {
+  @include vp-1023 {
+    padding: 0 0 30px;
+  }
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 100px;
+
+  @include vp-1023 {
+    gap: 20px;
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+
+  @include vp-1023 {
+    gap: 20px;
+    max-width: 134px;
+  }
+
+  .image {
+    position: relative;
+
+    img {
+      position: relative;
+
+      @include vp-1023 {
+        max-height: 124px;
+      }
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 142px;
+      width: 142px;
+      border-radius: 50%;
+      background-color: $color-kournikova;
+
+      @include vp-1023 {
+        height: 95px;
+        width: 95px;
+      }
+    }
+  }
+
+  span {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29px;
+    color: $color-default-black;
+    text-align: center;
+
+    max-width: 142px;
+
+    @include vp-1023 {
+      font-size: 16px;
+      line-height: 19px;
+      max-width: 120px;
+    }
+  }
+}
