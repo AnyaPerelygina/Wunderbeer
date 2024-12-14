@@ -1,0 +1,214 @@
+@import '../variables.scss';
+@import '../mixins.scss';
+
+.swiper .swiper-button-prev {
+  padding: 86px 0 0 366px;
+  width: 22px;
+  height: 22px;
+
+  &::after {
+    content: url('../../../public/svg/arrow-short.svg');
+    transform: rotate(180deg);
+    width: 22px;
+    height: 22px;
+  }
+
+  @include hover-focus {
+    opacity: 0.8;
+  }
+
+  &.disabled {
+    opacity: 0.6;
+  }
+
+  @media (min-width: 1200px) and (max-width: 1800px) {
+    padding: 86px 0 0 100px;
+  }
+
+  @media (min-width: 1024px) and (max-width: 1199px) {
+    padding: 86px 0 0 50px;
+  }
+
+  @include vp-1023 {
+    padding: 317px 0 0 40px;
+  }
+
+  @include vp-767 {
+    padding: 317px 0 0 10px;
+  }
+}
+
+.swiper .swiper-button-next {
+  padding: 51px 368px 0 0;
+  width: 22px;
+  height: 22px;
+
+  &::after {
+    content: url('../../../public/svg/arrow-short.svg');
+    width: 22px;
+    height: 22px;
+  }
+
+  @include hover-focus {
+    opacity: 0.8;
+  }
+
+  &.disabled {
+    opacity: 0.6;
+  }
+
+  @media (min-width: 1200px) and (max-width: 1800px) {
+    padding: 51px 100px 0 0;
+  }
+
+  @media (min-width: 1024px) and (max-width: 1199px) {
+    padding: 51px 50px 0 0;
+  }
+
+  @include vp-1023 {
+    padding: 283px 40px 0 0;
+  }
+
+  @include vp-767 {
+    padding: 283px 10px 0 0;
+  }
+}
+
+.swiper-slide {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    opacity: 0.6;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.swiper .swiper-pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 13px;
+
+  padding: 0 0 200px;
+
+  @include vp-1023 {
+    padding: 0 0 53px;
+  }
+
+  .swiper-pagination-bullet {
+    border: none;
+    border-radius: 50%;
+    background-color: $color-default-white;
+    opacity: 1;
+    width: 11px;
+    height: 11px;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $color-kournikova;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: -5px;
+      left: -5px;
+      width: 21px;
+      height: 21px;
+      background-color: transparent;
+      border: 1px solid $color-kournikova;
+      border-radius: 50%;
+    }
+  }
+}
+
+.hero__swiper + .swiper {
+  .swiper-button-prev {
+    padding: 86px 0 0 366px;
+
+    @media (min-width: 1200px) and (max-width: 1800px) {
+      padding: 86px 0 0 100px;
+    }
+
+    @media (min-width: 1024px) and (max-width: 1199px) {
+      padding: 86px 0 0 50px;
+    }
+
+    @include vp-1023 {
+      padding: 317px 0 0 40px;
+    }
+
+    @include vp-767 {
+      padding: 317px 0 0 10px;
+    }
+  }
+
+  .swiper-button-next {
+    padding: 51px 368px 0 0;
+
+    @media (min-width: 1200px) and (max-width: 1800px) {
+      padding: 51px 100px 0 0;
+    }
+
+    @media (min-width: 1024px) and (max-width: 1199px) {
+      padding: 51px 50px 0 0;
+    }
+
+    @include vp-1023 {
+      padding: 283px 40px 0 0;
+    }
+
+    @include vp-767 {
+      padding: 283px 10px 0 0;
+    }
+  }
+
+  .swiper-pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 13px;
+
+    padding: 0 0 200px;
+
+    @include vp-1023 {
+      padding: 0 0 53px;
+    }
+
+    .swiper-pagination-bullet {
+      border: none;
+      border-radius: 50%;
+      background: $color-default-white;
+      opacity: 1;
+      width: 11px;
+      height: 11px;
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: $color-kournikova;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: "";
+        top: -5px;
+        left: -5px;
+        width: 21px;
+        height: 21px;
+        background-color: transparent;
+        border: 1px solid $color-kournikova;
+        border-radius: 50%;
+      }
+    }
+  }
+}

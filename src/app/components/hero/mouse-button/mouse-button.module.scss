@@ -1,0 +1,38 @@
+@import '../../../../style/variables.scss';
+@import '../../../../style/mixins.scss';
+
+.mouseButton {
+  border: none;
+  background-color: transparent;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  row-gap: 10px;
+
+  position: absolute;
+  content: "";
+  z-index: 1;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  cursor: pointer;
+
+  span {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    color: $color-default-white;
+    text-align: center;
+  }
+
+  @include hover-focus {
+    opacity: 0.6;
+  }
+
+  @include vp-1023 {
+    display: none;
+  }
+}
