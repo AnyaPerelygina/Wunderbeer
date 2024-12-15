@@ -3,6 +3,7 @@ import Hero from '../components/hero/hero';
 import Assortment from '../components/assortiment/assortment';
 import Reasons from '../components/reasons/reasons';
 import About from '../components/about/about';
+import Services from '../components/services/services';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Assortment />
       <Reasons />
       <About />
+      <Services />
     </React.Fragment>
   )
 }

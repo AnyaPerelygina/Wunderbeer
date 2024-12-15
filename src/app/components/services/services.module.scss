@@ -1,0 +1,178 @@
+@import '../../../style/variables.scss';
+@import '../../../style/mixins.scss';
+
+.services {
+  padding: 39px 0 0;
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .btn {
+    font-weight: 500;
+
+    width: 100%;
+    max-width: 255px;
+
+    @include vp-1023 {
+      max-width: 190px;
+    }
+  }
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @include vp-1023 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.servicesTitle {
+  grid-column: span 2;
+  padding: 0 0 16px;
+
+  @include vp-1023 {
+    grid-column: unset;
+    padding: 0 0 34px;
+  }
+}
+
+.distribution,
+.equipment {
+  position: relative;
+
+  height: 100%;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: flex-start;
+  align-items: flex-end;
+
+  @media (min-width: 1024px) and (max-width:1220px) {
+    min-height: 440px;
+  }
+
+  @include vp-1023 {
+    min-height: unset;
+  }
+}
+
+.distribution {
+  .text {
+    right: 0;
+    max-width: 555px;
+    padding-right: 93px;
+
+    @media (min-width: 1024px) and (max-width: 1220px) {
+      left: 60px;
+      padding-right: 82px;
+    }
+
+    @include vp-1023 {
+      max-width: unset;
+      padding-right: 40px;
+    }
+
+    @include vp-767 {
+      padding-right: 15px;
+    }
+  }
+}
+
+.equipment {
+  .text {
+    left: 3%;
+    max-width: 520px;
+
+    @include vp-1023 {
+      left: unset;
+      max-width: unset;
+    }
+  }
+}
+
+.img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-default-black;
+    opacity: 0.6;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.text {
+  position: absolute;
+  bottom: 9%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 25px;
+
+  color: $color-default-white;
+
+  width: 100%;
+
+  @media (min-width: 1024px) and (max-width: 1240px) {
+    width: unset;
+  }
+
+  @include vp-1023 {
+    gap: 15px;
+    padding: 58px 40px;
+    align-self: center;
+    top: 50%;
+    left: 0;
+    bottom: unset;
+    transform: translateY(-50%);
+  }
+
+  @include vp-767 {
+    padding: 58px 15px;
+  }
+
+  h3 {
+    font-size: 31px;
+    font-weight: 500;
+    line-height: 33px;
+    letter-spacing: -0.6px;
+
+    margin: 0;
+
+    @include vp-767 {
+      font-size: 26px;
+      line-height: 28px;
+    }
+  }
+
+  p {
+    letter-spacing: -0.4px;
+
+    margin: 0;
+
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+}
