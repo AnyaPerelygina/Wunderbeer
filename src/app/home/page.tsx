@@ -4,6 +4,7 @@ import Assortment from '../components/assortiment/assortment';
 import Reasons from '../components/reasons/reasons';
 import About from '../components/about/about';
 import Services from '../components/services/services';
+import Novelty from '../components/novelty/novelty';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Reasons />
       <About />
       <Services />
+      <Novelty />
     </React.Fragment>
   )
 }

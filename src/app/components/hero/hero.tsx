@@ -76,7 +76,6 @@ export default function Hero() {
               navigation
               pagination={{ clickable: true }}
             >
-            <ul className={styles.swiperWrapper}>
               {HeroImgList.map((img, index) => (
                 <SwiperSlide className={`${styles.swiperSlide} ${index === currentSlide ? 'active' : ''}`} key={index}>
                   <Image
@@ -87,7 +86,6 @@ export default function Hero() {
                   />
                 </SwiperSlide>
               ))}
-            </ul>
           </Swiper>
           )}
           {isMobileScreen && (
@@ -101,18 +99,16 @@ export default function Hero() {
               navigation
               pagination={{ clickable: true }}
             >
-              <ul className={styles.swiper__wrapper}>
-                {HeroImgList.map((img, index) => (
-                  <SwiperSlide className={`${styles.swiperSlide} ${index === currentSlide ? 'active' : ''}`} key={index}>
-                    <Image
-                      src={`${basePath}/hero/${img.link}`}
-                      width={img.width}
-                      height={img.height}
-                      alt={img.alt}
-                    />
-                  </SwiperSlide>
-                ))}
-              </ul>
+              {HeroImgList.map((img, index) => (
+                <SwiperSlide className={`${styles.swiperSlide} ${index === currentSlide ? 'active' : ''}`} key={index}>
+                  <Image
+                    src={`${basePath}/hero/${img.link}`}
+                    width={img.width}
+                    height={img.height}
+                    alt={img.alt}
+                  />
+                </SwiperSlide>
+              ))}
             </Swiper>
           )}
           <MouseButton />

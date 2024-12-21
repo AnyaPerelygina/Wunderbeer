@@ -26,7 +26,7 @@
     "react-router-dom": "^6.23.1",
     "sass": "^1.77.4",
     "sass-loader": "^14.2.1",
-    "swiper": "^11.1.14",
+    "swiper": "^11.1.15",
     "use-ssr": "^1.0.25",
     "usehooks-ts": "^3.1.0",
     "zustand": "^4.5.2"

@@ -109,68 +109,157 @@
       margin: 0;
     }
   }
+}
 
-  .swiper {
+.swiper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  .swiperWrapper {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+
+    overflow: hidden;
+  }
+
+  .swiperSlide {
+    background-color: $color-aubergine;
     position: relative;
-    width: 100%;
-    height: 100%;
 
-    .swiperWrapper {
-      padding: 0;
-      margin: 0;
-      list-style: none;
+    min-height: 1007px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-      display: flex;
-      flex-direction: row;
-      justify-content: start;
-      align-items: center;
-
-      overflow: hidden;
+    img {
+      object-fit: cover;
+      width: 100%;
+      min-height: 1007px;
+      height: auto;
     }
 
-    .swiperSlide {
-      background-color: $color-aubergine;
-      position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      background-color: #000000;
+      opacity: 0.6;
+      height: 100%;
+      width: 100%;
+    }
 
-      min-height: 1007px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    @include vp-1023 {
+      min-height: 688px;
 
       img {
-        object-fit: cover;
-        width: 100%;
-        min-height: 1007px;
-        height: auto;
+        min-height: 688px;
       }
+    }
 
-      &::after {
+    @include vp-767 {
+      min-height: 568px;
+
+      img {
+        min-height: 568px;
+        margin: 0;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .swiper-button-prev {
+    padding: 86px 0 0 366px;
+
+    &::after {
+      background-image: url('/svg/arrow-short.svg');
+    }
+
+    @media (min-width: 1200px) and (max-width: 1800px) {
+      padding: 86px 0 0 100px;
+    }
+
+    @media (min-width: 1024px) and (max-width: 1199px) {
+      padding: 86px 0 0 50px;
+    }
+
+    @include vp-1023 {
+      padding: 256px 0 0 40px;
+    }
+
+    @include vp-767 {
+      padding: 256px 0 0 10px;
+    }
+  }
+
+  .swiper-button-next {
+    padding: 51px 368px 0 0;
+
+    &::after {
+      background-image: url('../../../../public/svg/arrow-short.svg');
+    }
+
+    @media (min-width: 1200px) and (max-width: 1800px) {
+      padding: 51px 100px 0 0;
+    }
+
+    @media (min-width: 1024px) and (max-width: 1199px) {
+      padding: 51px 50px 0 0;
+    }
+
+    @include vp-1023 {
+      padding: 222px 40px 0 0;
+    }
+
+    @include vp-767 {
+      padding: 222px 10px 0 0;
+    }
+  }
+
+  .swiper-pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 13px;
+
+    padding: 0 0 200px;
+
+    @include vp-1023 {
+      padding: 0 0 53px;
+    }
+
+    .swiper-pagination-bullet {
+      border: none;
+      border-radius: 50%;
+      background: $color-default-white;
+      opacity: 1;
+      width: 11px;
+      height: 11px;
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: $color-kournikova;
+      position: relative;
+
+      &::before {
         position: absolute;
         content: "";
-        top: 0;
-        left: 0;
-        background-color: #000000;
-        opacity: 0.6;
-        height: 100%;
-        width: 100%;
-      }
-
-      @include vp-1023 {
-        min-height: 688px;
-
-        img {
-          min-height: 688px;
-        }
-      }
-
-      @include vp-767 {
-        min-height: 568px;
-
-        img {
-          min-height: 568px;
-          margin: 0;
-          object-fit: cover;
-        }
+        top: -5px;
+        left: -5px;
+        width: 21px;
+        height: 21px;
+        background-color: transparent;
+        border: 1px solid $color-kournikova;
+        border-radius: 50%;
       }
     }
   }
