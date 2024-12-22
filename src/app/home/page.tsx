@@ -5,6 +5,7 @@ import Reasons from '../components/reasons/reasons';
 import About from '../components/about/about';
 import Services from '../components/services/services';
 import Novelty from '../components/novelty/novelty';
+import Partners from '../components/partners/partners';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <About />
       <Services />
       <Novelty />
+      <Partners />
     </React.Fragment>
   )
 }

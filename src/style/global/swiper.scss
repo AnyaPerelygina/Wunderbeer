@@ -1,6 +1,12 @@
 @import '../variables.scss';
 @import '../mixins.scss';
 
+.swiper .swiper-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .swiper .swiper-button-prev {
   // padding: 86px 0 0 366px;
   width: 22px;

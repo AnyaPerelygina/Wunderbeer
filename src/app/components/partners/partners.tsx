@@ -4,55 +4,66 @@ import { useRef, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from 'swiper/modules';
 
-import styles from './novelty.module.scss';
+import styles from './partners.module.scss';
 
 import Image from "next/image";
 import { basePath } from "@/const";
 import { Container } from "../container/container";
 import Title from '@/ui/title/title';
 
-export default function Novelty() {
-  const NoveltyImgList = [
+export default function Partners() {
+  const PartnersImgList = [
     {
-      link: 'beer-1@2x.webp',
-      title: 'Mild lager beer',
-      description: '4,6%, Светлое, Фильрованное'
+      id: 1,
+      link: 'partner-3@2x.webp',
+      width: 149,
+      height: 149,
     },
     {
-      link: 'beer-2@2x.webp',
-      title: 'Golden beer',
-      description: '8,5%, Светлое, Фильрованное'
+      id: 2,
+      link: 'partner-1@2x.webp',
+      width: 149,
+      height: 149,
     },
     {
-      link: 'beer-3@2x.webp',
-      title: 'Premium beer',
-      description: '4,6%, Светлое, Нефильрованное'
+      id: 3,
+      link: 'partner-2@2x.webp',
+      width: 81,
+      height: 81,
     },
     {
-      link: 'beer-2@2x.webp',
-      title: 'Golden beer',
-      description: '8,5%, Светлое, Фильрованное'
+      id: 4,
+      link: 'partner-3@2x.webp',
+      width: 149,
+      height: 149,
     },
     {
-      link: 'beer-3@2x.webp',
-      title: 'Premium beer',
-      description: '4,6%, Светлое, Нефильрованное'
+      id: 5,
+      link: 'partner-1@2x.webp',
+      width: 149,
+      height: 149,
+    },
+    {
+      id: 6,
+      link: 'partner-2@2x.webp',
+      width: 81,
+      height: 81,
     }
   ];
 
   const [isMobileScreen, setIsMobileScreen] = useState(false);
   const [isTabletScreen, setIsTabletScreen] = useState(false);
 
-    useEffect(() => {
-      const handleResize = () => {
-        setIsTabletScreen(window.innerWidth > 767 && window.innerWidth < 1024);
-        setIsMobileScreen(window.innerWidth < 768);
-      };
+  useEffect(() => {
+    const handleResize = () => {
+      setIsTabletScreen(window.innerWidth > 767 && window.innerWidth < 1024);
+      setIsMobileScreen(window.innerWidth < 768);
+    };
 
-      handleResize();
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
@@ -72,7 +83,7 @@ export default function Novelty() {
   return (
     <section className={styles.root}>
       <Container>
-        <div className={styles.noveltyImg}>
+        <div className={styles.partnersImg}>
           <picture>
             <source type="image/webp" media="(min-width: 360px)" srcSet={`${basePath}/background-img/paper-background.webp, ${basePath}/background-img/paper-background@2x.webp 2x`} />
             <Image
@@ -84,14 +95,13 @@ export default function Novelty() {
           </picture>
         </div>
         <div className={styles.wrapper}>
-          <Title className={styles.noveltyTitle} image="wheat-green" title="Новинки"/>
-          <p>Откройте для себя наше пиво</p>
+          <Title className={styles.partnersTitle} image="wheat-green" title="Наши партнеры"/>
           {!isMobileScreen && !isTabletScreen && (
             <Swiper
               ref={swiperRef}
-              className={`${styles.swiper} ${styles.noveltySwiper}`}
+              className={`${styles.swiper} ${styles.partnersSwiper}`}
               modules={[Navigation]}
-              slidesPerView={4}
+              slidesPerView={3}
               loop={true}
               speed={1000}
               navigation={{
@@ -99,16 +109,14 @@ export default function Novelty() {
                 nextEl: navigationNextRef.current,
               }}
             >
-              {NoveltyImgList.map((item) => (
+              {PartnersImgList.map((item) => (
                 <SwiperSlide className={styles.swiperSlide} key={item.link}>
                   <Image
-                    src={`${basePath}/bottles/${item.link}`}
-                    width={214}
-                    height={71}
-                    alt={'Пивная бутылка.'}
+                    src={`${basePath}/partners/${item.link}`}
+                    width={item.width}
+                    height={item.height}
+                    alt={'Логотип партнера.'}
                   />
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -116,7 +124,7 @@ export default function Novelty() {
           {isTabletScreen && !isMobileScreen && (
             <Swiper
               ref={swiperRef}
-              className={`${styles.swiper} ${styles.noveltySwiper}`}
+              className={`${styles.swiper} ${styles.partnersSwiper}`}
               modules={[Navigation]}
               slidesPerView={2}
               loop={true}
@@ -126,16 +134,14 @@ export default function Novelty() {
                 nextEl: navigationNextRef.current,
               }}
             >
-              {NoveltyImgList.map((item) => (
+              {PartnersImgList.map((item) => (
                 <SwiperSlide className={styles.swiperSlide} key={item.link}>
                   <Image
-                    src={`${basePath}/bottles/${item.link}`}
-                    width={214}
-                    height={71}
-                    alt={'Пивная бутылка.'}
+                    src={`${basePath}/partners/${item.link}`}
+                    width={item.width}
+                    height={item.height}
+                    alt={'Логотип партнера.'}
                   />
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -143,7 +149,7 @@ export default function Novelty() {
           {isMobileScreen && (
             <Swiper
               ref={swiperRef}
-              className={`${styles.swiper} ${styles.noveltySwiper}`}
+              className={`${styles.swiper} ${styles.partnersSwiper}`}
               modules={[Navigation]}
               slidesPerView={1}
               loop={true}
@@ -153,16 +159,14 @@ export default function Novelty() {
                 nextEl: navigationNextRef.current,
               }}
             >
-              {NoveltyImgList.map((item) => (
+              {PartnersImgList.map((item) => (
                 <SwiperSlide className={styles.swiperSlide} key={item.link}>
                   <Image
-                    src={`${basePath}/bottles/${item.link}`}
-                    width={214}
-                    height={71}
-                    alt={'Пивная бутылка.'}
+                    src={`${basePath}/partners/${item.link}`}
+                    width={item.width}
+                    height={item.height}
+                    alt={'Логотип партнера.'}
                   />
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
                 </SwiperSlide>
               ))}
             </Swiper>
