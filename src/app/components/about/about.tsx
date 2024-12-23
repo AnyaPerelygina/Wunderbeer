@@ -65,7 +65,7 @@ export default function About() {
   }, []);
 
   return (
-    <section className={styles.about}>
+    <section className={styles.root} ref={aboutRef}>
       <Container className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.motto}>

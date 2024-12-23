@@ -6,6 +6,7 @@ import About from '../components/about/about';
 import Services from '../components/services/services';
 import Novelty from '../components/novelty/novelty';
 import Partners from '../components/partners/partners';
+import News from '../components/news/news';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Services />
       <Novelty />
       <Partners />
+      <News />
     </React.Fragment>
   )
 }
