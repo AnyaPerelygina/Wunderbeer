@@ -2,6 +2,8 @@
 @import '../../../style/mixins.scss';
 
 .root {
+  background-color: $color-default-white;
+
   .container {
     padding: 0;
     margin: 0;

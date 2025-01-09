@@ -43,16 +43,16 @@ export default function Novelty() {
   const [isMobileScreen, setIsMobileScreen] = useState(false);
   const [isTabletScreen, setIsTabletScreen] = useState(false);
 
-    useEffect(() => {
-      const handleResize = () => {
-        setIsTabletScreen(window.innerWidth > 767 && window.innerWidth < 1024);
-        setIsMobileScreen(window.innerWidth < 768);
-      };
+  useEffect(() => {
+    const handleResize = () => {
+      setIsTabletScreen(window.innerWidth > 767 && window.innerWidth < 1024);
+      setIsMobileScreen(window.innerWidth < 768);
+    };
 
-      handleResize();
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);

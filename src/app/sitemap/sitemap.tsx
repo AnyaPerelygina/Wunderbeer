@@ -15,6 +15,7 @@ export default function Sitemap() {
       />
       <br /><br />
       <Link href={'/home'}>1. Главная</Link>
+      <Link href={'/error'}>2. Ошибка загрузки страницы</Link>
     </div>
   )
 }

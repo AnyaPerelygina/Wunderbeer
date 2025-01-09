@@ -4,6 +4,7 @@
 .root {
   position: relative;
   padding: 105px 0 111px;
+  background-color: $color-default-white;
 
   @include vp-1023 {
     padding: 52px 0 73px;
