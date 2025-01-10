@@ -1,0 +1,192 @@
+@import '../../../../style/variables.scss';
+@import '../../../../style/mixins.scss';
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup {
+  position: relative;
+  overflow: hidden;
+
+  background-color: $color-aubergine;
+  max-width: 636px;
+  border-radius: 5px;
+  padding: 55px 91px 55px 76px;
+  margin: auto 15px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-image: url('../../../../../public/svg/popup/wheats-popup.svg');
+    background-repeat: repeat-x;
+    background-size: 412px 100%;
+    background-position: center bottom;
+    height: 126px;
+    width: 100%;
+  }
+
+  p {
+    color: $color-default-white;
+    z-index: 2;
+  }
+
+  p:first-of-type {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+
+    margin: 0 0 30px;
+
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 16.8px;
+
+      margin: 0 0 14px;
+    }
+  }
+
+  p:last-of-type {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 16.8px;
+
+    margin: 0 0 48px;
+
+    @include vp-767 {
+      margin: 0 0 20px;
+    }
+  }
+
+  @include vp-767 {
+    align-items: flex-start;
+    padding: 38px 14px 24px;
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.popupTitle {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  color: $color-default-white;
+
+  margin: 0 0 36px;
+
+  z-index: 2;
+
+  @include vp-767 {
+    font-size: 25px;
+    line-height: 30px;
+
+    margin: 0 0 13px;
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+
+  z-index: 2;
+
+  width: 100%;
+
+  @include vp-767 {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 32px;
+  }
+
+  button {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18px;
+
+    padding: 17px;
+    min-width: 210px;
+
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 16.8px;
+
+      min-width: 197px;
+      padding: 9px;
+    }
+  }
+}
+
+.buttonYes {
+  background-color: $color-kournikova;
+  outline: none;
+
+  transition: outline $trans-default, background-color $trans-default;
+
+  @include hover-focus {
+    color: $color-kournikova;
+    background-color: transparent;
+
+    outline: 3px solid $color-kournikova;
+  }
+}
+
+.buttonNo {
+  background-color: $color-default-white;
+  outline: none;
+
+  transition: outline $trans-default, background-color $trans-default;
+
+  @include hover-focus {
+    color: $color-default-white;
+    background-color: transparent;
+
+    outline: 3px solid $color-default-white;
+  }
+}
+
+.images {
+  .image1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include vp-767 {
+      top: -14px;
+      left: -9px;
+    }
+  }
+
+  .image2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include vp-767 {
+      top: unset;
+      right: -24px;
+      bottom: -20px;
+    }
+  }
+}

@@ -8,7 +8,6 @@ import { basePath } from '@/const';
 import Image from 'next/image';
 
 import Title from '@/ui/title/title';
-// import Button from '@/ui/button/btn';
 
 import { Container } from '../container/container';
 

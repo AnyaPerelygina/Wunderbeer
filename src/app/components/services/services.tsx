@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import styles from './services.module.scss';
 import Title from '@/ui/title/title';
-import Button from '@/ui/button/btn';
+import LinkNew from '@/ui/link/link';
 import { Container } from "../container/container";
 
 export default function Services() {
@@ -28,7 +28,7 @@ export default function Services() {
             <div className={styles.text}>
               <h3 className={styles.subtitle}>Дистрибуция</h3>
               <p>Предоставляем услуги по комплектации магазинов разливного пива &quot;под ключ&quot;</p>
-              <Button className={styles.btn} href={'/distribution'}>Подробнее</Button>
+              <LinkNew className={styles.btn} href={'/distribution'}>Подробнее</LinkNew>
             </div>
           </div>
           <div className={styles.equipment}>
@@ -47,7 +47,7 @@ export default function Services() {
             <div className={styles.text}>
               <h3 className={styles.subtitle}>Комплектация магазинов</h3>
               <p>Дистрибьюция по Москве и Москвоской области региональных производителей пива, пивных напитков</p>
-              <Button className={styles.btn} href={'/distribution'}>Подробнее</Button>
+              <LinkNew className={styles.btn} href={'/distribution'}>Подробнее</LinkNew>
             </div>
           </div>
         </div>

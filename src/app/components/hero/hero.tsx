@@ -12,7 +12,7 @@ import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 
 import Image from "next/image";
-import Button from "../../../ui/button/btn";
+import LinkNew from "../../../ui/link/link";
 
 import styles from './hero.module.scss';
 
@@ -62,7 +62,7 @@ export default function Hero() {
             <div className={styles.description}>
               <p>В&nbsp;ассортименте в&nbsp;большом разнообразии представлены хмельные напитки собственного изготовления, а&nbsp;также от&nbsp;проверенных и&nbsp;надёжных партнёров – приобрести пиво оптом Москве и&nbsp;Московской области можно на&nbsp;выгодных условиях, а&nbsp;главное, будучи уверенным в&nbsp;отличных вкусовых характеристиках!</p>
             </div>
-            <Button className={styles.button} href={'/catalog'}>Перейти в&nbsp;каталог</Button>
+            <LinkNew className={styles.button} href={'/catalog'}>Перейти в&nbsp;каталог</LinkNew>
           </div>
           {!isMobileScreen && (
             <Swiper

@@ -8,7 +8,7 @@ import { basePath } from '@/const';
 import Image from 'next/image';
 
 import Title from '@/ui/title/title';
-import Button from '@/ui/button/btn';
+import LinkNew from '@/ui/link/link';
 
 import { Container } from '../container/container';
 
@@ -104,7 +104,7 @@ export default function About() {
           <div className={styles.text}>
             <Title className={styles.title} image="wheat-green" title="О компании"/>
             <p>Приветствуем на&nbsp;официальном сайте компании «Вундербир» – опытного и&nbsp;квалифицированного производителя и&nbsp;поставщика вкусного, качественного пива! В&nbsp;ассортименте в&nbsp;большом разнообразии представлены хмельные напитки собственного изготовления, а&nbsp;также от&nbsp;проверенных и&nbsp;надёжных партнёров – приобрести пиво оптом Москве и&nbsp;Московской области можно на&nbsp;выгодных условиях, а&nbsp;главное, будучи уверенным в&nbsp;отличных вкусовых характеристиках!</p>
-            <Button className={styles.btn} href={'/about'}>Подробнее</Button>
+            <LinkNew className={styles.btn} href={'/about'}>Подробнее</LinkNew>
           </div>
           <div className={styles.img}>
             <Image
