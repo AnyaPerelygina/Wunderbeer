@@ -1,5 +1,5 @@
 import { isProd } from '@/const';
-import Sitemap from './sitemap/sitemap';
+import Sitemap from './sitemap/page';
 import { redirect } from 'next/navigation';
 
 export default function Main() {
