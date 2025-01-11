@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, SwiperRef } from "swiper/react";
 import { Navigation } from 'swiper/modules';
 
 import styles from './partners.module.scss';
@@ -65,9 +65,9 @@ export default function Partners() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const navigationPrevRef = useRef(null);
-  const navigationNextRef = useRef(null);
-  const swiperRef = useRef(null);
+  const navigationPrevRef = useRef<HTMLDivElement>(null);
+  const navigationNextRef = useRef<HTMLDivElement>(null);
+  const swiperRef = useRef<SwiperRef>(null);
 
   useEffect(() => {
     if (navigationPrevRef.current && navigationNextRef.current) {
