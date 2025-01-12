@@ -13,25 +13,17 @@
   color: $color-default-black;
   padding: 15px 59px;
 
-  transition: padding $trans-default, outline $trans-default, background-color $trans-default;
+  transition: outline $trans-default, background-color $trans-default;
 
   @include hover-focus {
     color: $color-kournikova;
     background-color: transparent;
 
     outline: 3px solid $color-kournikova;
-    padding: 12px 56px;
   }
 
   @include vp-1023 {
     font-size: 14px;
     padding: 8px 35px;
-
-    @include hover-focus {
-      padding: 8px 35px;
-      // color: $color-kournikova;
-      // background-color: transparent;
-      // outline: 3px solid $color-kournikova;
-    }
   }
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -8,6 +8,7 @@ import { basePath } from '@/const';
 import Image from 'next/image';
 
 import Title from '@/ui/title/title';
+import Button from "@/ui/button/button";
 
 import { Container } from '../container/container';
 
@@ -21,21 +22,24 @@ export default function News() {
       link: 'news-1.webp',
       alt: 'Изображение пивного крана и кружки пива.',
       newsTitle: 'Откройте для себя наше крафтовое пиво.',
-      text: 'При покупки 3-х бутылок нашего крафтого пива 1 бутылка в подарок.',
+      text: 'При покупки 3-х бутылок нашего крафтового пива 1 бутылка в подарок.',
     },
     {
       link: 'news-2.webp',
       alt: 'Изображение кружки пива на столе.',
       newsTitle: 'Откройте для себя наше крафтовое пиво.',
-      text: 'При покупки 3-х бутылок нашего крафтого пива 1 бутылка в подарок.',
+      text: 'При покупки 3-х бутылок нашего крафтового пива 1 бутылка в подарок.',
     },
     {
       link: 'news-3.webp',
       alt: 'Изображение бутылок пива.',
       newsTitle: 'Откройте для себя наше крафтовое пиво.',
-      text: 'При покупки 3-х бутылок нашего крафтого пива 1 бутылка в подарок.',
+      text: 'При покупки 3-х бутылок нашего крафтового пива 1 бутылка в подарок.',
     }
   ];
+
+  const [visibleNewsCount, setVisibleNewsCount] = useState(3);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const newsRef = useRef<HTMLDivElement>(null);
   const newsImgRef = useRef<HTMLDivElement>(null);
@@ -62,13 +66,22 @@ export default function News() {
     }
   }, []);
 
+  const handleShowMore = () => {
+    if (isExpanded) {
+      setVisibleNewsCount(3);
+    } else {
+      setVisibleNewsCount((prevCount) => prevCount + 3);
+    }
+    setIsExpanded(!isExpanded && visibleNewsCount + 3 >= NewsList.length);
+  };
+
   return (
     <section className={styles.root} ref={newsRef}>
       <Container className={styles.container}>
         <div className={styles.wrapper}>
-          <Title className={styles.title} image="wheat-yellow" title="Новости"/>
+          <Title className={styles.title} image="wheat-yellow" title="Новости" />
           <ul className={styles.list}>
-            {NewsList.map((img) => (
+            {NewsList.slice(0, visibleNewsCount).map((img) => (
               <li className={styles.item} key={img.link}>
                 <Image
                   src={`${basePath}/news/${img.link}`}
@@ -81,6 +94,14 @@ export default function News() {
               </li>
             ))}
           </ul>
+          {visibleNewsCount < NewsList.length || isExpanded ? (
+            <Button
+              className={styles.showMoreButton}
+              onClick={handleShowMore}
+            >
+              {isExpanded ? "Показать меньше" : "Показать ещё"}
+            </Button>
+          ) : null}
           <div className={styles.animation}>
             <div className={styles.img} ref={newsImgRef}>
               <Image
@@ -94,5 +115,5 @@ export default function News() {
         </div>
       </Container>
     </section>
-  )
+  );
 }
