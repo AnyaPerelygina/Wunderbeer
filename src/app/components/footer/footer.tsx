@@ -7,6 +7,33 @@ import Nav from '../nav/nav';
 import styles from './footer.module.scss';
 
 export default function Footer() {
+  const navLinks = [
+    {
+      href: '/catalog',
+      label: 'Каталог',
+    },
+    {
+      href: '/distribution',
+      label: 'Дистрибуция',
+    },
+    {
+      href: '/store',
+      label: 'Комплектация магазинов',
+    },
+    {
+      href: '/about',
+      label: 'О компании',
+    },
+    {
+      href: '/contacts',
+      label: 'Контакты',
+    },
+    {
+      href: '/privacy-policy',
+      label: 'Политика конфиденциальности',
+    }
+  ]
+
   function handleLinkClick(): void {
     throw new Error('Function not implemented.');
   }
@@ -19,7 +46,7 @@ export default function Footer() {
           <p>В&nbsp;ассортименте в&nbsp;большом разнообразии представлены хмельные напитки собственного изготовления, а&nbsp;также от&nbsp;проверенных и&nbsp;надёжных партнёров.</p>
           <Social className={styles.socialFooter} SocialLinks={[]} onLinkClick={handleLinkClick} />
           <Contacts className={styles.contacts} navLinks={[]} onLinkClick={handleLinkClick} />
-          <Nav className={styles.navFooter} navLinks={[]} onLinkClick={handleLinkClick} />
+          <Nav className={styles.navFooter} navLinks={navLinks} onLinkClick={handleLinkClick} />
           <div className={styles.footer__copyright}>
             <span>ООО “Вундербир” 2010 - 2024</span>
             <span>Все права защищены ©</span>

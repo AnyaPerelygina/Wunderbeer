@@ -4,30 +4,7 @@ import Link from 'next/link';
 import { NavProps } from './nav.types';
 import styles from './nav.module.scss';
 
-export default function Nav({ onLinkClick, className }: NavProps) {
-  const navLinks = [
-    {
-      href: '/catalog',
-      label: 'Каталог',
-    },
-    {
-      href: '/distribution',
-      label: 'Дистрибуция',
-    },
-    {
-      href: '/store',
-      label: 'Комплектация магазинов',
-    },
-    {
-      href: '/about',
-      label: 'О компании',
-    },
-    {
-      href: '/contacts',
-      label: 'Контакты',
-    },
-  ]
-
+export default function Nav({ onLinkClick, className, navLinks }: NavProps) {
   const pathname = usePathname();
 
   return (

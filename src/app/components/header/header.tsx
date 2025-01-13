@@ -12,6 +12,29 @@ import { Container } from "../container/container";
 import styles from './header.module.scss';
 
 export default function Header() {
+  const navLinks = [
+    {
+      href: '/catalog',
+      label: 'Каталог',
+    },
+    {
+      href: '/distribution',
+      label: 'Дистрибуция',
+    },
+    {
+      href: '/store',
+      label: 'Комплектация магазинов',
+    },
+    {
+      href: '/about',
+      label: 'О компании',
+    },
+    {
+      href: '/contacts',
+      label: 'Контакты',
+    }
+  ]
+
   const [isMobileScreen, setIsMobileScreen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const headerRef = useRef<HTMLDivElement>(null);
@@ -50,7 +73,7 @@ export default function Header() {
             <Social SocialLinks={[]} onLinkClick={handleLinkClick}/>
             <Logo />
             <ShoppingBasket />
-            <Nav navLinks={[]} onLinkClick={handleLinkClick}/>
+            <Nav navLinks={navLinks} onLinkClick={handleLinkClick}/>
           </div>
         )}
 
@@ -73,7 +96,7 @@ export default function Header() {
             </button>
             <div className={`${styles.menu} ${isOpen ? styles['is-opened'] : ''}`}>
               <ShoppingBasket />
-              <Nav navLinks={[]} onLinkClick={handleLinkClick}/>
+              <Nav navLinks={navLinks} onLinkClick={handleLinkClick}/>
               <Social SocialLinks={[]} onLinkClick={handleLinkClick} />
             </div>
           </div>
