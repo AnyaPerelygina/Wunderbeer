@@ -17,12 +17,20 @@
     color: $color-default-black;
 
     margin: 0;
+
+    @include vp-767 {
+      line-height: 25px;
+    }
   }
 
   a {
     @include hover-focus {
       border-bottom: 0.5px solid $color-default-black;;
     }
+  }
+
+  @include vp-767 {
+    padding: 21px 0 50px;
   }
 }
 
