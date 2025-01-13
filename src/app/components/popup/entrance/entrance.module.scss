@@ -140,9 +140,10 @@
 
 .buttonYes {
   background-color: $color-kournikova;
+  color: $color-default-black;
   outline: none;
 
-  transition: outline $trans-default, background-color $trans-default;
+  transition: outline $trans-default, background-color $trans-default, color $trans-default;
 
   @include hover-focus {
     color: $color-kournikova;
@@ -154,9 +155,10 @@
 
 .buttonNo {
   background-color: $color-default-white;
+  color: $color-default-black;
   outline: none;
 
-  transition: outline $trans-default, background-color $trans-default;
+  transition: outline $trans-default, background-color $trans-default, color $trans-default;
 
   @include hover-focus {
     color: $color-default-white;
