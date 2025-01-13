@@ -1,7 +1,37 @@
+'use client'
+
+import { useEffect } from 'react';
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
 import { Container } from '../container/container';
 import styles from './privacy-policy-doc.module.scss';
 
 export default function PrivacyPolicyDoc() {
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const items = document.querySelectorAll(`.${styles.list} li, .${styles.sublist} li, .${styles.root} p`);
+
+    gsap.set(items, { opacity: 0, y: 30 });
+
+    items.forEach((item) => {
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: item,
+          start: 'top 100%',
+          toggleActions: 'play none none none',
+        },
+      }).to(item, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: 'power1.out',
+        stagger: 0.2,
+      });
+    });
+  }, []);
+
   return (
     <section className={styles.root}>
       <Container className={styles.container}>
