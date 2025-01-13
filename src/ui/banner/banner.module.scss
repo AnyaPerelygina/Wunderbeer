@@ -64,15 +64,14 @@
   img {
     object-fit: cover;
     width: 100%;
-    min-height: 390px;
-    height: auto;
+    height: 390px;
   }
 
   @include vp-767 {
-    min-height: 204px;
+    height: 204px;
 
     img {
-      min-height: 204px;
+      height: 204px;
       margin: 0;
       object-fit: cover;
     }

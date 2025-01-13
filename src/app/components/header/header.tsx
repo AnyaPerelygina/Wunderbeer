@@ -40,6 +40,18 @@ export default function Header() {
   const headerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('scroll-lock');
+    } else {
+      document.body.classList.remove('scroll-lock');
+    }
+
+    return () => {
+      document.body.classList.remove('scroll-lock');
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (headerRef.current && !headerRef.current.contains(event.target as Node)) {
         setIsOpen(false);
@@ -66,6 +78,8 @@ export default function Header() {
   };
 
   return (
+    <>
+    {isOpen && <div className={styles.overlay} />}
     <header className={`${styles.header} ${isOpen ? styles['is-opened'] : ''}`}>
       <Container className={styles.container}>
         {!isMobileScreen && (
@@ -103,5 +117,6 @@ export default function Header() {
         )}
       </Container>
     </header>
+    </>
   )
 }

@@ -6,7 +6,7 @@
   padding: 12px 0;
 
   position: relative;
-  z-index: 666;
+  z-index: 10;
 
   transition: background-color $trans-default;
 
@@ -83,4 +83,15 @@
   &.is-opened .toggle__opened {
     display: none;
   }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 1;
 }
