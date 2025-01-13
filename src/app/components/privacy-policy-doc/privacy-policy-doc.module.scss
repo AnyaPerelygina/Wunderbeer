@@ -1,0 +1,66 @@
+@import '../../../style/variables.scss';
+@import '../../../style/mixins.scss';
+
+.root {
+  background-color: $color-default-white;
+  padding: 21px 0 100px;
+
+  p,
+  a,
+  li,
+  h2 {
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 400;
+    letter-spacing: -1.2px;
+    text-align: left;
+    color: $color-default-black;
+
+    margin: 0;
+  }
+
+  a {
+    @include hover-focus {
+      border-bottom: 0.5px solid $color-default-black;;
+    }
+  }
+}
+
+.container {
+  max-width: 1230px;
+  margin: 0 auto;
+}
+
+.list {
+  counter-reset: list-counter;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  margin: 0;
+  counter-increment: list-counter;
+
+  &::before {
+    content: counter(list-counter) ". ";
+  }
+}
+
+.sublist {
+  margin: 0;
+  padding: 0;
+
+  counter-reset: letter-counter;
+  list-style: none;
+  padding-left: 0;
+}
+
+.subitem {
+  counter-increment: letter-counter;
+  margin: 0;
+
+  &::before {
+    content: counter(letter-counter, upper-alpha) ". ";
+  }
+}
