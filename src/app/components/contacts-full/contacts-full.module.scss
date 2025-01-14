@@ -1,0 +1,121 @@
+@import '../../../style/variables.scss';
+@import '../../../style/mixins.scss';
+
+.root {
+  position: relative;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  height: 100%;
+  width: 100%;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 96px;
+
+  max-width: 1109px;
+  margin: 0 auto;
+  padding: 45px 0 49px;
+
+  @include vp-1023 {
+    grid-template-columns: 1fr;
+    row-gap: 70px;
+
+    padding: 41px 0 49px;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 74px;
+
+  @include vp-767 {
+    row-gap: 36px;
+  }
+}
+
+.adress,
+.phones {
+  display: flex;
+  flex-direction: column;
+  row-gap: 21px;
+
+  @include vp-767 {
+    row-gap: 13px;
+  }
+}
+
+.phones {
+  row-gap: 26px;
+
+  @include vp-767 {
+    row-gap: 20px;
+  }
+}
+
+.title {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 500;
+
+  @include vp-767 {
+    font-size: 25px;
+    line-height: 30px;
+  }
+}
+
+.link {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 9px;
+
+  @include vp-767 {
+    gap: 13px;
+  }
+
+  span {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
+    letter-spacing: -0.2px;
+
+    @include vp-767 {
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: -0.5px;
+    }
+  }
+}
+
+.map {
+  grid-column: span 2;
+  height: 390px;
+  width: 100%;
+
+  @include vp-1023 {
+    grid-column: unset;
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: 1px solid $color-gainsboro;
+    border-radius: 10px;
+  }
+}

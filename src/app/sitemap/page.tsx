@@ -17,6 +17,7 @@ export default function Sitemap() {
       <Link href={'/home'}>1. Главная;</Link>
       <Link href={'/error'}>2. Ошибка загрузки страницы;</Link>
       <Link href={'/privacy-policy'}>3. Политика конфиденциальности;</Link>
+      <Link href={'/contacts'}>4. Контакты;</Link>
     </div>
   )
 }
