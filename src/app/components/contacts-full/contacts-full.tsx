@@ -5,9 +5,8 @@ import { Container } from '../container/container';
 import { basePath } from "@/const";
 
 import styles from './contacts-full.module.scss';
-import { ContactsFullProps } from './contacts-full.types';
 
-export default function ContactsFull({ onLinkClick }: ContactsFullProps) {
+export default function ContactsFull() {
   return (
     <section className={styles.root}>
       <div className={styles.background}>
@@ -26,13 +25,13 @@ export default function ContactsFull({ onLinkClick }: ContactsFullProps) {
           <div className={styles.info}>
             <div className={styles.adress}>
               <h2 className={styles.title}>Где нас найти</h2>
-              <Link className={styles.link} onClick={onLinkClick} href={'https://www.google.com/maps/search/?api=1&query=Москва,+Рязанский+проспект+22,+к2'}>
+              <Link className={styles.link} href={'https://www.google.com/maps/search/?api=1&query=Москва,+Рязанский+проспект+22,+к2'} target={'_blank'}>
                 <span>Россия, Москва, Рязанский проспект 22, к2</span>
               </Link>
             </div>
             <div className={styles.phones}>
               <h2 className={styles.title}>Свяжитесь с нами</h2>
-              <Link className={styles.link} onClick={onLinkClick} href={'tel:+7 (495) 740-40-51'}>
+              <Link className={styles.link} href={'tel:+7 (495) 740-40-51'} target={'_blank'}>
                 <div className={styles.icon}>
                   <Image
                     src={`${basePath}/svg/phone-green.svg`}
@@ -42,7 +41,7 @@ export default function ContactsFull({ onLinkClick }: ContactsFullProps) {
                 </div>
                 <span>+7 (495) 740-40-51</span>
               </Link>
-              <Link className={styles.link} onClick={onLinkClick} href={'tel:+7 (925) 924-07-00'}>
+              <Link className={styles.link} href={'tel:+7 (925) 924-07-00'} target={'_blank'}>
                 <div className={styles.icon}>
                   <Image
                     src={`${basePath}/svg/phone-green.svg`}
@@ -52,7 +51,7 @@ export default function ContactsFull({ onLinkClick }: ContactsFullProps) {
                 </div>
                 <span>+7 (925) 924-07-00</span>
               </Link>
-              <Link className={styles.link} onClick={onLinkClick} href={'mailto:wunderbeer@mail.ru'}>
+              <Link className={styles.link} href={'mailto:wunderbeer@mail.ru'} target={'_blank'}>
                 <div className={styles.icon}>
                   <Image
                     src={`${basePath}/svg/mail-green.svg`}

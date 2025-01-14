@@ -24,6 +24,9 @@
   }
 
   a {
+    border-bottom: none;
+    transition: border-bottom $trans-default;
+
     @include hover-focus {
       border-bottom: 0.5px solid $color-default-black;;
     }
