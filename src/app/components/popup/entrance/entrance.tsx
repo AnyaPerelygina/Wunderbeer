@@ -59,8 +59,8 @@ export default function EntrancePopup() {
         <p>Добро пожаловать на наш сайт Wunderbeer. Для доступа необходимо подтвердить совершеннолетний возраст.</p>
         <p>Сайт содержит информацию для лиц совершеннолетнего возраста. Сведения, размещенные на сайте, не являются рекламой, носят исключительно информационный характер, и предназначены только для личного использования.</p>
         <div className={styles.buttons}>
-          <Button className={styles.buttonYes} onClick={handleConfirm}>Мне исполнилось 18 лет</Button>
-          <Button className={styles.buttonNo} onClick={handleDeny}>Мне еще нет 18</Button>
+          <Button className={styles.buttonYes} type={'button'} onClick={handleConfirm}>Мне исполнилось 18 лет</Button>
+          <Button className={styles.buttonNo} type={'button'} onClick={handleDeny}>Мне еще нет 18</Button>
         </div>
         <div className={styles.images}>
           <div className={styles.image1}>
