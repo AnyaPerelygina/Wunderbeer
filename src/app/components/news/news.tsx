@@ -98,6 +98,7 @@ export default function News() {
             <Button
               className={styles.showMoreButton}
               onClick={handleShowMore}
+              type={'button'}
             >
               {isExpanded ? "Показать меньше" : "Показать ещё"}
             </Button>

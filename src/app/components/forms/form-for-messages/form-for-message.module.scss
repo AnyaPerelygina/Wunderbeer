@@ -1,0 +1,233 @@
+@import '../../../../style/variables.scss';
+@import '../../../../style/mixins.scss';
+
+.form {
+  .title {
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 500;
+
+    margin: 0 0 30px;
+
+    @include vp-767 {
+      font-size: 25px;
+      line-height: 30px;
+
+      margin: 0 0 16px;
+    }
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+
+    @include vp-767 {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  input,
+  textarea {
+    padding: 12px 18px;
+    border-radius: 5px;
+    width: 100%;
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: start;
+    }
+
+    @include hover-focus {
+      outline: none;
+    }
+
+    &:active,
+    &:focus-visible {
+      outline: none;
+
+      &::placeholder {
+        color: transparent;
+      }
+    }
+  }
+
+  .input {
+    margin: 0 0 11px;
+
+    @include vp-767 {
+      margin: 0 0 16px;
+    }
+  }
+
+  .textarea {
+    grid-column: span 2;
+    margin: 0 0 5px;
+
+    textarea {
+      min-height: 137px;
+    }
+
+    @include vp-767 {
+      grid-column: unset;
+      margin: 0 0 10px;
+
+      textarea {
+        min-height: 200px;
+      }
+    }
+  }
+
+  .text {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+
+    grid-column: span 2;
+    margin: 0 0 19px;
+
+    p {
+      margin: 0;
+    }
+
+    @include vp-767 {
+      grid-column: unset;
+      margin: 0 0 28px;
+    }
+  }
+
+  button {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    background-color: $color-kournikova;
+    color: $color-default-black;
+    padding: 11px 60px;
+
+    grid-column: span 2;
+    max-width: 255px;
+
+    transition: outline $trans-default, background-color $trans-default;
+
+    @include hover-focus {
+      color: $color-kournikova;
+      background-color: transparent;
+
+      outline: 3px solid $color-kournikova;
+    }
+
+    @include vp-1023 {
+      font-size: 14px;
+      line-height: 17px;
+      padding: 8px 35px;
+      width: 100%;
+      max-width: unset;
+    }
+
+    @include vp-767 {
+      grid-column: unset;
+      padding: 14px 26px;
+    }
+  }
+
+  .statusSubmitted,
+  .statusError {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: start;
+    text-transform: uppercase;
+    margin: 0;
+
+    width: 100%;
+    max-width: 100%;
+    grid-column: span 2;
+
+    @include vp-767 {
+      grid-column: unset;
+    }
+  }
+}
+
+.formBlack {
+  .title {
+    color: $color-default-black;
+  }
+
+  input,
+  textarea {
+    background-color: transparent;
+    border: 1px solid $color-very-light-grey;
+
+    transition: border $trans-default, background-color $trans-default;
+
+    &::placeholder {
+      color: $color-dim-gray;
+
+      transition: color $trans-default;
+    }
+
+    @include hover-focus {
+      border: 1px solid $color-dim-gray;
+      outline: none;
+    }
+
+    &:active,
+    &:focus-visible {
+      border: 1px solid $color-dim-gray;
+      outline: none;
+
+      &::placeholder {
+        color: transparent;
+      }
+    }
+  }
+
+  .statusSubmitted {
+    color: $color-asparagus;
+  }
+
+  .statusError {
+    color: $color-free-speech-red;
+  }
+
+  .text {
+    color: $color-default-black;
+  }
+
+  .privacyPolicyLink {
+    color: $color-kournikova;
+    border-bottom: 0.5px solid $color-kournikova;
+
+    transition: color $trans-default, border-bottom $trans-default;
+
+    @include hover-focus {
+      color: $color-default-black;
+      border-bottom: none;
+    }
+  }
+}
+
+.input.error input,
+.textarea.error textarea {
+  border-color: $color-free-speech-red;
+
+  &::placeholder {
+    color: $color-free-speech-red;
+  }
+
+  @include hover-focus {
+    border-color: $color-free-speech-red;
+
+    &::placeholder {
+      color: $color-free-speech-red;
+    }
+  }
+}

@@ -1,7 +1,10 @@
+'use client'
+
 import Link from 'next/link';
 import Image from 'next/image';
 
 import { Container } from '../container/container';
+import FormForMessages from '@/app/components/forms/form-for-messages/form-for-messages';
 import { basePath } from "@/const";
 
 import styles from './contacts-full.module.scss';
@@ -63,9 +66,7 @@ export default function ContactsFull() {
               </Link>
             </div>
           </div>
-          <div className={styles.form}>
-            <h2 className={styles.title}>Оставьте для&nbsp;нас&nbsp;сообщение и&nbsp;мы&nbsp;ответим</h2>
-          </div>
+          <FormForMessages mod="black" />
           <div className={styles.map}>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2510.7815522479177!2d37.77388844114266!3d55.72006174330065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414ab57122d00001%3A0x3b1d50f0756b38ab!2sRyazanskiy%20Prospekt%2C%2022%2C%20%D0%BA.2%2C%20Moskva%2C%20Russia%2C%20109428!5e0!3m2!1sen!2srs!4v1736885048818!5m2!1sen!2srs"
@@ -73,6 +74,14 @@ export default function ContactsFull() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade">
             </iframe>
+            <div className={styles.img}>
+              <Image
+                src={`${basePath}/contacts/map.webp`}
+                width={1100}
+                height={391}
+                alt='Карта.'
+              />
+          </div>
           </div>
         </div>
       </Container>

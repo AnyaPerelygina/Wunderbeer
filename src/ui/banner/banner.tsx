@@ -12,13 +12,13 @@ export default function Banner({image, title}: BannerProps) {
         <h1 className={styles.title}>{title}</h1>
       </Container>
       <div className={styles.background}>
-          <Image
-            src={`${basePath}/banner/${image}`}
-            width={1920}
-            height={390}
-            alt={'Фоновое изображение.'}
-          />
-        </div>
+        <Image
+          src={`${basePath}/banner/${image}`}
+          width={1920}
+          height={390}
+          alt={'Фоновое изображение.'}
+        />
+      </div>
     </section>
   )
 }

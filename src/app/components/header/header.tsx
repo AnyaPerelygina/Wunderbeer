@@ -2,7 +2,9 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { basePath } from '@/const';
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+
 import Social from '../social/social';
 import Logo from '../../../ui/logo/logo';
 import ShoppingBasket from './shopping-basket/shopping-basket';
@@ -38,6 +40,7 @@ export default function Header() {
   const [isMobileScreen, setIsMobileScreen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const headerRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     if (isOpen) {
@@ -80,7 +83,7 @@ export default function Header() {
   return (
     <>
     {isOpen && <div className={styles.overlay} />}
-    <header className={`${styles.header} ${isOpen ? styles['is-opened'] : ''}`}>
+    <header className={`${styles.header} ${isOpen ? styles['is-opened'] : ''} ${pathname === '/error' ? styles['is-error'] : ''}`}>
       <Container className={styles.container}>
         {!isMobileScreen && (
           <div className={styles.wrapper}>
