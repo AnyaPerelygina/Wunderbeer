@@ -13,16 +13,16 @@ export default function ContactsFull() {
   return (
     <section className={styles.root}>
       <div className={styles.background}>
-          <picture>
-            <source type="image/webp" media="(min-width: 360px)" srcSet={`${basePath}/background-img/paper-background.webp, ${basePath}/background-img/paper-background@2x.webp 2x`} />
-            <Image
-              src={`${basePath}/background-img/paper-background.png`}
-              width={1920}
-              height={604}
-              alt="Фоновое изображение."
-            />
-          </picture>
-        </div>
+        <picture>
+          <source type="image/webp" media="(min-width: 360px)" srcSet={`${basePath}/background-img/paper-background.webp, ${basePath}/background-img/paper-background@2x.webp 2x`} />
+          <Image
+            src={`${basePath}/background-img/paper-background.png`}
+            width={1920}
+            height={604}
+            alt="Фоновое изображение."
+          />
+        </picture>
+      </div>
       <Container className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.info}>
