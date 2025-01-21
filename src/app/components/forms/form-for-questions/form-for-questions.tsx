@@ -3,29 +3,23 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Button from '@/ui/button/button';
-import styles from './form-for-message.module.scss';
+import styles from './form-for-questions.module.scss';
 
-interface FormForMessagesProps {
-  mod?: 'white' | 'black';
-}
-
-export default function FormForMessages({ mod = 'black' }: FormForMessagesProps) {
+export default function FormForQuestions() {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitted' | 'error'>('idle');
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
-    message: ''
+    phone: ''
   });
 
   const [errors, setErrors] = useState({
     name: false,
-    email: false,
-    message: false
+    phone: false
   });
 
-  const validateEmail = (email: string) => {
-    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    return emailPattern.test(email);
+  const validatePhone = (phone: string) => {
+    const phonePattern = /^(\+7|8)?\s?(\(\d{3}\)|\d{3})\s?\d{3}[-\s]?\d{2}[-\s]?\d{2}$/;
+    return phonePattern.test(phone);
   };
 
   const validateName = (name: string) => {
@@ -33,16 +27,10 @@ export default function FormForMessages({ mod = 'black' }: FormForMessagesProps)
     return namePattern.test(name);
   };
 
-  const validateMessage = (message: string) => {
-    const scriptOrLinkPattern = /<script.*?>.*?<\/script>|<a.*?>.*?<\/a>/i;
-    return message.trim() !== '' && !scriptOrLinkPattern.test(message);
-  };
-
   const validateForm = () => {
     const newErrors = {
       name: !validateName(formData.name),
-      email: !validateEmail(formData.email),
-      message: !validateMessage(formData.message)
+      phone: !validatePhone(formData.phone)
     };
 
     setErrors(newErrors);
@@ -57,12 +45,12 @@ export default function FormForMessages({ mod = 'black' }: FormForMessagesProps)
       return;
     }
 
-    if (!validateEmail(formData.email) || !validateName(formData.name) || !validateMessage(formData.message)) {
+    if (!validatePhone(formData.phone) || !validateName(formData.name)) {
       setFormStatus('error');
       return;
     }
 
-    if (!formData.name || !formData.email || !formData.message) {
+    if (!formData.name || !formData.phone) {
       setFormStatus('error');
       return;
     }
@@ -73,8 +61,7 @@ export default function FormForMessages({ mod = 'black' }: FormForMessagesProps)
 
       setFormData({
         name: '',
-        email: '',
-        message: ''
+        phone: ''
       });
 
       setTimeout(() => {
@@ -105,13 +92,14 @@ export default function FormForMessages({ mod = 'black' }: FormForMessagesProps)
     }
   };
 
-  const inputStyles = (field: 'name' | 'email' | 'message') => {
+  const inputStyles = (field: 'name' | 'phone') => {
     return errors[field] ? `${styles.error}` : '';
   };
 
   return (
-    <div className={`${styles.form} ${mod === 'black' ? styles.formBlack : styles.formWhite}`}>
-      <h2 className={styles.title}>Оставьте для&nbsp;нас&nbsp;сообщение и&nbsp;мы&nbsp;ответим</h2>
+    <div className={styles.form}>
+      <h2 className={styles.title}>Остались вопросы?</h2>
+      <p>Оставьте свой&nbsp;номер телефона, и&nbsp;мы&nbsp;Вам&nbsp;поможем</p>
       <form onSubmit={handleSubmit}>
         <div className={`${styles.input} ${inputStyles('name')}`} data-validate-type="text" data-limitation="name" data-message-base="Поле обязательно к заполнению" data-message-extra="Проверьте корректность заполнения поля" data-required="data-required">
           <label>
@@ -124,25 +112,15 @@ export default function FormForMessages({ mod = 'black' }: FormForMessagesProps)
             />
           </label>
         </div>
-        <div className={`${styles.input} ${inputStyles('email')}`} data-validate-type="email" data-message-base="Поле обязательно к заполнению" data-required="data-required">
+        <div className={`${styles.input} ${inputStyles('phone')}`} data-validate-type="phone" data-message-base="Поле обязательно к заполнению" data-required="data-required">
           <label>
             <input
-              type='email'
-              name='email'
-              placeholder='Ваш email'
-              value={formData.email}
+              type='phone'
+              name='phone'
+              placeholder='Ваш номер'
+              value={formData.phone}
               onChange={handleChange}
             />
-          </label>
-        </div>
-        <div className={`${styles.textarea} ${inputStyles('message')}`} data-validate-type="text" data-required="data-required">
-          <label>
-            <textarea
-              name='message'
-              placeholder='Ваше сообщение...'
-              value={formData.message}
-              onChange={handleChange}
-            ></textarea>
           </label>
         </div>
         <div className={styles.text}>
