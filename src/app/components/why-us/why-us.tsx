@@ -2,39 +2,43 @@ import Image from 'next/image';
 import { basePath } from '@/const';
 
 import styles from './why-us.module.scss';
-import Title from '@/ui/title/title';
+
 import { Container } from "../container/container";
 import Reasons from '../reasons/reasons';
 
 export default function WhyUs() {
   const ReasonsList = [
     {
-      link: 'wheat.svg',
-      width: 106,
-      height: 185,
+      link: 'wheats.svg',
+      width: 130,
+      height: 130,
       alt: 'Изображение колосьев.',
-      title: 'Отборный солод',
+      title: 'Солод',
+      description: 'Отборный солод придаёт нашему пиву тот самый насыщенный вкус.'
     },
     {
-      link: 'hops-with-branches.svg',
-      width: 138,
-      height: 172,
+      link: 'hops-simple.svg',
+      width: 133,
+      height: 132,
       alt: 'Изображение хмеля.',
-      title: 'Качественный хмель',
+      title: 'Качественные материалы',
+      description: 'Каждое зерно и каждый листок хмеля проходят тщательный отбор, чтобы обеспечить непревзойдённое качество.'
     },
     {
-      link: 'barell.svg',
-      width: 159,
-      height: 187,
-      alt: 'Изображение барелли.',
-      title: 'Специальная вода',
+      link: 'molecules.svg',
+      width: 128,
+      height: 135,
+      alt: 'Изображение химического элемента.',
+      title: 'Технологии',
+      description: 'Современные технологии пивоварения позволяют нам сохранять традиции, улучшая рецепты.'
     },
     {
-      link: 'modern-brewery.svg',
-      width: 285,
-      height: 181,
+      link: 'brewery.svg',
+      width: 127,
+      height: 126,
       alt: 'Изображение пивоварни.',
-      title: 'Современное оборудование',
+      title: 'Оборудование',
+      description: 'Передовое оборудование помогает нам воплощать в жизнь самые амбициозные идеи.'
     }
   ];
 
@@ -52,7 +56,7 @@ export default function WhyUs() {
             />
           </picture>
         </div>
-        <Title className={styles.title} image="wheat-green" title="Почему мы"/>
+        <h2 className={styles.title}>Почему мы</h2>
         <Reasons reasonsList={ReasonsList} />
       </Container>
     </section>

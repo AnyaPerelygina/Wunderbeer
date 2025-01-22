@@ -4,7 +4,8 @@
 .list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 1035px;
 
   position: relative;
 
@@ -12,14 +13,19 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-end;
-  column-gap: 100px;
-  row-gap: 54px;
+  align-items: flex-start;
+  gap: 10px;
 
   @include vp-1023 {
+    margin: 50px auto 0 auto;
+    gap: 54px;
+  }
+
+  @include vp-767 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 17px;
+    gap: 17px;
+    align-items: flex-end;
 
     max-width: 320px;
     margin: 0 auto;
@@ -34,21 +40,25 @@
   height: 100%;
   gap: 55px;
 
-  @include vp-1023 {
+  @include vp-767 {
     gap: 24px;
   }
 
   .image {
     position: relative;
-    height: 100%;
+    height: 185px;
 
     display: flex;
     align-items: center;
 
+    @include vp-1023 {
+      height: 124px;
+    }
+
     img {
       position: relative;
 
-      @include vp-1023 {
+      @include vp-767 {
         max-height: 124px;
       }
     }
@@ -64,7 +74,7 @@
       border-radius: 50%;
       background-color: $color-kournikova;
 
-      @include vp-1023 {
+      @include vp-767 {
         height: 95px;
         width: 95px;
       }
@@ -78,12 +88,29 @@
     color: $color-default-black;
     text-align: center;
 
-    max-width: 142px;
+    max-width: 200px;
 
-    @include vp-1023 {
+    @include vp-767 {
       font-size: 16px;
       line-height: 19px;
       max-width: 120px;
+    }
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 19px;
+    color: $color-default-black;
+    text-align: center;
+
+    max-width: 254px;
+    margin: 0;
+
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 17px;
+      max-width: 500px;
     }
   }
 }
