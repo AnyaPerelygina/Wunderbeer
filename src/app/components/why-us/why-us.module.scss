@@ -1,0 +1,32 @@
+@import '../../../style/variables.scss';
+@import '../../../style/mixins.scss';
+
+.root {
+  position: relative;
+  padding: 55px 0 134px;
+
+  @include vp-1023 {
+    padding: 36px 0 70px;
+  }
+}
+
+.img {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.title {
+  @include vp-1023 {
+    padding: 0 0 9px;
+  }
+}

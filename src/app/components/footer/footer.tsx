@@ -21,7 +21,7 @@ export default function Footer() {
       label: 'Комплектация магазинов',
     },
     {
-      href: '/about',
+      href: '/about-us',
       label: 'О компании',
     },
     {

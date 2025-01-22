@@ -28,7 +28,7 @@ export default function Header() {
       label: 'Комплектация магазинов',
     },
     {
-      href: '/about',
+      href: '/about-us',
       label: 'О компании',
     },
     {

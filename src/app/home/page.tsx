@@ -1,7 +1,7 @@
 import React from 'react';
 import Hero from '../components/hero/hero';
 import Assortment from '../components/assortiment/assortment';
-import Reasons from '../components/reasons/reasons';
+import WhyUs from '../components/why-us/why-us';
 import About from '../components/about/about';
 import Services from '../components/services/services';
 import Novelty from '../components/novelty/novelty';
@@ -16,7 +16,7 @@ export default function Home() {
       <h1 className='visually-hidden'>Wunderbeer - интернет-магазин пива.</h1>
       <Hero />
       <Assortment />
-      <Reasons />
+      <WhyUs />
       <About />
       <Services />
       <Novelty />
