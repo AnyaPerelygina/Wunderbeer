@@ -2,6 +2,12 @@
 @import '../../../../style/mixins.scss';
 
 .form {
+  max-width: 540px;
+
+  @include vp-767 {
+    max-width: 100%;
+  }
+
   .title {
     font-size: 30px;
     line-height: 30px;
@@ -211,6 +217,115 @@
     @include hover-focus {
       color: $color-default-black;
       border-bottom: none;
+    }
+  }
+}
+
+.formWhite {
+  margin: 0 auto;
+
+  @include vp-767 {
+    padding: 0 15px;
+  }
+
+  .title {
+    color: $color-default-white;
+    margin: 0 0 19px;
+
+    @include vp-767 {
+      margin: 0 0 24px;
+    }
+  }
+
+  input,
+  textarea {
+    outline: none;
+    border: none;
+    background-color: rgb(255, 255, 255, 0.7);
+    backdrop-filter: blur(4px);
+    padding: 13px 18px;
+
+    transition: backdrop-filter $trans-default;
+
+    @include hover-focus {
+      backdrop-filter: none;
+      outline: none;
+    }
+
+    &:active,
+    &:focus-visible {
+      outline: none;
+      backdrop-filter: none;
+
+      &::placeholder {
+        color: transparent;
+      }
+    }
+  }
+
+  .input,
+  .textarea {
+    @include vp-767 {
+      margin: 0 0 11px;
+    }
+  }
+
+  .textarea textarea {
+    @include vp-767 {
+      min-height: 136px;
+    }
+  }
+
+  .text {
+    color: $color-default-white;
+    margin: 0 0 19px 25px;
+
+    @include vp-767 {
+      margin: -2px 0 19px;
+    }
+  }
+
+  .privacyPolicyLink {
+    color: $color-kournikova;
+    border-bottom: 0.5px solid $color-kournikova;
+
+    transition: color $trans-default, border-bottom $trans-default;
+
+    @include hover-focus {
+      color: $color-default-white;
+      border-bottom: none;
+    }
+  }
+
+  button {
+    margin: 0 auto;
+    padding: 11px 87px;
+    max-width: 255px;
+
+    @include vp-767 {
+      padding: 13px 20px;
+    }
+  }
+
+  .statusSubmitted {
+    margin: 0 auto;
+    padding: 11px 0;
+    color: $color-default-white;
+    width: fit-content;
+
+    @include vp-767 {
+      padding: 13px 0;
+    }
+  }
+
+  .statusError {
+    margin: 0 auto;
+    padding: 11px 0;
+    color: $color-free-speech-red;
+    width: fit-content;
+
+    @include vp-767 {
+      padding: 13px 0;
     }
   }
 }

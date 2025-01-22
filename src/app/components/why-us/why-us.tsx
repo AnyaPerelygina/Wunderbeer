@@ -14,7 +14,7 @@ export default function WhyUs() {
       height: 130,
       alt: 'Изображение колосьев.',
       title: 'Солод',
-      description: 'Отборный солод придаёт нашему пиву тот самый насыщенный вкус.'
+      description: 'Отборный солод придаёт нашему пиву тот самый насыщенный вкус, который ценят истинные гурманы.'
     },
     {
       link: 'hops-simple.svg',
@@ -47,7 +47,7 @@ export default function WhyUs() {
       <Container className={styles.container}>
         <div className={styles.img}>
           <picture>
-            <source type="image/webp" media="(min-width: 360px)" srcSet={`${basePath}/background-img/paper-background.webp, ${basePath}/background-img/paper-background@2x.webp 2x`} />
+            <source type="image/webp" media="(min-width: 320px)" srcSet={`${basePath}/background-img/paper-background.webp, ${basePath}/background-img/paper-background@2x.webp 2x`} />
             <Image
               src={`${basePath}/background-img/paper-background.png`}
               width={1920}

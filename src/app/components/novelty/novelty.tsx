@@ -74,7 +74,7 @@ export default function Novelty() {
       <Container>
         <div className={styles.noveltyImg}>
           <picture>
-            <source type="image/webp" media="(min-width: 360px)" srcSet={`${basePath}/background-img/paper-background.webp, ${basePath}/background-img/paper-background@2x.webp 2x`} />
+            <source type="image/webp" media="(min-width: 320px)" srcSet={`${basePath}/background-img/paper-background.webp, ${basePath}/background-img/paper-background@2x.webp 2x`} />
             <Image
               src={`${basePath}/background-img/paper-background.png`}
               width={1920}

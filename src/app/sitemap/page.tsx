@@ -19,6 +19,7 @@ export default function Sitemap() {
       <Link href={'/privacy-policy'}>3. Политика конфиденциальности;</Link>
       <Link href={'/contacts'}>4. Контакты;</Link>
       <Link href={'/about-us'}>5. О компании;</Link>
+      <Link href={'/equipment-of-shops'}>6. Комплектация магазинов;</Link>
     </div>
   )
 }

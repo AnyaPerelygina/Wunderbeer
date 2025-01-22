@@ -24,7 +24,7 @@ export default function Header() {
       label: 'Дистрибуция',
     },
     {
-      href: '/store',
+      href: '/equipment-of-shops',
       label: 'Комплектация магазинов',
     },
     {
