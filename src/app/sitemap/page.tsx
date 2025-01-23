@@ -21,6 +21,7 @@ export default function Sitemap() {
       <Link href={'/about-us'}>5. О компании;</Link>
       <Link href={'/equipment-of-shops'}>6. Комплектация магазинов;</Link>
       <Link href={'/distribution'}>7. Дистрибуция;</Link>
+      <Link href={'/catalog'}>8. Каталог;</Link>
     </div>
   )
 }
