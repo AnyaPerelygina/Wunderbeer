@@ -13,6 +13,13 @@
   display: grid;
   grid-template-columns: 255px auto;
   column-gap: 50px;
+
+  @include vp-1023 {
+    display: flex;
+    flex-direction: column;
+    column-gap: unset;
+    gap: 20px;
+  }
 }
 
 .wrapperForm {

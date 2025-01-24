@@ -11,6 +11,11 @@
 
   position: relative;
   z-index: 1;
+
+  @include vp-767 {
+    max-width: 136px;
+    margin: 0 auto;
+  }
 }
 
 .badges {
