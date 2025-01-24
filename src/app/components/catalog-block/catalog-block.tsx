@@ -3,6 +3,7 @@ import { basePath } from '@/const';
 
 import { Container } from '../container/container';
 import FormForQuestions from '../forms/form-for-questions/form-for-questions';
+import CatalogList from '@/app/components/catalog-list/catalog-list';
 
 import styles from './catalog-block.module.scss';
 
@@ -22,6 +23,7 @@ export default function CatalogBlock() {
             </div>
             <FormForQuestions />
           </div>
+          <CatalogList />
         </div>
       </Container>
     </section>
