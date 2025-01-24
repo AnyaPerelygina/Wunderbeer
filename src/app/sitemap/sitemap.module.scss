@@ -6,7 +6,38 @@
   flex-direction: column;
   justify-content: center;
   align-items: start;
+  gap: 50px;
   padding: 50px;
+}
+
+.list {
+  counter-reset: list-counter;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  margin: 0;
+  padding: 10px;
+  counter-increment: list-counter;
+
+  &::before {
+    content: counter(list-counter) ". ";
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 29px;
+    text-align: start;
+
+    color: $color-default-black;
+    transform: color $trans-default;
+
+    @include vp-767 {
+      font-size: 16px;
+      line-height: 24px;
+      padding: 5px;
+    }
+  }
 
   a {
     font-size: 24px;
@@ -14,28 +45,27 @@
     line-height: 29px;
     color: $color-default-black;
     text-align: start;
-    padding: 10px;
-    margin: 0 0 20px;
+
+    transform: color $trans-default;
 
     @include hover-focus {
       color: $color-kournikova;
-      border: 1px solid $color-kournikova;
-      border-radius: 5px;
-      padding: 9px;
     }
 
     @include vp-767 {
       font-size: 16px;
       line-height: 24px;
       padding: 5px;
-      margin: 0 0 10px;
+    }
+  }
 
-      @include hover-focus {
-        color: $color-kournikova;
-        border: 1px solid $color-kournikova;
-        border-radius: 5px;
-        padding: 4px;
-      }
+  @include hover-focus {
+    &::before {
+      color: $color-kournikova;
+    }
+
+    a {
+      color: $color-kournikova;
     }
   }
 }
