@@ -18,7 +18,7 @@ export default function CatalogList() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobileScreen(window.innerWidth < 767);
+      setIsMobileScreen(window.innerWidth < 768);
     };
 
     handleResize();

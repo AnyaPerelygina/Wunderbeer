@@ -5,14 +5,17 @@
   display: flex;
   flex-direction: column;
   gap: 48px;
+
+  @include vp-767 {
+    gap: 33px;
+    padding: 0 57px;
+  }
 }
 
 .list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: space-between;
-  column-gap: 0;
   row-gap: 47px;
 
   padding: 0;
@@ -22,8 +25,15 @@
   max-width: 784px;
   width: 100%;
 
+  @include vp-1023 {
+    max-width: 100%;
+    justify-items: center;
+  }
+
   @include vp-767 {
+    display: flex;
     flex-direction: column;
+    row-gap: 25px;
   }
 }
 
@@ -38,8 +48,8 @@
   align-items: center;
 
   @include vp-767 {
-    min-height: 189px;
-    margin: 0;
+    min-height: unset;
+    margin: 0 0 9px;
   }
 }
 
@@ -49,6 +59,11 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
+
+  @include vp-767 {
+    gap: 22px;
+    padding: 37px 0;
+  }
 
   span {
     font-weight: 500;
@@ -98,7 +113,7 @@
   left: 0;
   z-index: -1;
 
-  min-height: 141px;
+  height: 141px;
   border-radius: 5px;
 
   &::after {
@@ -115,9 +130,20 @@
 
   img {
     border-radius: 5px;
+    width: 100%;
+    height: 141px;
+    object-fit: cover;
+
+    @include vp-767 {
+      height: 100%;
+    }
+  }
+
+  @include vp-1023 {
+    width: 100%;
   }
 
   @include vp-767 {
-    min-height: 189px;
+    height: 100%;
   }
 }
