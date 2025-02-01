@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { basePath } from '@/const';
 
 import Card from '@/app/components/card/card';
+import Pagination from '../pagination/pagination';
 
 import styles from './catalog-list.module.scss';
 
@@ -15,6 +16,8 @@ export default function CatalogList() {
   const [isMobileScreen, setIsMobileScreen] = useState(false);
   const [firstRow, setFirstRow] = useState(mockCatalogCards.slice(0, 6));
   const [secondRow, setSecondRow] = useState(mockCatalogCards.slice(6, 12));
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = isMobileScreen ? 6 : 12;
 
   useEffect(() => {
     const handleResize = () => {
@@ -38,6 +41,25 @@ export default function CatalogList() {
     }
   }, [isMobileScreen]);
 
+  useEffect(() => {
+    const currentItems = mockCatalogCards.slice(
+      (currentPage - 1) * itemsPerPage,
+      currentPage * itemsPerPage
+    );
+
+    if (isMobileScreen) {
+      setFirstRow(currentItems.slice(0, 3));
+      setSecondRow(currentItems.slice(3, 6));
+    } else {
+      setFirstRow(currentItems.slice(0, 6));
+      setSecondRow(currentItems.slice(6, 12));
+    }
+  }, [currentPage, isMobileScreen, itemsPerPage]);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
   return (
     <div className={styles.root}>
       <div className={styles.wrapper}>
@@ -51,6 +73,7 @@ export default function CatalogList() {
               price={card.price}
               isNew={card.new}
               isOnSale={card.discount}
+              inStock={card.availability}
             />
           ))}
         </ul>
@@ -98,9 +121,16 @@ export default function CatalogList() {
               price={card.price}
               isNew={card.new}
               isOnSale={card.discount}
+              inStock={card.availability}
             />
           ))}
         </ul>
+
+        <Pagination
+          totalCardsCount={mockCatalogCards.length}
+          currentPage={currentPage}
+          onPageChange={handlePageChange}
+        />
       </div>
     </div>
   );

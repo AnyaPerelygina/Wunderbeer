@@ -131,6 +131,12 @@
     background-color: transparent;
   }
 
+  &:disabled {
+    background-color: $color-light-grey;
+    color: $color-default-white;
+    pointer-events: none;
+  }
+
   @include vp-767 {
     max-width: 100%;
   }

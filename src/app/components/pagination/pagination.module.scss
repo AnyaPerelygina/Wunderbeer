@@ -1,0 +1,57 @@
+@import '../../../style/variables.scss';
+@import '../../../style/mixins.scss';
+
+.root {
+  margin: 10px auto;
+  width: fit-content;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0;
+    width: 47px;
+    height: 18px;
+
+    svg {
+      fill: $color-asparagus;
+    }
+
+    &.active {
+      color: $color-kournikova;
+    }
+
+    &:disabled {
+      svg {
+        fill: $color-light-grey;
+      }
+    }
+  }
+}
+
+.buttonNext {
+  transform: rotate(180deg);
+}
+
+.pageNumbers {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.pageButton {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 20px;
+  color: $color-light-slate-grey;
+}

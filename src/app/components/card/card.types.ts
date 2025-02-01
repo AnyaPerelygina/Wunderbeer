@@ -5,4 +5,5 @@ export type CardProps = {
   price: number;
   isNew?: boolean;
   isOnSale?: boolean;
+  inStock: boolean;
 };

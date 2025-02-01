@@ -4,11 +4,11 @@
 .wrapper {
   display: flex;
   flex-direction: column;
+  // justify-content: center;
   gap: 48px;
 
   @include vp-767 {
     gap: 33px;
-    padding: 0 57px;
   }
 }
 
@@ -34,6 +34,8 @@
     display: flex;
     flex-direction: column;
     row-gap: 25px;
+
+    padding: 0 57px;
   }
 }
 

@@ -14,6 +14,7 @@ export default function Card({
   price,
   isNew = false,
   isOnSale = false,
+  inStock = true,
 }: CardProps) {
   return (
     <div className={styles.root}>
@@ -32,7 +33,7 @@ export default function Card({
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.description}>{description}</p>
       <span className={styles.price}>{price} руб.</span>
-      <Button className={styles.button} type={'button'}>Купить</Button>
+      <Button className={styles.button} type={'button'} disabled={!inStock}>{inStock ? 'Купить' : 'Нет в наличии'}</Button>
     </div>
   );
 }
