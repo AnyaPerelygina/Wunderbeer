@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import Icon from '@/ui/icon/icon';
 import Wheat from '@/assets/wheat-green.svg';
@@ -31,7 +31,23 @@ export default function Pagination({
     }
   };
 
-  const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
+  const getPageNumbers = () => {
+    if (totalPages <= 4) {
+      return Array.from({ length: totalPages }, (_, index) => index + 1);
+    }
+
+    if (currentPage <= 3) {
+      return [1, 2, 3, '...', totalPages];
+    }
+
+    if (currentPage >= totalPages - 2) {
+      return [1, '...', totalPages - 2, totalPages - 1, totalPages];
+    }
+
+    return [1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages];
+  };
+
+  const pageNumbers = getPageNumbers();
 
   return (
     <div className={styles.root}>
@@ -45,14 +61,18 @@ export default function Pagination({
         <Icon Icon={Wheat} width={47} height={18} />
       </button>
       <ul className={styles.pageNumbers}>
-        {pageNumbers.map((pageNumber) => (
-          <li key={pageNumber} className={styles.pageNumber}>
-            <button
-              className={`${styles.pageButton} ${pageNumber === currentPage ? styles.active : ''}`}
-              onClick={() => handleClick(pageNumber)}
-              type={'button'}>
-              {pageNumber}
-            </button>
+        {pageNumbers.map((pageNumber, index) => (
+          <li key={index} className={styles.pageNumber}>
+            {pageNumber === '...' ? (
+              <span className={styles.ellipsis}>...</span>
+            ) : (
+              <button
+                className={`${styles.pageButton} ${pageNumber === currentPage ? styles.active : ''}`}
+                onClick={() => handleClick(pageNumber as number)}
+                type={'button'}>
+                {pageNumber}
+              </button>
+            )}
           </li>
         ))}
       </ul>
