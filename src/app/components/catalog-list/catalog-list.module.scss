@@ -3,9 +3,13 @@
 
 .root {
   margin: 0 0 0 20px;
+  grid-row: 2 / 5;
+  grid-column: 2 / 3;
 
   @include vp-1023 {
     margin: 0;
+    grid-row: unset;
+    grid-column: unset;
   }
 }
 

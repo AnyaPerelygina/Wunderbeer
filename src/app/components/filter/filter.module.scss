@@ -1,0 +1,10 @@
+@import '../../../style/variables.scss';
+@import '../../../style/mixins.scss';
+
+.root {
+  grid-area: 2 / 1;
+  background-color: $color-aubergine;
+  border-radius: 5px;
+  padding: 40px 11px 21px;
+  margin: 0 0 30px;
+}

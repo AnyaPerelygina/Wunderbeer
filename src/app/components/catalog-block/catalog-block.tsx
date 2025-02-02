@@ -3,6 +3,7 @@ import { basePath } from '@/const';
 
 import { Container } from '../container/container';
 import FilterResults from '@/app/components/filter/filter-results/filter-results';
+import Filter from '@/app/components/filter/filter';
 import FormForQuestions from '../forms/form-for-questions/form-for-questions';
 import CatalogList from '@/app/components/catalog-list/catalog-list';
 
@@ -14,6 +15,7 @@ export default function CatalogBlock() {
       <Container className={styles.container}>
         <div className={styles.wrapper}>
           <FilterResults count={96} />
+          <Filter />
           <div className={styles.wrapperForm}>
             <div className={styles.background}>
               <Image
