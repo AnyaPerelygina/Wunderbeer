@@ -1,0 +1,19 @@
+@import '../../../../style/variables.scss';
+@import '../../../../style/mixins.scss';
+
+.root {
+  grid-column: 2 / 3;
+  margin: 0 0 17px;
+
+  @include vp-1023 {
+    grid-column: unset;
+    margin: 0;
+  }
+}
+
+.text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: $color-default-black;
+}

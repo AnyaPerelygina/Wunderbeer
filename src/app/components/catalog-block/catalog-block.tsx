@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { basePath } from '@/const';
 
 import { Container } from '../container/container';
+import FilterResults from '@/app/components/filter/filter-results/filter-results';
 import FormForQuestions from '../forms/form-for-questions/form-for-questions';
 import CatalogList from '@/app/components/catalog-list/catalog-list';
 
@@ -12,6 +13,7 @@ export default function CatalogBlock() {
     <section className={styles.root}>
       <Container className={styles.container}>
         <div className={styles.wrapper}>
+          <FilterResults count={96} />
           <div className={styles.wrapperForm}>
             <div className={styles.background}>
               <Image
