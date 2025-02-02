@@ -2,13 +2,14 @@
 @import '../../../style/mixins.scss';
 
 .root {
-  margin: 10px auto;
-  width: fit-content;
+  margin: 5px auto;
+  width: 100%;
+  max-width: 280px;
 
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
   button {
@@ -16,8 +17,6 @@
     outline: none;
     background-color: transparent;
     padding: 0;
-    width: 47px;
-    height: 18px;
 
     svg {
       fill: $color-asparagus;
@@ -35,21 +34,37 @@
   }
 }
 
+.buttonPrev {
+  width: 48px;
+  height: 18px;
+}
+
 .buttonNext {
   transform: rotate(180deg);
+  width: 48px;
+  height: 18px;
 }
 
 .pageNumbers {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  justify-content: space-evenly;
 
+  width: 100%;
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
 .pageButton {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 20px;
+  color: $color-light-slate-grey;
+}
+
+.dots {
   font-weight: 500;
   font-size: 25px;
   line-height: 20px;

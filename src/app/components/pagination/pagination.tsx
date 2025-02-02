@@ -64,7 +64,7 @@ export default function Pagination({
         {pageNumbers.map((pageNumber, index) => (
           <li key={index} className={styles.pageNumber}>
             {pageNumber === '...' ? (
-              <span className={styles.ellipsis}>...</span>
+              <span className={styles.dots}>...</span>
             ) : (
               <button
                 className={`${styles.pageButton} ${pageNumber === currentPage ? styles.active : ''}`}
