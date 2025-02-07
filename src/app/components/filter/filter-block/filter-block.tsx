@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 
 import styles from './filter-block.module.scss';
 
@@ -19,6 +19,13 @@ export default function FilterBlock() {
   const [minPrice, setMinPrice] = useState<number>(0);
   const [maxPrice, setMaxPrice] = useState<number>(500);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const minPos = (minPrice / 500) * 100;
+  const maxPos = (maxPrice / 500) * 100;
+
+  const rangeTrackStyle = useMemo(() => ({
+    left: `${minPos}%`,
+    width: `${maxPos - minPos}%`
+  }), [minPos, maxPos]);
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategories((prev) =>
@@ -94,6 +101,10 @@ export default function FilterBlock() {
           onChange={(e) => setMaxPrice(Number(e.target.value))}
         />
         <div className={styles.rangeWrapper}>
+          <div
+            className={styles.rangeTrack}
+            style={rangeTrackStyle}
+          />
           <input
             type="range"
             min="0"
