@@ -28,13 +28,14 @@ export default function FilterBlock() {
     );
   };
 
-  const handlePriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleMinChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = Number(e.target.value);
-    if (value < minPrice) {
-      setMinPrice(value);
-    } else {
-      setMaxPrice(value);
-    }
+    if (value <= maxPrice) setMinPrice(value);
+  };
+
+  const handleMaxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = Number(e.target.value);
+    if (value >= minPrice) setMaxPrice(value);
   };
 
   return (
@@ -92,13 +93,24 @@ export default function FilterBlock() {
           value={maxPrice}
           onChange={(e) => setMaxPrice(Number(e.target.value))}
         />
-        <input
-          type="range"
-          min="0"
-          max="500"
-          value={maxPrice}
-          onChange={handlePriceChange}
-        />
+        <div className={styles.rangeWrapper}>
+          <input
+            type="range"
+            min="0"
+            max="500"
+            value={minPrice}
+            onChange={handleMinChange}
+            className={styles.range}
+          />
+          <input
+            type="range"
+            min="0"
+            max="500"
+            value={maxPrice}
+            onChange={handleMaxChange}
+            className={styles.range}
+          />
+        </div>
       </div>
       <Button type={'submit'}>Подобрать</Button>
     </div>
