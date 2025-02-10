@@ -1,10 +1,13 @@
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react';
+
 import styles from './filter.module.scss';
+import { FilterProps } from './filter.types';
+
 import FilterBlock from '@/app/components/filter/filter-block/filter-block';
 
-export default function Filter() {
+export default function Filter({ applyFilters }: FilterProps) {
   const [isMobileScreen, setIsMobileScreen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const filterRef = useRef<HTMLDivElement>(null);
@@ -35,7 +38,7 @@ export default function Filter() {
     <div className={`${styles.root} ${isOpen ? styles['is-opened'] : ''}`}>
       {!isMobileScreen && (
         <div className={styles.wrapper}>
-          <FilterBlock />
+          <FilterBlock applyFilters={applyFilters} />
         </div>
       )}
       {isMobileScreen && (
@@ -45,7 +48,7 @@ export default function Filter() {
             <span className={styles.toggle__closed}>Закрыть</span>
           </button>
           <div className={`${styles.filterMenu} ${isOpen ? styles['is-opened'] : ''}`}>
-            <FilterBlock />
+            <FilterBlock applyFilters={applyFilters} />
           </div>
         </div>
       )}

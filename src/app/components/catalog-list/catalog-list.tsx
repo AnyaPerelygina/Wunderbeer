@@ -11,8 +11,9 @@ import Pagination from '../pagination/pagination';
 import styles from './catalog-list.module.scss';
 
 import mockCatalogCards from '@/app/data/data';
+import { CatalogListProps } from './catalog-list.types';
 
-export default function CatalogList() {
+export default function CatalogList({ filteredCards }: CatalogListProps) {
   const [isMobileScreen, setIsMobileScreen] = useState(false);
   const [firstRow, setFirstRow] = useState(mockCatalogCards.slice(0, 6));
   const [secondRow, setSecondRow] = useState(mockCatalogCards.slice(6, 12));
@@ -30,6 +31,20 @@ export default function CatalogList() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    const currentItems = filteredCards.slice(
+      (currentPage - 1) * itemsPerPage,
+      currentPage * itemsPerPage
+    );
+
+    if (isMobileScreen) {
+      setFirstRow(currentItems.slice(0, 3));
+      setSecondRow(currentItems.slice(3, 6));
+    } else {
+      setFirstRow(currentItems.slice(0, 6));
+      setSecondRow(currentItems.slice(6, 12));
+    }
+  }, [filteredCards, currentPage, isMobileScreen, itemsPerPage]);
 
   useEffect(() => {
     if (isMobileScreen) {
@@ -127,7 +142,7 @@ export default function CatalogList() {
         </ul>
 
         <Pagination
-          totalCardsCount={mockCatalogCards.length}
+          totalCardsCount={filteredCards.length}
           currentPage={currentPage}
           onPageChange={handlePageChange}
         />

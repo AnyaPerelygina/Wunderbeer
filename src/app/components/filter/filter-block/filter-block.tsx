@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react';
 
 import styles from './filter-block.module.scss';
+import { FilterBlockProps } from './filter-block.types';
 
 import { Category } from './filter-block.types';
 import Button from '@/ui/button/button';
@@ -14,7 +15,7 @@ const categories: Category[] = [
   { label: 'Соки, вода' }
 ];
 
-export default function FilterBlock() {
+export default function FilterBlock({ applyFilters }: FilterBlockProps) {
   const [minPrice, setMinPrice] = useState<number>(0);
   const [maxPrice, setMaxPrice] = useState<number>(500);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
@@ -42,6 +43,10 @@ export default function FilterBlock() {
   const handleMaxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = Number(e.target.value);
     if (value >= minPrice) setMaxPrice(value);
+  };
+
+  const handleApplyFilters = () => {
+    applyFilters(selectedCategories, minPrice, maxPrice);
   };
 
   return (
@@ -124,7 +129,7 @@ export default function FilterBlock() {
           />
         </div>
       </div>
-      <Button type={'submit'}>Подобрать</Button>
+      <Button type={'submit'} onClick={handleApplyFilters}>Подобрать</Button>
     </div>
   );
 }
