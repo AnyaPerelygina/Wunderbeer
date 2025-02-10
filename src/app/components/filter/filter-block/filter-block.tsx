@@ -6,7 +6,6 @@ import { Category } from './filter-block.types';
 import Button from '@/ui/button/button';
 import Icon from '@/ui/icon/icon';
 import WheatYellow from '@/assets/wheat-yellow.svg';
-// import WheatGreen from '@/assets/wheat-green.svg';
 
 const categories: Category[] = [
   { label: 'Пиво', options: ['Темное', 'Светлое', 'Фильтрованное', 'Нефильтрованное', 'Пшеничное'] },
@@ -55,11 +54,12 @@ export default function FilterBlock() {
       <div className={styles.categories}>
         {categories.map((cat) => (
           <div key={cat.label} className={styles.category}>
-            <label>
+            <label onClick={() => handleCategoryChange(cat.label)}>
               <input
                 type="checkbox"
                 checked={selectedCategories.includes(cat.label)}
                 onChange={() => handleCategoryChange(cat.label)}
+                id={`checkbox-${cat.label}`}
               />
               <h4>{cat.label}</h4>
             </label>
@@ -71,8 +71,9 @@ export default function FilterBlock() {
                       type="checkbox"
                       checked={selectedCategories.includes(option)}
                       onChange={() => handleCategoryChange(option)}
+                      id={`checkbox-${option}`}
                     />
-                    <span>{option}</span>
+                    <span className={styles.checkboxCustom}>{option}</span>
                   </label>
                 ))}
               </div>
