@@ -48,8 +48,6 @@ export default function Pagination({
   };
 
   const pageNumbers = getPageNumbers();
-
-  // Determine if the page buttons should be disabled
   const isPageNumberOne = pageNumbers.length === 1;
   const isPageNumberZero = pageNumbers.length === 0;
 
@@ -84,10 +82,10 @@ export default function Pagination({
         ))}
       </ul>
       <button
-        className={`${styles.buttonNext} ${currentPage === totalPages || isPageNumberOne ? 'disabled' : ''}`}
+        className={`${styles.buttonNext} ${currentPage === totalPages || isPageNumberZero || isPageNumberOne ? 'disabled' : ''}`}
         type="button"
         onClick={goToNextPage}
-        disabled={currentPage === totalPages || isPageNumberOne}
+        disabled={currentPage === totalPages || isPageNumberZero || isPageNumberOne}
         name="Вперед"
       >
         <Icon Icon={Wheat} width={47} height={18} />

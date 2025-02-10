@@ -19,12 +19,14 @@ export default function CatalogBlock() {
 
   const applyFilters = (selectedCategories: string[], minPrice: number, maxPrice: number) => {
     const filtered = mockCatalogCards.filter(card => {
-      // Фильтрация по категориям
-      const inCategory = selectedCategories.length === 0 || selectedCategories.some(category => {
-        return card.tags
-          .split(',') // Разделяем теги на массив
-          .map(tag => tag.trim().toLowerCase()) // Убираем пробелы и приводим к нижнему регистру
-          .includes(category.trim().toLowerCase()); // Сравниваем с категорией
+      const cardTags = card.tags
+        .split(',')
+        .map(tag => tag.trim().toLowerCase());
+
+      // Фильтрация по категориям и подкатегориям
+      const inCategory = selectedCategories.length === 0 || selectedCategories.every(category => {
+        // Проверяем, что тег карточки содержит хотя бы одну выбранную категорию
+        return cardTags.some(tag => tag.includes(category.trim().toLowerCase()));
       });
 
       // Фильтрация по цене
