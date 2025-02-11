@@ -7,7 +7,7 @@ import styles from './shopping-basket.module.scss';
 export default function ShoppingBasket() {
   return (
     <div className={styles.shoppingBasket}>
-      <Link href={'#'}>
+      <Link href={'/shopping-card'}>
         <Image
           src={`${basePath}/svg/shopping-basket.svg`}
           width={28}
