@@ -7,4 +7,95 @@
   border-radius: 5px;
   padding: 40px 11px 21px;
   margin: 0 0 30px;
+
+  @include vp-1023 {
+    padding: 0;
+    margin: 0 0 43px;
+  }
+}
+
+.wrapper {
+  &.is-opened {
+    @include vp-1023 {
+      padding: 8px 13px 23px;
+    }
+  }
+}
+
+.filterMenu {
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity $trans-default, height $trans-default, visibility $trans-default;
+
+  &.is-opened {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.toggle {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  width: 100%;
+
+  &__closed {
+    display: none;
+  }
+
+  &.is-opened {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    margin: 0 0 25px;
+    width: fit-content;
+  }
+
+  &.is-opened .toggle__closed {
+    display: inline-block;
+
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    text-decoration: underline;
+    text-align: center;
+    text-transform: lowercase;
+    color: $color-default-white;
+  }
+
+  &.is-opened .toggle__opened {
+    display: none;
+  }
+}
+
+.toggle__opened {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $color-default-white;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 2px;
+  padding: 20px 10px 17px;
+
+  svg {
+    transform: scale(0.6);
+  }
+
+  svg:last-of-type {
+    transform: rotate(180deg) scale(0.6);
+  }
 }

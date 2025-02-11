@@ -29,6 +29,10 @@
 
       outline: 3px solid $color-kournikova;
     }
+
+    @include vp-1023 {
+      outline: 1px solid $color-kournikova;
+    }
   }
 }
 
@@ -59,6 +63,10 @@
 
   svg:last-of-type {
     transform: rotate(180deg) scale(0.6);
+  }
+
+  @include vp-1023 {
+    gap: 10px;
   }
 }
 
@@ -109,11 +117,19 @@
         visibility: hidden;
 
         transition: opacity $trans-default;
+
+        @include vp-1023 {
+          left: 0;
+        }
       }
     }
 
     input[type="checkbox"]:checked + h4 {
       margin: 0 0 10px 29px;
+
+      @include vp-1023 {
+        margin: 0 0 10px 39px;
+      }
     }
 
     input[type="checkbox"]:checked + h4::before {
@@ -178,6 +194,10 @@
     height: auto;
 
     margin: 0 0 17px 29px;
+
+    @include vp-1023 {
+      margin: 0 0 17px 39px;
+    }
   }
 }
 
@@ -199,6 +219,10 @@
     line-height: 22px;
     color: $color-default-black;
     text-align: right;
+
+    @include vp-1023 {
+      max-width: 100%;
+    }
   }
 
   input[type="number"]:first-child {
@@ -213,6 +237,10 @@
   max-width: 233px;
   height: 2px;
   background: $color-default-white;
+
+  @include vp-1023 {
+    max-width: 100%;
+  }
 
   input[type="range"] {
     -webkit-appearance: none;

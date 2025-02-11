@@ -6,6 +6,8 @@ import styles from './filter.module.scss';
 import { FilterProps } from './filter.types';
 
 import FilterBlock from '@/app/components/filter/filter-block/filter-block';
+import Icon from '@/ui/icon/icon';
+import WheatYellow from '@/assets/wheat-yellow.svg';
 
 export default function Filter({ applyFilters }: FilterProps) {
   const [isMobileScreen, setIsMobileScreen] = useState(false);
@@ -44,7 +46,11 @@ export default function Filter({ applyFilters }: FilterProps) {
       {isMobileScreen && (
         <div ref={filterRef} className={`${styles.wrapper} ${isOpen ? styles['is-opened'] : ''}`}>
           <button className={`${styles.toggle} ${isOpen ? styles['is-opened'] : ''}`} onClick={() => setIsOpen(!isOpen)}>
-            <span className={styles.toggle__opened}>Фильтр</span>
+            <span className={styles.toggle__opened}>
+              <Icon Icon={WheatYellow} width={47} height={18} />
+                Фильтр
+              <Icon Icon={WheatYellow} width={47} height={18} />
+            </span>
             <span className={styles.toggle__closed}>Закрыть</span>
           </button>
           <div className={`${styles.filterMenu} ${isOpen ? styles['is-opened'] : ''}`}>
