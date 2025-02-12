@@ -2,6 +2,7 @@
 @import '../../../../style/mixins.scss';
 
 .shoppingBasket {
+  position: relative;
   justify-self: end;
   margin: 0 11px 10px 0;
 
@@ -29,4 +30,29 @@
       height: 21px;
     }
   }
+}
+
+.count {
+  position: absolute;
+  content: "";
+  bottom: 20px;
+  left: 20px;
+  background-color: $color-default-white;
+  border-radius: 50%;
+  min-width: 20px;
+  min-height: 20px;
+  width: auto;
+  height: auto;
+  padding: 1px 5px;
+  aspect-ratio: 1;
+
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: $color-default-black;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

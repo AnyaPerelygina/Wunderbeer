@@ -14,8 +14,9 @@ export default function Card({
   price,
   isNew = false,
   isOnSale = false,
-  inStock = true,
+  inStock = true
 }: CardProps) {
+
   return (
     <div className={styles.root}>
       <div className={styles.img}>
