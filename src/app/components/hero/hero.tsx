@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import React, { useState, useEffect, useRef } from "react";
+import { Swiper, SwiperSlide, SwiperRef } from "swiper/react";
 import { Navigation, Pagination, Autoplay} from 'swiper/modules';
 import { basePath } from "@/const";
 import MouseButton from "./mouse-button/mouse-button";
@@ -51,6 +51,21 @@ export default function Hero() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const navigationPrevRef = useRef<HTMLDivElement>(null);
+  const navigationNextRef = useRef<HTMLDivElement>(null);
+  const swiperRef = useRef<SwiperRef>(null);
+
+  useEffect(() => {
+    if (navigationPrevRef.current && navigationNextRef.current) {
+      navigationPrevRef.current.addEventListener('click', () => {
+        if (swiperRef.current) swiperRef.current.swiper.slidePrev();
+      });
+      navigationNextRef.current.addEventListener('click', () => {
+        if (swiperRef.current) swiperRef.current.swiper.slideNext();
+      });
+    }
+  }, []);
+
   return (
     <section className={styles.root}>
       <Container className={styles.container}>
@@ -66,14 +81,18 @@ export default function Hero() {
           </div>
           {!isMobileScreen && (
             <Swiper
-              className={styles.swiper}
+              ref={swiperRef}
+              className={`${styles.swiper} ${styles.heroSwiper}`}
               modules={[Navigation, Pagination, Autoplay]}
               slidesPerView={1}
               speed={1500}
               loop={true}
               effect={'fade'}
               autoplay={{ delay: 3000, disableOnInteraction: false }}
-              navigation
+              navigation={{
+                prevEl: navigationPrevRef.current,
+                nextEl: navigationNextRef.current,
+              }}
               pagination={{ clickable: true }}
             >
               {HeroImgList.map((img, index) => (
@@ -90,13 +109,17 @@ export default function Hero() {
           )}
           {isMobileScreen && (
             <Swiper
-              className={styles.swiper}
+              ref={swiperRef}
+              className={`${styles.swiper} ${styles.heroSwiper}`}
               modules={[Navigation, Pagination]}
               slidesPerView={1}
               speed={1500}
               loop={true}
               effect={'fade'}
-              navigation
+              navigation={{
+                prevEl: navigationPrevRef.current,
+                nextEl: navigationNextRef.current,
+              }}
               pagination={{ clickable: true }}
             >
               {HeroImgList.map((img, index) => (
@@ -111,6 +134,22 @@ export default function Hero() {
               ))}
             </Swiper>
           )}
+          <div className={styles.navigation}>
+            <div ref={navigationPrevRef} className={styles.navigationPrev}>
+              <Image
+                src={`${basePath}/svg/arrow-short.svg`}
+                width={22}
+                height={22}
+                alt={'Назад.'} />
+            </div>
+            <div ref={navigationNextRef} className={styles.navigationNext}>
+              <Image
+                src={`${basePath}/svg/arrow-short.svg`}
+                width={22}
+                height={22}
+                alt={'Вперед.'} />
+            </div>
+            </div>
           <MouseButton />
         </div>
       </Container>

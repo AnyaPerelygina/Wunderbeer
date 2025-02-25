@@ -1,15 +1,5 @@
-export interface CardsProps {
-  key: string;
-  image: string;
-  title: string;
-  description: string;
-  price: number;
-  availability: boolean;
-  discount: boolean;
-  new: boolean;
-  tags: string;
-}
+import { CardProps } from "../card/card.types";
 
 export type CatalogListProps = {
-  filteredCards: CardsProps[];
+  filteredCards: CardProps[];
 }
