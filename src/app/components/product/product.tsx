@@ -1,10 +1,10 @@
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
-import { basePath } from "@/const";
+// import { basePath } from "@/const";
 import { Container } from "../container/container";
-import FormForQuestions from '../forms/form-for-questions/form-for-questions';
+// import FormForQuestions from '../forms/form-for-questions/form-for-questions';
 import Button from '@/ui/button/button';
 import Card from '@/app/components/card/card';
 
@@ -21,7 +21,7 @@ export default function Product() {
     <section className={styles.root}>
       <Container className={styles.container}>
         <Link href={'/catalog'} target="_self">Вернуться в каталог</Link>
-        <div className={styles.about}>
+        {/* <div className={styles.about}>
           <div className={styles.aboutWrapper}>
             <Image
               src={`${basePath}/bottles/${image}.webp`}
@@ -47,7 +47,7 @@ export default function Product() {
             </Button>
           </div>
           <FormForQuestions />
-        </div>
+        </div> */}
         <div className={styles.info}>
           <div className={styles.infoWrapper}>
             <div className={styles.controls}>

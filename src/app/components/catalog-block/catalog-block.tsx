@@ -56,7 +56,7 @@ export default function CatalogBlock() {
             </div>
             <FormForQuestions />
           </div>
-          <CatalogList filteredCards={filteredCards} />
+          <CatalogList filteredCards={[]} />
         </div>
       </Container>
     </section>
