@@ -1,2 +1,91 @@
 @import '../../../style/variables.scss';
 @import '../../../style/mixins.scss';
+
+.container {
+  display: grid;
+  grid-template-columns: auto 255px;
+}
+
+.linkReturn {
+  grid-column: span 2;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.wrapperForm {
+  position: relative;
+  max-width: 255px;
+  max-height: 364px;
+
+  grid-area: unset;
+
+  @include vp-1023 {
+    display: none;
+  }
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    background-color: $color-default-black;
+    opacity: 0.5;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+  }
+}
+
+.about {
+  display: flex;
+  flex-direction: row;
+}
+
+.info {
+  grid-column: span 2;
+}
+
+.more {
+  grid-column: span 2;
+}
+
+.subtitle {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 36px;
+}
+
+.moreWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}

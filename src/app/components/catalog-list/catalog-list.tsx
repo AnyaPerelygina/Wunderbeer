@@ -82,6 +82,7 @@ export default function CatalogList({ filteredCards }: CatalogListProps) {
           {firstRow.map((card) => (
             <Card
               key={card.key}
+              id={card.key}
               image={card.image}
               title={card.title}
               description={card.description}
@@ -130,6 +131,7 @@ export default function CatalogList({ filteredCards }: CatalogListProps) {
           {secondRow.map((card) => (
             <Card
               key={card.key}
+              id={card.key}
               image={card.image}
               title={card.title}
               description={card.description}

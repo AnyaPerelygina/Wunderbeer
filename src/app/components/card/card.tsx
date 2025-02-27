@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,7 +11,7 @@ import styles from './card.module.scss';
 import Button from '@/ui/button/button';
 
 export default function Card({
-  key,
+  id,
   image,
   title,
   description,
@@ -20,7 +22,7 @@ export default function Card({
 }: CardProps) {
 
   return (
-    <Link className={styles.root} href={`/product/${key}`} passHref>
+    <Link className={styles.root} href={`/product-page/${id}`} passHref>
       <div className={styles.img}>
         <div className={styles.badges}>
           {isNew && <span className={`${styles.badge} ${styles.badgeNew}`}>Новинка</span>}
