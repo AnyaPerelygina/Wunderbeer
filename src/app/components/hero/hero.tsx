@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide, SwiperRef } from "swiper/react";
 import { Navigation, Pagination, Autoplay} from 'swiper/modules';
 import { basePath } from "@/const";
 import MouseButton from "./mouse-button/mouse-button";
-import { Container } from "../container/container";
+import { Container } from "../../../ui/container/container";
 
 import 'swiper/scss';
 import 'swiper/scss/navigation';

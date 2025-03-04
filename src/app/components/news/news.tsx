@@ -10,7 +10,7 @@ import Image from 'next/image';
 import Title from '@/ui/title/title';
 import Button from "@/ui/button/button";
 
-import { Container } from '../container/container';
+import { Container } from '../../../ui/container/container';
 
 import styles from './news.module.scss';
 

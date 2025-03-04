@@ -1,7 +1,7 @@
 import { basePath } from '@/const';
 import Image from 'next/image';
 
-import { Container } from '@/app/components/container/container';
+import { Container } from '@/ui/container/container';
 
 import styles from './history.module.scss';
 

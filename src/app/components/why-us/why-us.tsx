@@ -3,7 +3,7 @@ import { basePath } from '@/const';
 
 import styles from './why-us.module.scss';
 
-import { Container } from "../container/container";
+import { Container } from "../../../ui/container/container";
 import Reasons from '../reasons/reasons';
 
 export default function WhyUs() {

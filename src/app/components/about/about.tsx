@@ -10,7 +10,7 @@ import Image from 'next/image';
 import Title from '@/ui/title/title';
 import LinkNew from '@/ui/link/link';
 
-import { Container } from '../container/container';
+import { Container } from '../../../ui/container/container';
 
 import styles from './about.module.scss';
 

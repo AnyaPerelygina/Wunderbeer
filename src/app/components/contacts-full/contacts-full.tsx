@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { Container } from '../container/container';
+import { Container } from '../../../ui/container/container';
 import FormForMessages from '@/app/components/forms/form-for-messages/form-for-messages';
 import { basePath } from "@/const";
 

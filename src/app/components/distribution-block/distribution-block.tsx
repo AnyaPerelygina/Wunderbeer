@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { basePath } from '@/const';
 
-import { Container } from '../container/container';
+import { Container } from '../../../ui/container/container';
 import styles from './distribution-block.module.scss';
 import FormForMessages from '../forms/form-for-messages/form-for-messages';
 

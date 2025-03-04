@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-import { Container } from '../container/container';
+import { Container } from '../../../ui/container/container';
 import styles from './privacy-policy-doc.module.scss';
 
 export default function PrivacyPolicyDoc() {

@@ -4,7 +4,7 @@ import Image from 'next/image';
 import styles from './services.module.scss';
 import Title from '@/ui/title/title';
 import LinkNew from '@/ui/link/link';
-import { Container } from "../container/container";
+import { Container } from "../../../ui/container/container";
 
 export default function Services() {
   return (

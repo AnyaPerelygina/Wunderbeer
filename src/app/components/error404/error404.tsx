@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Container } from "../container/container";
+import { Container } from "../../../ui/container/container";
 
 import styles from './error404.module.scss'
 

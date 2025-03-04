@@ -8,7 +8,7 @@ import styles from './partners.module.scss';
 
 import Image from "next/image";
 import { basePath } from "@/const";
-import { Container } from "../container/container";
+import { Container } from "../../../ui/container/container";
 import Title from '@/ui/title/title';
 
 export default function Partners() {

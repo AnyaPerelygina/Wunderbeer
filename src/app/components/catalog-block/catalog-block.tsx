@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { basePath } from '@/const';
 
-import { Container } from '../container/container';
+import { Container } from '../../../ui/container/container';
 import FilterResults from '@/app/components/filter/filter-results/filter-results';
 import Filter from '@/app/components/filter/filter';
 import FormForQuestions from '../forms/form-for-questions/form-for-questions';

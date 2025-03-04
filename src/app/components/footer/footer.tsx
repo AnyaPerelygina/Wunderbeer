@@ -1,7 +1,7 @@
 import Logo from '../../../ui/logo/logo';
 import Social from '../social/social';
 import Contacts from '../contacts/contacts';
-import { Container } from "../container/container";
+import { Container } from "../../../ui/container/container";
 import Nav from '../nav/nav';
 
 import styles from './footer.module.scss';

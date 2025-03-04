@@ -2,7 +2,7 @@
 
 import gsap from "gsap";
 
-import { Container } from "../container/container";
+import { Container } from "../../../ui/container/container";
 import Image from "next/image";
 import Title from '@/ui/title/title';
 import styles from './assortment.module.scss';

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { basePath } from '@/const';
-import { Container } from '@/app/components/container/container';
+import { Container } from '@/ui/container/container';
 
 import styles from './banner.module.scss';
 import { BannerProps } from './banner.types';

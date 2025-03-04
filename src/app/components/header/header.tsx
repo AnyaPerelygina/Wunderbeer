@@ -9,7 +9,7 @@ import Social from '../social/social';
 import Logo from '../../../ui/logo/logo';
 import ShoppingBasket from './shopping-basket/shopping-basket';
 import Nav from '../nav/nav';
-import { Container } from "../container/container";
+import { Container } from "../../../ui/container/container";
 
 import styles from './header.module.scss';
 

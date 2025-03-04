@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import { Container } from '../container/container';
+import { Container } from '../../../ui/container/container';
 import LinkNew from '@/ui/link/link';
 import styles from './shopping-card-block.module.scss';
 

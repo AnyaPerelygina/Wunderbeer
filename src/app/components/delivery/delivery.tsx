@@ -2,7 +2,7 @@ import { basePath } from '@/const';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { Container } from '@/app/components/container/container';
+import { Container } from '@/ui/container/container';
 import FormForQuestions from '../forms/form-for-questions/form-for-questions';
 
 import styles from './delivery.module.scss';
