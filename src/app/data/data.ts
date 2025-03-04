@@ -11,6 +11,7 @@ const mockCatalogCards = [
     discount: true,
     new: false,
     tags: 'пиво, светлое, фильтрованное',
+    text: 'Пиво Mild Lager светлое, фильтрованное, 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
     key: 'beer2',
@@ -24,6 +25,7 @@ const mockCatalogCards = [
     discount: false,
     new: false,
     tags: 'пиво, светлое, фильтрованное',
+    text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.5мл, в стеклянной бутылке.'
   },
   {
     key: 'beer3',

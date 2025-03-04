@@ -29,6 +29,13 @@ export default function Product({ params }: { params: { id: string } }) {
   const navigationPrevRef = useRef<HTMLDivElement>(null);
   const navigationNextRef = useRef<HTMLDivElement>(null);
 
+  const [activeTab, setActiveTab] = useState<'description' | 'characteristics'>('description');
+
+  // Функция для переключения вкладок
+  const handleTabChange = (tab: 'description' | 'characteristics') => {
+    setActiveTab(tab);
+  };
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobileScreen(window.innerWidth < 768);
@@ -118,12 +125,37 @@ export default function Product({ params }: { params: { id: string } }) {
           </div>
           <div className={styles.infoWrapper}>
             <div className={styles.controls}>
-              <Button className={styles.button} type={'button'}>Описание</Button>
-              <Button className={styles.button} type={'button'}>Характеристики</Button>
+              <Button
+                className={styles.button}
+                type={'button'}
+                onClick={() => handleTabChange('description')}
+                disabled={activeTab === 'description'}
+              >
+                Описание
+              </Button>
+              <Button
+                className={styles.button}
+                type={'button'}
+                onClick={() => handleTabChange('characteristics')}
+                disabled={activeTab === 'characteristics'}
+              >
+                Характеристики
+              </Button>
             </div>
             <div className={styles.contents}>
-              <div className={styles.content}></div>
-              <div className={styles.content}></div>
+              {activeTab === 'description' && (
+                <div className={styles.content}>{product.text}</div>
+              )}
+              {activeTab === 'characteristics' && (
+                <div className={styles.content}>
+                  <ul className={styles.contentList}>
+                    <li className={styles.contentItem}>Крепость: {product.strength} %</li>
+                    <li className={styles.contentItem}>Объем: {product.size} л</li>
+                    <li className={styles.contentItem}>Цена: {product.price} руб.</li>
+                    <li className={styles.contentItem}>Теги: {product.tags}</li>
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
         </div>
