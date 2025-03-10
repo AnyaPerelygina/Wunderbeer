@@ -1,8 +1,6 @@
 'use client'
 
 import { useState } from 'react';
-import Image from 'next/image';
-import { basePath } from '@/const';
 
 import { Container } from '../../../ui/container/container';
 import FilterResults from '@/app/components/filter/filter-results/filter-results';
@@ -35,7 +33,6 @@ export default function CatalogBlock() {
       return inCategory && inPriceRange;
     });
 
-
     setFilteredCards(filtered);
   };
 
@@ -46,14 +43,6 @@ export default function CatalogBlock() {
           <FilterResults count={filteredCards.length} />
           <Filter applyFilters={applyFilters} />
           <div className={styles.wrapperForm}>
-            <div className={styles.background}>
-              <Image
-                src={`${basePath}/delivery/background-hops-mini.webp`}
-                width={255}
-                height={364}
-                alt="Фоновое изображение."
-              />
-            </div>
             <FormForQuestions />
           </div>
           <CatalogList filteredCards={[]} />

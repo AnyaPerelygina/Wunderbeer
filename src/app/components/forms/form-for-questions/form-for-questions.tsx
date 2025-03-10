@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from "next/image";
+import { basePath } from "@/const";
 import Button from '@/ui/button/button';
 import styles from './form-for-questions.module.scss';
 
@@ -98,6 +100,14 @@ export default function FormForQuestions() {
 
   return (
     <div className={styles.form}>
+      <div className={styles.backgroundForm}>
+        <Image
+          src={`${basePath}/delivery/background-hops-mini.webp`}
+          width={255}
+          height={364}
+          alt="Фоновое изображение."
+        />
+      </div>
       <h2 className={styles.title}>Остались вопросы?</h2>
       <p>Оставьте свой&nbsp;номер телефона, и&nbsp;мы&nbsp;Вам&nbsp;поможем</p>
       <form onSubmit={handleSubmit}>

@@ -2,7 +2,7 @@
 @import '../../../style/mixins.scss';
 
 .root {
-  padding: 50px 0;
+  padding: 0 0 50px;
 
   .container {
     max-width: 100%;
@@ -17,21 +17,22 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 19px;
+  letter-spacing: -0.5px;
 
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 
   max-width: 1230px;
   width: 100%;;
   margin: 0 auto;
-  padding: 0 60px;
+  padding: 9px 60px 19px;
 
   @include vp-1023 {
-    padding: 0 40px;
+    padding: 9px 40px 19px;
   }
 
   @include vp-767 {
@@ -43,41 +44,12 @@
   position: relative;
   max-width: 255px;
   max-height: 364px;
+  margin-top: 45px;
 
   grid-area: unset;
 
   @include vp-1023 {
     display: none;
-  }
-}
-
-.backgroundForm {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-
-  height: 100%;
-  width: 100%;
-  border-radius: 5px;
-
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-  }
-
-  &::after {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    background-color: $color-default-black;
-    opacity: 0.5;
-    height: 100%;
-    width: 100%;
-    border-radius: 5px;
   }
 }
 
@@ -89,15 +61,101 @@
   max-width: 1230px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 60px;
+  padding: 0 60px 36px;
 
   @include vp-1023 {
-    padding: 0 40px;
+    padding: 0 40px 35px;
   }
 
   @include vp-767 {
     padding: 0 15px;
     flex-direction: column;
+  }
+
+  .bottleImg {
+    margin: 0 0 0 95px;
+  }
+}
+
+.characteristics {
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+  margin-top: 45px;
+  margin-left: 75px;
+
+  .title {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1;
+    color: $color-default-black;
+    margin: 0;
+  }
+
+  .description,
+  .strength,
+  .size {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1;
+    color: $color-default-black;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    span {
+      font-weight: 300;
+    }
+  }
+
+  .price {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1;
+    color: $color-default-black;
+    margin: 0;
+    padding: 8px 0 5px;
+
+    span {
+      font-weight: 300;
+      font-size: 18px;
+    }
+  }
+
+  button {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: $color-default-black;
+
+    background-color: $color-kournikova;
+    border-radius: 50px;
+    width: 100%;
+    max-width: 175px;
+    padding: 13px 20px;
+    margin: 0;
+    outline: none;
+
+    transition: color $trans-default, outline $trans-default, background-color $trans-default;
+
+    @include hover-focus {
+      color: $color-kournikova;
+      outline: 1px solid $color-kournikova;
+      background-color: transparent;
+    }
+
+    &:disabled {
+      background-color: $color-light-grey;
+      color: $color-default-white;
+      pointer-events: none;
+    }
+
+    @include vp-767 {
+      max-width: 100%;
+    }
   }
 }
 
@@ -141,6 +199,62 @@
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
+
+  button {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1;
+    color: $color-default-black;
+    background-color: transparent;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 7px;
+    padding: 25px 36px;
+
+    &:disabled {
+      font-weight: 500;
+    }
+  }
+
+  svg {
+    &:last-child {
+      transform: rotateY(180deg);
+    }
+  }
+}
+
+.content {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  color: $color-night-rider;
+
+  padding: 21px 20px 34px 91px;
+}
+
+.contentList {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0;
+}
+
+.contentItem {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  color: $color-night-rider;
+}
+
+.more {
+  padding: 36px 0 70px;
 }
 
 .moreWrapper {
@@ -162,6 +276,7 @@
   font-size: 30px;
   font-weight: 500;
   line-height: 36px;
+  padding: 0 0 20px;
 }
 
 .moreList {
@@ -170,6 +285,8 @@
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
+  max-width: 1070px;
+  margin: 0 auto;
 }
 
 .moreSwiper {

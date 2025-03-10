@@ -4,6 +4,7 @@ export type CardProps = {
   image: string;
   title: string;
   description: string;
+  strength: number;
   price: number;
   isNew?: boolean;
   isOnSale?: boolean;

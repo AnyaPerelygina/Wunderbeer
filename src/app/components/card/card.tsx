@@ -14,6 +14,7 @@ export default function Card({
   id,
   image,
   title,
+  strength,
   description,
   price,
   isNew = false,
@@ -36,7 +37,7 @@ export default function Card({
         />
       </div>
       <h3 className={styles.title}>{title}</h3>
-      <p className={styles.description}>{description}</p>
+      <p className={styles.description}>%{strength} {description}</p>
       <span className={styles.price}>{price} руб.</span>
       <Button
         className={styles.button}

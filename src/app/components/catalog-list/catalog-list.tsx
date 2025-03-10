@@ -85,6 +85,7 @@ export default function CatalogList({ filteredCards }: CatalogListProps) {
               id={card.key}
               image={card.image}
               title={card.title}
+              strength={card.strength}
               description={card.description}
               price={card.price}
               isNew={card.new}
@@ -134,6 +135,7 @@ export default function CatalogList({ filteredCards }: CatalogListProps) {
               id={card.key}
               image={card.image}
               title={card.title}
+              strength={card.strength}
               description={card.description}
               price={card.price}
               isNew={card.new}

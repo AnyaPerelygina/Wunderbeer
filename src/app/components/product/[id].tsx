@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide, SwiperRef } from "swiper/react";
 import { Navigation } from 'swiper/modules';
 
 import Image from "next/image";
+import WheatYellow from '@/assets/wheat-yellow.svg';
 import Link from "next/link";
 import { basePath } from "@/const";
 
@@ -31,7 +32,6 @@ export default function Product({ params }: { params: { id: string } }) {
 
   const [activeTab, setActiveTab] = useState<'description' | 'characteristics'>('description');
 
-  // Функция для переключения вкладок
   const handleTabChange = (tab: 'description' | 'characteristics') => {
     setActiveTab(tab);
   };
@@ -76,14 +76,16 @@ export default function Product({ params }: { params: { id: string } }) {
         </Link>
         <div className={styles.about}>
           <div className={styles.aboutWrapper}>
-            <Image
-              src={`${basePath}/bottles/${product.image}.webp`}
-              width={244}
-              height={643}
-              alt="Изображение пивной бутылки"
-            />
+            <div className={styles.bottleImg}>
+              <Image
+                src={`${basePath}/bottles/${product.image}.webp`}
+                width={255}
+                height={643}
+                alt="Изображение пивной бутылки"
+              />
+            </div>
             <div className={styles.characteristics}>
-              <h3 className={styles.title}>{product.title}</h3>
+              <h3 className={styles.title}>{product.type} {product.title}</h3>
               <p className={styles.description}>{product.description}</p>
               <h4 className={styles.strength}>
                 Крепость: <span>{product.strength} %</span>
@@ -92,21 +94,13 @@ export default function Product({ params }: { params: { id: string } }) {
                 Объем: <span>{product.size} л</span>
               </h4>
               <h4 className={styles.price}>
-                {product.price} руб. <span>/шт.</span>
+                {product.price} руб. <span>шт.</span>
               </h4>
               <Button type="button" disabled={!product.availability}>
                 {product.availability ? "Купить" : "Нет в наличии"}
               </Button>
             </div>
             <div className={styles.wrapperForm}>
-              <div className={styles.backgroundForm}>
-                <Image
-                  src={`${basePath}/delivery/background-hops-mini.webp`}
-                  width={255}
-                  height={364}
-                  alt="Фоновое изображение."
-                />
-              </div>
               <FormForQuestions />
             </div>
           </div>
@@ -131,7 +125,9 @@ export default function Product({ params }: { params: { id: string } }) {
                 onClick={() => handleTabChange('description')}
                 disabled={activeTab === 'description'}
               >
+                {activeTab === 'description' && <WheatYellow />}
                 Описание
+                {activeTab === 'description' && <WheatYellow />}
               </Button>
               <Button
                 className={styles.button}
@@ -139,7 +135,9 @@ export default function Product({ params }: { params: { id: string } }) {
                 onClick={() => handleTabChange('characteristics')}
                 disabled={activeTab === 'characteristics'}
               >
+                {activeTab === 'characteristics' && <WheatYellow />}
                 Характеристики
+                {activeTab === 'characteristics' && <WheatYellow />}
               </Button>
             </div>
             <div className={styles.contents}>
@@ -149,10 +147,15 @@ export default function Product({ params }: { params: { id: string } }) {
               {activeTab === 'characteristics' && (
                 <div className={styles.content}>
                   <ul className={styles.contentList}>
-                    <li className={styles.contentItem}>Крепость: {product.strength} %</li>
+                    <li className={styles.contentItem}>Экстрактивность начального сусла: {product.wort}%</li>
+                    <li className={styles.contentItem}>Объемная доля спирта: {product.strength}%</li>
+                    <li className={styles.contentItem}>Состав: {product.composition}</li>
+                    <li className={styles.contentItem}>Энергетическая ценность: {product.value}ккал</li>
+                    <li className={styles.contentItem}>Продукт {product.gluten}</li>
                     <li className={styles.contentItem}>Объем: {product.size} л</li>
-                    <li className={styles.contentItem}>Цена: {product.price} руб.</li>
-                    <li className={styles.contentItem}>Теги: {product.tags}</li>
+                    <li className={styles.contentItem}>Хранить в холодном сухом месте при температуре +5 - +20&apos;С.</li>
+                    <li className={styles.contentItem}>Чрезмерное употребление алкогольной продукции вредит вашему здоровью.</li>
+                    <li className={styles.contentItem}>Срок годности 9 месяцев.</li>
                   </ul>
                 </div>
               )}
@@ -186,8 +189,11 @@ export default function Product({ params }: { params: { id: string } }) {
                           key={card.key}
                           image={card.image}
                           title={card.title}
+                          strength={card.strength}
                           description={card.description}
                           price={card.price}
+                          isNew={card.new}
+                          isOnSale={card.discount}
                           inStock={card.availability}
                         />
                       </SwiperSlide>
@@ -216,8 +222,11 @@ export default function Product({ params }: { params: { id: string } }) {
                       key={card.key}
                       image={card.image}
                       title={card.title}
+                      strength={card.strength}
                       description={card.description}
                       price={card.price}
+                      isNew={card.new}
+                      isOnSale={card.discount}
                       inStock={card.availability}
                     />
                   ))}

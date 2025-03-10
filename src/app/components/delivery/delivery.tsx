@@ -1,5 +1,3 @@
-import { basePath } from '@/const';
-import Image from 'next/image';
 import Link from 'next/link';
 
 import { Container } from '@/ui/container/container';
@@ -18,14 +16,6 @@ export default function Delivery() {
           <p>Мы&nbsp;всегда рады предложить самые удобные способы доставки для&nbsp;наших&nbsp;клиентов. Если&nbsp;вы&nbsp;не&nbsp;нашли удобный для&nbsp;вас способ доставки — вы&nbsp;всегда&nbsp;можете связаться с&nbsp;нашими&nbsp;менеджерами по&nbsp;телефону: <Link className={styles.link} href={'tel:+7 (800) 775-10-50'} target={'_blank'}>8&nbsp;800&nbsp;775-10-50</Link> (звонок бесплатный) и&nbsp;обсудить любые иные&nbsp;варианты доставки вашего&nbsp;заказа.</p>
         </div>
         <div className={styles.wrapperForm}>
-          <div className={styles.background}>
-            <Image
-              src={`${basePath}/delivery/background-hops-mini.webp`}
-              width={255}
-              height={364}
-              alt="Фоновое изображение."
-            />
-          </div>
           <FormForQuestions />
         </div>
       </Container>
