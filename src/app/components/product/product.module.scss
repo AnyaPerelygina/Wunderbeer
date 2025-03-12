@@ -54,6 +54,24 @@
   }
 }
 
+.about {
+  position: relative;
+}
+
+.aboutAnimation {
+  position: absolute;
+  top: 0;
+  max-width: 200px;
+
+  @include vp-1023 {
+    display: none;
+  }
+
+  .img2 {
+    margin: -86px 0 0;
+  }
+}
+
 .aboutWrapper {
   display: flex;
   flex-direction: row;
@@ -399,7 +417,7 @@
   }
 }
 
-.animation {
+.moreAnimation {
   position: absolute;
   bottom: 26%;
   right: 0;

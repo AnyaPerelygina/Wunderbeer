@@ -36,6 +36,9 @@ export default function Product({ params }: { params: { id: string } }) {
   const navigationNextRef = useRef<HTMLDivElement>(null);
   const moreRef = useRef<HTMLDivElement>(null);
   const moreImgRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const aboutImg1Ref = useRef<HTMLDivElement>(null);
+  const aboutImg2Ref = useRef<HTMLDivElement>(null);
 
   const [activeTab, setActiveTab] = useState<'description' | 'characteristics'>('description');
 
@@ -51,6 +54,49 @@ export default function Product({ params }: { params: { id: string } }) {
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (aboutImg1Ref.current) {
+      gsap.fromTo(
+        aboutImg1Ref.current,
+        { x: -100, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          scrollTrigger: {
+            trigger: aboutRef.current,
+            start: "top center",
+            toggleActions: "play none none none",
+            onEnter: () => {
+              gsap.to(aboutImg1Ref.current, { x: 0, opacity: 1, duration: 1 });
+            },
+          },
+        }
+      );
+    }
+
+    if (aboutImg2Ref.current) {
+      gsap.fromTo(
+        aboutImg2Ref.current,
+        { x: -100, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          delay: 0.5,
+          scrollTrigger: {
+            trigger: aboutRef.current,
+            start: "top center",
+            toggleActions: "play none none none",
+            onEnter: () => {
+              gsap.to(aboutImg2Ref.current, { x: 0, opacity: 1, duration: 1, delay: 0.5 });
+            },
+          },
+        }
+      );
+    }
   }, []);
 
   useEffect(() => {
@@ -103,7 +149,25 @@ export default function Product({ params }: { params: { id: string } }) {
           <Icon Icon={Arrow} width={44} height={8} />
           Вернуться в каталог
         </Link>
-        <div className={styles.about}>
+        <div className={styles.about} ref={aboutRef}>
+          <div className={styles.aboutAnimation}>
+            <div className={styles.img1} ref={aboutImg1Ref}>
+              <Image
+                  src={`${basePath}/svg/mug-of-beer.svg`}
+                  width={245}
+                  height={364}
+                  alt="Изображение кружки пива."
+                />
+            </div>
+            <div className={styles.img2} ref={aboutImg2Ref}>
+              <Image
+                src={`${basePath}/svg/hops.svg`}
+                width={220}
+                height={266}
+                alt="Изображение хмеля."
+              />
+            </div>
+          </div>
           <div className={styles.aboutWrapper}>
             <div className={styles.bottleImg}>
               <Image
@@ -192,7 +256,7 @@ export default function Product({ params }: { params: { id: string } }) {
           </div>
         </div>
         <div className={styles.more} ref={moreRef}>
-          <div className={styles.animation}>
+          <div className={styles.moreAnimation}>
             <div className={styles.img} ref={moreImgRef}>
               <Image
                 src={`${basePath}/svg/glass-of-beer.svg`}
