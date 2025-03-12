@@ -20,7 +20,12 @@ import styles from "./product.module.scss";
 import "swiper/css";
 import "swiper/css/navigation";
 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import mockCatalogCards from "@/app/data/data";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Product({ params }: { params: { id: string } }) {
   const product = mockCatalogCards.find((card) => card.key === params.id);
@@ -29,6 +34,8 @@ export default function Product({ params }: { params: { id: string } }) {
   const [slidesToShow, setSlidesToShow] = useState(1);
   const navigationPrevRef = useRef<HTMLDivElement>(null);
   const navigationNextRef = useRef<HTMLDivElement>(null);
+  const moreRef = useRef<HTMLDivElement>(null);
+  const moreImgRef = useRef<HTMLDivElement>(null);
 
   const [activeTab, setActiveTab] = useState<'description' | 'characteristics'>('description');
 
@@ -60,6 +67,28 @@ export default function Product({ params }: { params: { id: string } }) {
       swiperRef.current.swiper.navigation.update();
     }
   }, [swiperRef]);
+
+  useEffect(() => {
+    if (moreImgRef.current) {
+      gsap.fromTo(
+        moreImgRef.current,
+        { x: 200, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          scrollTrigger: {
+            trigger: moreRef.current,
+            start: "top center",
+            toggleActions: "play none none none",
+            onEnter: () => {
+              gsap.to(moreImgRef.current, { x: 0, opacity: 1, duration: 1 });
+            },
+          },
+        }
+      );
+    }
+  }, []);
 
   if (!product) return <p>Товар не найден</p>;
 
@@ -162,7 +191,17 @@ export default function Product({ params }: { params: { id: string } }) {
             </div>
           </div>
         </div>
-        <div className={styles.more}>
+        <div className={styles.more} ref={moreRef}>
+          <div className={styles.animation}>
+            <div className={styles.img} ref={moreImgRef}>
+              <Image
+                src={`${basePath}/svg/glass-of-beer.svg`}
+                width={224}
+                height={342}
+                alt="Изображение кружки пива."
+              />
+            </div>
+          </div>
           <div className={styles.moreWrapper}>
             <h3 className={styles.subtitle}>
               Вам понравится

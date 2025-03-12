@@ -298,6 +298,7 @@
 }
 
 .more {
+  position: relative;
   padding: 36px 0 70px;
 
   @include vp-767 {
@@ -395,5 +396,23 @@
 
   @include vp-767 {
     right: 0;
+  }
+}
+
+.animation {
+  position: absolute;
+  bottom: 26%;
+  right: 0;
+  z-index: 0;
+  opacity: 1;
+
+  transition: top $trans-default;
+  transition: right $trans-default;
+  transition: opacity $trans-default;
+
+  @include vp-1023 {
+    bottom: -130px;
+    opacity: 0.1;
+    height: 351px;
   }
 }
