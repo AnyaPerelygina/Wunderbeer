@@ -214,6 +214,14 @@
     gap: 7px;
     padding: 25px 36px;
 
+    @include hover-focus {
+      font-weight: 500;
+    }
+
+    &:active {
+      font-weight: 500;
+    }
+
     &:disabled {
       font-weight: 500;
     }
