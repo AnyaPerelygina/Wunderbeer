@@ -1,9 +1,12 @@
 import { useState } from 'react';
+import { useCart } from "@/context/cart-context";
 import { ButtonProps } from './button-buy.types';
+
 import styles from './button-buy.module.scss';
 
 export default function ButtonBuy({ className = '', type='button', availability = true, disabled = false }: ButtonProps) {
   const [count, setCount] = useState(0);
+  const { addItem, removeItem } = useCart();
 
   if(!availability) {
     return (
@@ -17,17 +20,21 @@ export default function ButtonBuy({ className = '', type='button', availability 
     event.stopPropagation();
     event.preventDefault();
     setCount((prev) => prev + 1);
+    addItem();
   }
+
   const handleDecreament = (event: React.MouseEvent) => {
     event.stopPropagation();
     event.preventDefault();
     setCount((prev) => prev - 1);
+    removeItem();
   }
 
   const handleClick = (event: React.MouseEvent) => {
     event.stopPropagation();
     event.preventDefault();
     setCount(1);
+    addItem();
   }
 
   return (
@@ -42,7 +49,9 @@ export default function ButtonBuy({ className = '', type='button', availability 
           'Купить'
         ) : (
           <div className={styles.counter}>
-            <button onClick={handleDecreament}>-</button>{count}<button onClick={handleIncreament}>+</button>
+            <button onClick={handleDecreament}>-</button>
+            {count}
+            <button onClick={handleIncreament}>+</button>
           </div>
         )
       }

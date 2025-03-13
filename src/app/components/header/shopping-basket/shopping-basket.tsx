@@ -1,11 +1,13 @@
+import { useCart } from "@/context/cart-context";
 import { basePath } from '@/const';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import styles from './shopping-basket.module.scss';
-import { ShoppingBasketProps } from './shopping-basket.types';
 
-export default function ShoppingBasket({ totalItems }: ShoppingBasketProps) {
+export default function ShoppingBasket() {
+  const { totalItems } = useCart();
+
   return (
     <div className={styles.shoppingBasket}>
       <Link href={'/shopping-card'}>

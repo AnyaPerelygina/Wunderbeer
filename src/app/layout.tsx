@@ -4,6 +4,8 @@ import { usePathname } from 'next/navigation';
 import Layout from './components/layout/layout';
 import localFont from 'next/font/local';
 import MetaData from './metadata';
+import { CartProvider } from "@/context/cart-context";
+
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
 
@@ -76,9 +78,11 @@ export default function RootLayout({
       <MetaData />
       <body className={font.className}>
         <div className="wrapper">
-          {getHeaderContent()}
-          <Layout>{children}</Layout>
-          {getFooterContent()}
+          <CartProvider>
+            {getHeaderContent()}
+            <Layout>{children}</Layout>
+            {getFooterContent()}
+          </CartProvider>
         </div>
       </body>
     </html>
