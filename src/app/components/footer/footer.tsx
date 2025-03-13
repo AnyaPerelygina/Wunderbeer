@@ -4,6 +4,9 @@ import Contacts from '../contacts/contacts';
 import { Container } from "../../../ui/container/container";
 import Nav from '../nav/nav';
 
+import { basePath } from '@/const';
+import Image from 'next/image';
+
 import styles from './footer.module.scss';
 
 export default function Footer() {
@@ -41,7 +44,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer} id='footer'>
       <Container className={styles.container}>
-        <div className={styles.footer__wrapper}>
+        <div className={styles.wrapper}>
           <Logo className={styles.logoFooter}/>
           <p>В&nbsp;ассортименте в&nbsp;большом разнообразии представлены хмельные напитки собственного изготовления, а&nbsp;также от&nbsp;проверенных и&nbsp;надёжных партнёров.</p>
           <Social className={styles.socialFooter} SocialLinks={[]} onLinkClick={handleLinkClick} />
@@ -53,6 +56,26 @@ export default function Footer() {
           </div>
         </div>
       </Container>
+      <div className={styles.decoration}>
+        <Image
+          src={`${basePath}/svg/hops-line.svg`}
+          width={640}
+          height={196}
+          alt="Изображение хмеля."
+        />
+        <Image
+          src={`${basePath}/svg/hops-line.svg`}
+          width={640}
+          height={196}
+          alt="Изображение хмеля."
+        />
+        <Image
+          src={`${basePath}/svg/hops-line.svg`}
+          width={640}
+          height={196}
+          alt="Изображение хмеля."
+        />
+      </div>
     </footer>
   )
 }
