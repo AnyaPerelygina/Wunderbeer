@@ -55,4 +55,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @include vp-1023 {
+    min-width: 15px;
+    min-height: 15px;
+    bottom: 15px;
+    left: 15px;
+
+    font-size: 14px;
+    line-height: 1;
+  }
 }

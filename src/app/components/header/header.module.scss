@@ -55,7 +55,7 @@
       height: 100vh;
       max-height: 478px;
       opacity: 1;
-      overflow-y: auto;
+      overflow-y: visible;
       background-color: $color-aubergine;
       z-index: 666;
     }
