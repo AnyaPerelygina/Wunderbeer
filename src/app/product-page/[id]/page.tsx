@@ -12,9 +12,15 @@ export async function generateStaticParams() {
 }
 
 export default function ProductPage({ params }: { params: { id: string } }) {
+  const product = mockCatalogCards.find((item) => item.key === params.id);
+
+  if (!product) {
+    return <p>Продукт не найден</p>;
+  }
+
   return (
     <React.Fragment>
-      <Banner image={'banner-2.webp'} title={'Пиво'}/>
+      <Banner image={'banner-2.webp'} title={product.type}/>
       <Product params={params} />
     </React.Fragment>
   );
