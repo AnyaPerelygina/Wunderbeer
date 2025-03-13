@@ -8,7 +8,7 @@ import { basePath } from "@/const";
 import { CardProps } from './card.types';
 import styles from './card.module.scss';
 
-import Button from '@/ui/button/button';
+import ButtonBuy from "@/ui/button-buy/button-buy";
 
 export default function Card({
   id,
@@ -19,7 +19,7 @@ export default function Card({
   price,
   isNew = false,
   isOnSale = false,
-  inStock = true,
+  availability = true,
 }: CardProps) {
 
   return (
@@ -39,11 +39,7 @@ export default function Card({
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.description}>%{strength} {description}</p>
       <span className={styles.price}>{price} руб.</span>
-      <Button
-        className={styles.button}
-        type={'button'}
-        disabled={!inStock}>{inStock ? 'Купить' : 'Нет в наличии'}
-      </Button>
+      <ButtonBuy type="button" availability={availability} />
     </Link>
   );
 }

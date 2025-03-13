@@ -11,6 +11,7 @@ import { basePath } from "@/const";
 
 import FormForQuestions from "../forms/form-for-questions/form-for-questions";
 import { Container } from "@/ui/container/container";
+import ButtonBuy from "@/ui/button-buy/button-buy";
 import Button from "@/ui/button/button";
 import Icon from "@/ui/icon/icon";
 import Card from "../card/card";
@@ -189,9 +190,7 @@ export default function Product({ params }: { params: { id: string } }) {
               <h4 className={styles.price}>
                 {product.price} руб. <span>шт.</span>
               </h4>
-              <Button type="button" disabled={!product.availability}>
-                {product.availability ? "Купить" : "Нет в наличии"}
-              </Button>
+              <ButtonBuy type="button" availability={product.availability} />
             </div>
             <div className={styles.wrapperForm}>
               <FormForQuestions />
