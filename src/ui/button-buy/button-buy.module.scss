@@ -1,6 +1,16 @@
 @import '../../style/variables.scss';
 @import '../../style/mixins.scss';
 
+.buttonWrapper {
+  width: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-self: center;
+}
+
 .button {
   font-weight: 500;
   font-size: 16px;
@@ -12,16 +22,16 @@
   border-radius: 50px;
   width: 100%;
   max-width: 175px;
-  padding: 13px 20px;
+  padding: 8px 20px;
   margin: 0;
   outline: none;
-  border: none;
+  border: 1px solid $color-kournikova;
 
-  transition: color $trans-default, outline $trans-default, background-color $trans-default;
+  transition: background-color $trans-default, color $trans-default;
 
   @include hover-focus {
     color: $color-kournikova;
-    outline: 1px solid $color-kournikova;
+
     background-color: transparent;
   }
 
@@ -32,6 +42,122 @@
   }
 
   @include vp-767 {
-    max-width: 100%;
+    max-width: 300px;
   }
+}
+
+.counter {
+  background-color: transparent;
+  border: 1px solid $color-kournikova;
+  border-radius: 50px;
+  width: 100%;
+  max-width: 175px;
+  padding: 1.5px 20px;
+  margin: 0;
+  color: $color-kournikova;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    position: relative;
+    border: none;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    padding: 16px;
+
+    outline: none;
+
+    &:first-child {
+      &::after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 16px;
+        height: 4px;
+        border-radius: 5px;
+        background-color: $color-kournikova;
+      }
+    }
+
+    &:last-child {
+      &::before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%) rotate(90deg);
+        width: 16px;
+        height: 4px;
+        border-radius: 5px;
+        background-color: $color-kournikova;
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 16px;
+        height: 4px;
+        border-radius: 5px;
+        background-color: $color-kournikova;
+      }
+    }
+
+    @include hover-focus {
+      &:first-child {
+        &::after {
+          opacity: 0.8;
+        }
+      }
+
+      &:last-child {
+        &::before {
+          opacity: 0.8;
+        }
+
+        &::after {
+          opacity: 0.8;
+        }
+      }
+    }
+
+    &:active {
+      &:first-child {
+        &::after {
+          opacity: 0.5;
+        }
+      }
+
+      &:last-child {
+        &::before {
+          opacity: 0.8;
+        }
+
+        &::after {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  @include vp-767 {
+    max-width: 300px;
+  }
+}
+
+.counterNumber {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1;
+  text-align: center;
+  color: $color-default-black;
 }

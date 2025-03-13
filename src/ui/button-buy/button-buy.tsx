@@ -38,23 +38,25 @@ export default function ButtonBuy({ className = '', type='button', availability 
   }
 
   return (
-    <button
-      type={type}
-      className={`${styles.button} ${className}`}
-      onClick={count === 0 ? handleClick : undefined}
-      disabled={disabled}
-    >
+    <div className={styles.buttonWrapper}>
       {
         count === 0 ? (
-          'Купить'
+          <button
+            type={type}
+            className={`${styles.button} ${className}`}
+            onClick={count === 0 ? handleClick : undefined}
+            disabled={disabled}
+          >
+            Купить
+          </button>
         ) : (
-          <div className={styles.counter}>
-            <button onClick={handleDecreament}>-</button>
-            {count}
-            <button onClick={handleIncreament}>+</button>
+          <div className={`${styles.counter} ${className ? className : ''}`}>
+            <button onClick={handleDecreament}></button>
+            <span className={styles.counterNumber}>{count}</span>
+            <button onClick={handleIncreament}></button>
           </div>
         )
       }
-    </button>
+    </div>
   );
 }

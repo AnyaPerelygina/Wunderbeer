@@ -296,7 +296,7 @@ export default function Product({ params }: { params: { id: string } }) {
                           price={card.price}
                           isNew={card.new}
                           isOnSale={card.discount}
-                          inStock={card.availability}
+                          availability={card.availability}
                         />
                       </SwiperSlide>
                     ))}
@@ -329,7 +329,7 @@ export default function Product({ params }: { params: { id: string } }) {
                       price={card.price}
                       isNew={card.new}
                       isOnSale={card.discount}
-                      inStock={card.availability}
+                      availability={card.availability}
                     />
                   ))}
                 </div>
