@@ -25,11 +25,12 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import mockCatalogCards from "@/app/data/data";
+import { ProductProps } from "./product.type";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Product({ params }: { params: { id: string } }) {
-  const product = mockCatalogCards.find((card) => card.key === params.id);
+export default function Product({ params }: ProductProps) {
+  const product = mockCatalogCards.find((card) => card.productKey === params.id);
   const [isMobileScreen, setIsMobileScreen] = useState(false);
   const swiperRef = useRef<SwiperRef>(null);
   const [slidesToShow, setSlidesToShow] = useState(1);
@@ -190,8 +191,8 @@ export default function Product({ params }: { params: { id: string } }) {
               <h4 className={styles.price}>
                 {product.price} руб. <span>шт.</span>
               </h4>
-              <ButtonBuy type="button" availability={product.availability} />
-            </div>
+              <ButtonBuy type="button" availability={product.availability} productKey={product.productKey} name={product.title} image={product.image} price={product.price} />
+              </div>
             <div className={styles.wrapperForm}>
               <FormForQuestions />
             </div>
@@ -285,10 +286,11 @@ export default function Product({ params }: { params: { id: string } }) {
                     }}
                   >
                     {availableCards.map((card) => (
-                      <SwiperSlide key={card.key} className={styles.swiperSlide}>
+                      <SwiperSlide key={card.productKey} className={styles.swiperSlide}>
                         <Card
-                          id={card.key}
-                          key={card.key}
+                          id={card.productKey}
+                          key={card.productKey}
+                          productKey={card.productKey}
                           image={card.image}
                           title={card.title}
                           strength={card.strength}
@@ -320,8 +322,9 @@ export default function Product({ params }: { params: { id: string } }) {
                 <div className={styles.moreList}>
                   {availableCards.map((card) => (
                     <Card
-                      id={card.key}
-                      key={card.key}
+                      id={card.productKey}
+                      key={card.productKey}
+                      productKey={card.productKey}
                       image={card.image}
                       title={card.title}
                       strength={card.strength}

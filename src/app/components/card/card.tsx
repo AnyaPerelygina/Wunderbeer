@@ -12,6 +12,7 @@ import ButtonBuy from "@/ui/button-buy/button-buy";
 
 export default function Card({
   id,
+  productKey,
   image,
   title,
   strength,
@@ -39,7 +40,7 @@ export default function Card({
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.description}>%{strength} {description}</p>
       <span className={styles.price}>{price} руб.</span>
-      <ButtonBuy className={styles.counterButton} type="button" availability={availability} />
+      <ButtonBuy className={styles.counterButton} type="button" availability={availability} productKey={productKey} name={title} image={image} price={price} />
     </Link>
   );
 }

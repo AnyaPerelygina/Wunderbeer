@@ -1,21 +1,48 @@
 import { createContext, useContext, useState, ReactNode } from "react";
 
 type CartContextType = {
+  items: { productKey: string; name: string; price: number; image: string; quantity: number }[];
   totalItems: number;
-  addItem: () => void;
-  removeItem: () => void;
+  addItem: (item: { productKey: string; name: string; price: number, image: string; }) => void;
+  removeItem: (productKey: string) => void;
 };
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export function CartProvider({ children }: { children: ReactNode }) {
-  const [totalItems, setTotalItems] = useState(0);
+  const [items, setItems] = useState<
+    { productKey: string; name: string; price: number; image: string; quantity: number }[]
+  >([]);
 
-  const addItem = () => setTotalItems((prev) => prev + 1);
-  const removeItem = () => setTotalItems((prev) => (prev > 0 ? prev - 1 : 0));
+  const totalItems = items.reduce((total, item) => total + item.quantity, 0);
+
+  const addItem = (item: { productKey: string; name: string; price: number, image: string; }) => {
+    setItems((prevItems) => {
+      console.log('Добавляем товар:', item);
+      const existingItem = prevItems.find((i) => i.productKey === item.productKey);
+      if (existingItem) {
+        return prevItems.map((i) =>
+          i.productKey === item.productKey
+            ? { ...i, quantity: i.quantity + 1 }
+            : i
+        );
+      }
+      return [...prevItems, { ...item, quantity: 1 }];
+    });
+  };
+
+  const removeItem = (productKey:string) => {
+    setItems((prevItems) =>
+      prevItems
+        .map((item) =>
+          item.productKey === productKey ? { ...item, quantity: item.quantity - 1 } : item
+        )
+        .filter((item) => item.quantity > 0)
+    );
+  };
 
   return (
-    <CartContext.Provider value={{ totalItems, addItem, removeItem }}>
+    <CartContext.Provider value={{ items, totalItems, addItem, removeItem }}>
       {children}
     </CartContext.Provider>
   );

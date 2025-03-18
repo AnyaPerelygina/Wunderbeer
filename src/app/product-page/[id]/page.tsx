@@ -7,12 +7,12 @@ import Product from "@/app/components/product/[id]";
 
 export async function generateStaticParams() {
   return mockCatalogCards.map((product) => ({
-    id: product.key,
+    id: product.productKey,
   }));
 }
 
 export default function ProductPage({ params }: { params: { id: string } }) {
-  const product = mockCatalogCards.find((item) => item.key === params.id);
+  const product = mockCatalogCards.find((item) => item.productKey === params.id);
 
   if (!product) {
     return <p>Продукт не найден</p>;

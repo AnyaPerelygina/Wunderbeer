@@ -81,8 +81,8 @@ export default function CatalogList({ filteredCards }: CatalogListProps) {
         <ul className={styles.list}>
           {firstRow.map((card) => (
             <Card
-              key={card.key}
-              id={card.key}
+              key={card.productKey}
+              id={card.productKey}
               image={card.image}
               title={card.title}
               strength={card.strength}
@@ -90,7 +90,8 @@ export default function CatalogList({ filteredCards }: CatalogListProps) {
               price={card.price}
               isNew={card.new}
               isOnSale={card.discount}
-              inStock={card.availability}
+              productKey={card.productKey}
+              availability={card.availability}
             />
           ))}
         </ul>
@@ -131,8 +132,8 @@ export default function CatalogList({ filteredCards }: CatalogListProps) {
         <ul className={styles.list}>
           {secondRow.map((card) => (
             <Card
-              key={card.key}
-              id={card.key}
+              key={card.productKey}
+              id={card.productKey}
               image={card.image}
               title={card.title}
               strength={card.strength}
@@ -140,7 +141,8 @@ export default function CatalogList({ filteredCards }: CatalogListProps) {
               price={card.price}
               isNew={card.new}
               isOnSale={card.discount}
-              inStock={card.availability}
+              productKey={card.productKey}
+              availability={card.availability}
             />
           ))}
         </ul>

@@ -1,12 +1,12 @@
 import React from 'react';
 import Banner from '../../ui/banner/banner';
-import ShoppingCardBlock from '@/app/components/shopping-card-block/shopping-card-block';
+import ShoppingCartBlock from '@/app/components/shopping-card-block/shopping-cart-block'
 
-export default function ShoppingCard() {
+export default function ShoppingCart() {
   return (
     <React.Fragment>
       <Banner image={'banner-3.webp'} title={'Корзина'}/>
-      <ShoppingCardBlock />
+      <ShoppingCartBlock />
     </React.Fragment>
   )
 }

@@ -1,6 +1,6 @@
 const mockCatalogCards = [
   {
-    key: 'beer1',
+    productKey: 'beer1',
     type: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
@@ -19,7 +19,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Mild Lager 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer2',
+    productKey: 'beer2',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -38,7 +38,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.5мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer3',
+    productKey: 'beer3',
     type: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
@@ -57,7 +57,7 @@ const mockCatalogCards = [
     text: 'Пиво Premium Beer светлое, нефильтрованное, 4.6%, 0.45мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer4',
+    productKey: 'beer4',
     type: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
@@ -76,7 +76,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Mild Lager 4.6%, 0.4мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer5',
+    productKey: 'beer5',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -95,7 +95,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Golden Beer 8.5%, 0.5мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer6',
+    productKey: 'beer6',
     type: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
@@ -114,7 +114,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое нефильтрованное Premium Beer 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer7',
+    productKey: 'beer7',
     type: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
@@ -133,7 +133,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Mild Lager 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer8',
+    productKey: 'beer8',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -152,7 +152,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Golden Beer 8.5%, 0.5мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer9',
+    productKey: 'beer9',
     type: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
@@ -171,7 +171,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое нефильтрованное Premium Beer 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer10',
+    productKey: 'beer10',
     type: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
@@ -190,7 +190,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое нефильтрованное Premium Beer 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer11',
+    productKey: 'beer11',
     type: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
@@ -209,7 +209,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Mild Lager 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer12',
+    productKey: 'beer12',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -228,7 +228,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer13',
+    productKey: 'beer13',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -247,7 +247,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.5мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer14',
+    productKey: 'beer14',
     type: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
@@ -266,7 +266,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Mild Lager 4.6%, 0.5мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer15',
+    productKey: 'beer15',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -285,7 +285,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.4мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer16',
+    productKey: 'beer16',
     type: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
@@ -304,7 +304,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое нефильтрованное Premium Beer 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer17',
+    productKey: 'beer17',
     type: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
@@ -323,7 +323,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Mild Lager 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer18',
+    productKey: 'beer18',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -342,7 +342,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer19',
+    productKey: 'beer19',
     type: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
@@ -361,7 +361,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое нефильтрованное Premium Beer 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer20',
+    productKey: 'beer20',
     type: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
@@ -380,7 +380,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Mild Lager 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer21',
+    productKey: 'beer21',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -399,7 +399,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.5мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer22',
+    productKey: 'beer22',
     type: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
@@ -418,7 +418,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое нефильтрованное Premium Beer 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer23',
+    productKey: 'beer23',
     type: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
@@ -437,7 +437,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое нефильтрованное Premium Beer 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer24',
+    productKey: 'beer24',
     type: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
@@ -456,7 +456,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Mild Lager 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer25',
+    productKey: 'beer25',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -475,7 +475,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.5мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer26',
+    productKey: 'beer26',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -494,7 +494,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.4мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer27',
+    productKey: 'beer27',
     type: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
@@ -513,7 +513,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Mild Lager 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer28',
+    productKey: 'beer28',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -532,7 +532,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.4мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer29',
+    productKey: 'beer29',
     type: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
@@ -551,7 +551,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое нефильтрованное Premium Beer 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer30',
+    productKey: 'beer30',
     type: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
@@ -570,7 +570,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Mild Lager 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer31',
+    productKey: 'beer31',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -589,7 +589,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.5мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer32',
+    productKey: 'beer32',
     type: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
@@ -608,7 +608,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое нефильтрованное Premium Beer 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer33',
+    productKey: 'beer33',
     type: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
@@ -627,7 +627,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Mild Lager 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer34',
+    productKey: 'beer34',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -646,7 +646,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.5мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer35',
+    productKey: 'beer35',
     type: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
@@ -665,7 +665,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое нефильтрованное Premium Beer 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer36',
+    productKey: 'beer36',
     type: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
@@ -684,7 +684,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое нефильтрованное Premium Beer 4.6%, 0.5мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer37',
+    productKey: 'beer37',
     type: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
@@ -703,7 +703,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Mild Lager 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer38',
+    productKey: 'beer38',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -722,7 +722,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.4мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer39',
+    productKey: 'beer39',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -741,7 +741,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer40',
+    productKey: 'beer40',
     type: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
@@ -760,7 +760,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Mild Lager 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer41',
+    productKey: 'beer41',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -779,7 +779,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer42',
+    productKey: 'beer42',
     type: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
@@ -798,7 +798,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое нефильтрованное Premium Beer 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer43',
+    productKey: 'beer43',
     type: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
@@ -817,7 +817,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Mild Lager 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer44',
+    productKey: 'beer44',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -836,7 +836,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.5мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer45',
+    productKey: 'beer45',
     type: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
@@ -855,7 +855,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое нефильтрованное Premium Beer 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer46',
+    productKey: 'beer46',
     type: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
@@ -874,7 +874,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Mild Lager 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer47',
+    productKey: 'beer47',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -893,7 +893,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.5мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer48',
+    productKey: 'beer48',
     type: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
@@ -912,7 +912,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое нефильтрованное Premium Beer 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer49',
+    productKey: 'beer49',
     type: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
@@ -931,7 +931,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое нефильтрованное Premium Beer 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer50',
+    productKey: 'beer50',
     type: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
@@ -950,7 +950,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Mild Lager 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer51',
+    productKey: 'beer51',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -969,7 +969,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.5мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer52',
+    productKey: 'beer52',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -988,7 +988,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.45мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer53',
+    productKey: 'beer53',
     type: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
@@ -1007,7 +1007,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Mild Lager 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer54',
+    productKey: 'beer54',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -1026,7 +1026,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer55',
+    productKey: 'beer55',
     type: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
@@ -1045,7 +1045,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое нефильтрованное Premium Beer 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer56',
+    productKey: 'beer56',
     type: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
@@ -1064,7 +1064,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Mild Lager 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer57',
+    productKey: 'beer57',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -1083,7 +1083,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.5мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer58',
+    productKey: 'beer58',
     type: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
@@ -1102,7 +1102,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое нефильтрованное Premium Beer 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer59',
+    productKey: 'beer59',
     type: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
@@ -1121,7 +1121,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Mild Lager 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer60',
+    productKey: 'beer60',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -1140,7 +1140,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.25мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer61',
+    productKey: 'beer61',
     type: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
@@ -1159,7 +1159,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое нефильтрованное Premium Beer 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer62',
+    productKey: 'beer62',
     type: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
@@ -1178,7 +1178,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое нефильтрованное Premium Beer 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer63',
+    productKey: 'beer63',
     type: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
@@ -1197,7 +1197,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Mild Lager 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer64',
+    productKey: 'beer64',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -1216,7 +1216,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer65',
+    productKey: 'beer65',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -1235,7 +1235,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer66',
+    productKey: 'beer66',
     type: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
@@ -1254,7 +1254,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Mild Lager 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer67',
+    productKey: 'beer67',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -1273,7 +1273,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.4мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer68',
+    productKey: 'beer68',
     type: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
@@ -1292,7 +1292,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое нефильтрованное Premium Beer 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer69',
+    productKey: 'beer69',
     type: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
@@ -1311,7 +1311,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Mild Lager 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer70',
+    productKey: 'beer70',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -1330,7 +1330,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.5мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer71',
+    productKey: 'beer71',
     type: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
@@ -1349,7 +1349,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое нефильтрованное Premium Beer 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer72',
+    productKey: 'beer72',
     type: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
@@ -1368,7 +1368,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Mild Lager 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer73',
+    productKey: 'beer73',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -1387,7 +1387,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.5мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer74',
+    productKey: 'beer74',
     type: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
@@ -1406,7 +1406,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое нефильтрованное Premium Beer 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer75',
+    productKey: 'beer75',
     type: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
@@ -1425,7 +1425,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое нефильтрованное Premium Beer 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer76',
+    productKey: 'beer76',
     type: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
@@ -1444,7 +1444,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Mild Lager 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer77',
+    productKey: 'beer77',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -1463,7 +1463,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.4мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer78',
+    productKey: 'beer78',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -1482,7 +1482,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.45мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer79',
+    productKey: 'beer79',
     type: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
@@ -1501,7 +1501,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Mild Lager 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer80',
+    productKey: 'beer80',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -1520,7 +1520,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.5мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer81',
+    productKey: 'beer81',
     type: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
@@ -1539,7 +1539,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое нефильтрованное Premium Beer 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer82',
+    productKey: 'beer82',
     type: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
@@ -1558,7 +1558,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Mild Lager 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer83',
+    productKey: 'beer83',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -1577,7 +1577,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.5мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer84',
+    productKey: 'beer84',
     type: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
@@ -1596,7 +1596,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое нефильтрованное Premium Beer 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer85',
+    productKey: 'beer85',
     type: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
@@ -1615,7 +1615,7 @@ const mockCatalogCards = [
     text: 'Пиво светлое фильтрованное пастеризованное Mild Lager 4.6%, 0.355мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer86',
+    productKey: 'beer86',
     type: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
@@ -1634,7 +1634,7 @@ const mockCatalogCards = [
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.4мл, в стеклянной бутылке.'
   },
   {
-    key: 'beer87',
+    productKey: 'beer87',
     type: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',

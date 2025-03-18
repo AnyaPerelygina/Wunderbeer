@@ -4,11 +4,20 @@ import { ButtonProps } from './button-buy.types';
 
 import styles from './button-buy.module.scss';
 
-export default function ButtonBuy({ className = '', type='button', availability = true, disabled = false }: ButtonProps) {
+export default function ButtonBuy({
+  className = '',
+  type = 'button',
+  availability = true,
+  disabled = false,
+  productKey,
+  name,
+  price,
+  image,
+}: ButtonProps) {
   const [count, setCount] = useState(0);
   const { addItem, removeItem } = useCart();
 
-  if(!availability) {
+  if (!availability) {
     return (
       <button type={type} className={`${styles.button} ${className}`} disabled>
         Нет в наличии
@@ -20,22 +29,25 @@ export default function ButtonBuy({ className = '', type='button', availability 
     event.stopPropagation();
     event.preventDefault();
     setCount((prev) => prev + 1);
-    addItem();
-  }
+
+    addItem({ productKey: productKey, name, price, image });
+  };
 
   const handleDecreament = (event: React.MouseEvent) => {
     event.stopPropagation();
     event.preventDefault();
     setCount((prev) => prev - 1);
-    removeItem();
-  }
+    removeItem(productKey);
+  };
 
   const handleClick = (event: React.MouseEvent) => {
     event.stopPropagation();
     event.preventDefault();
     setCount(1);
-    addItem();
-  }
+
+    console.log('Добавляем в корзину:', productKey);
+    addItem({ productKey: productKey, name, price, image });
+  };
 
   return (
     <div className={styles.buttonWrapper}>
@@ -44,7 +56,7 @@ export default function ButtonBuy({ className = '', type='button', availability 
           <button
             type={type}
             className={`${styles.button} ${className}`}
-            onClick={count === 0 ? handleClick : undefined}
+            onClick={handleClick}
             disabled={disabled}
           >
             Купить

@@ -4,4 +4,8 @@ export type ButtonProps = {
   type: 'button' | 'submit' | 'reset';
   availability: boolean;
   disabled?: boolean;
+  productKey: string;
+  name: string;
+  price: number;
+  image: string;
 };

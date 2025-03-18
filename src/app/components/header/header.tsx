@@ -41,7 +41,6 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const headerRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
-  const [totalItems] = useState(0);
 
   useEffect(() => {
     if (isOpen) {
@@ -90,7 +89,7 @@ export default function Header() {
           <div className={styles.wrapper}>
             <Social SocialLinks={[]} onLinkClick={handleLinkClick}/>
             <Logo />
-            <ShoppingBasket totalItems={totalItems} />
+            <ShoppingBasket />
             <Nav navLinks={navLinks} onLinkClick={handleLinkClick}/>
           </div>
         )}
@@ -113,7 +112,7 @@ export default function Header() {
                 alt={'Закрыть меню.'} />
             </button>
             <div className={`${styles.menu} ${isOpen ? styles['is-opened'] : ''}`}>
-              <ShoppingBasket totalItems={totalItems} />
+              <ShoppingBasket />
               <Nav navLinks={navLinks} onLinkClick={handleLinkClick}/>
               <Social SocialLinks={[]} onLinkClick={handleLinkClick} />
             </div>

@@ -23,7 +23,7 @@ export default function Sitemap() {
           <Link href={'/catalog'}>Каталог;</Link>
         </li>
         <li className={styles.item}>
-          <Link href={'/shopping-card'}>Корзина;</Link>
+          <Link href={'/shopping-cart'}>Корзина;</Link>
         </li>
         <li className={styles.item}>
           <Link href={'/distribution'}>Дистрибуция;</Link>
