@@ -20,7 +20,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
 
   return (
     <React.Fragment>
-      <Banner image={'banner-2.webp'} title={product.type}/>
+      <Banner image={'banner-2.webp'} title={product.productType}/>
       <Product params={params} />
     </React.Fragment>
   );
