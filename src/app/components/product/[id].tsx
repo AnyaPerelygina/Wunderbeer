@@ -180,7 +180,7 @@ export default function Product({ params }: ProductProps) {
               />
             </div>
             <div className={styles.characteristics}>
-              <h3 className={styles.title}>{product.type} {product.title}</h3>
+              <h3 className={styles.title}>{product.productType} {product.title}</h3>
               <p className={styles.description}>{product.description}</p>
               <h4 className={styles.strength}>
                 Крепость: <span>{product.strength} %</span>
@@ -191,7 +191,7 @@ export default function Product({ params }: ProductProps) {
               <h4 className={styles.price}>
                 {product.price} руб. <span>шт.</span>
               </h4>
-              <ButtonBuy type="button" availability={product.availability} productKey={product.productKey} name={product.title} image={product.image} price={product.price} />
+              <ButtonBuy type="button" availability={product.availability} productKey={product.productKey} name={product.title} image={product.image} price={product.price} productType={product.productType} size={product.size} description={product.description} />
               </div>
             <div className={styles.wrapperForm}>
               <FormForQuestions />
@@ -299,6 +299,8 @@ export default function Product({ params }: ProductProps) {
                           isNew={card.new}
                           isOnSale={card.discount}
                           availability={card.availability}
+                          productType={card.productType}
+                          size={card.size}
                         />
                       </SwiperSlide>
                     ))}
@@ -333,6 +335,8 @@ export default function Product({ params }: ProductProps) {
                       isNew={card.new}
                       isOnSale={card.discount}
                       availability={card.availability}
+                      productType={card.productType}
+                      size={card.size}
                     />
                   ))}
                 </div>

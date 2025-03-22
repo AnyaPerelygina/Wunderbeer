@@ -13,6 +13,9 @@ export default function ButtonBuy({
   name,
   price,
   image,
+  size,
+  description,
+  productType
 }: ButtonProps) {
   const [count, setCount] = useState(0);
   const { addItem, removeItem } = useCart();
@@ -30,7 +33,9 @@ export default function ButtonBuy({
     event.preventDefault();
     setCount((prev) => prev + 1);
 
-    addItem({ productKey: productKey, name, price, image });
+    addItem({
+      productKey: productKey, name, price, image, size, description,
+      productType });
   };
 
   const handleDecreament = (event: React.MouseEvent) => {
@@ -45,8 +50,8 @@ export default function ButtonBuy({
     event.preventDefault();
     setCount(1);
 
-    console.log('Добавляем в корзину:', productKey);
-    addItem({ productKey: productKey, name, price, image });
+    addItem({ productKey: productKey, name, price, image, size, description,
+      productType });
   };
 
   return (

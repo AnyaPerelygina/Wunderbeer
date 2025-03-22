@@ -1,6 +1,7 @@
 export type CardProps = {
   id: string;
   productKey: string;
+  productType: string;
   image: string;
   title: string;
   description: string;
@@ -10,4 +11,5 @@ export type CardProps = {
   isOnSale?: boolean;
   availability: boolean;
   text?: string;
+  size: number;
 };

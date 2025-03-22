@@ -5,7 +5,10 @@ export type ButtonProps = {
   availability: boolean;
   disabled?: boolean;
   productKey: string;
+  productType: string;
   name: string;
   price: number;
   image: string;
+  size: number;
+  description: string;
 };

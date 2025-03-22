@@ -1,7 +1,7 @@
 const mockCatalogCards = [
   {
     productKey: 'beer1',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
     description: 'Светлое, Фильрованное',
@@ -20,7 +20,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer2',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -39,7 +39,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer3',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
     description: 'Светлое, Нефильрованное',
@@ -58,7 +58,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer4',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
     description: 'Светлое, Фильрованное',
@@ -77,7 +77,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer5',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -96,7 +96,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer6',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
     description: 'Светлое, Нефильрованное',
@@ -115,7 +115,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer7',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
     description: 'Светлое, Фильрованное',
@@ -134,7 +134,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer8',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -153,7 +153,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer9',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
     description: 'Светлое, Нефильрованное',
@@ -172,7 +172,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer10',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
     description: 'Светлое, Нефильрованное',
@@ -191,7 +191,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer11',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
     description: 'Светлое, Фильрованное',
@@ -210,7 +210,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer12',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -229,7 +229,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer13',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -248,7 +248,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer14',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
     description: 'Светлое, Фильрованное',
@@ -267,7 +267,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer15',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -286,7 +286,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer16',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
     description: 'Светлое, Нефильрованное',
@@ -305,7 +305,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer17',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
     description: 'Светлое, Фильрованное',
@@ -324,7 +324,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer18',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -343,7 +343,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer19',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
     description: 'Светлое, Нефильрованное',
@@ -362,7 +362,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer20',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
     description: 'Светлое, Фильрованное',
@@ -381,7 +381,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer21',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -400,7 +400,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer22',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
     description: 'Светлое, Нефильрованное',
@@ -419,7 +419,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer23',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
     description: 'Светлое, Нефильрованное',
@@ -438,7 +438,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer24',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
     description: 'Светлое, Фильрованное',
@@ -457,7 +457,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer25',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -476,7 +476,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer26',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -495,7 +495,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer27',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
     description: 'Светлое, Фильрованное',
@@ -514,7 +514,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer28',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -533,7 +533,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer29',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
     description: 'Светлое, Нефильрованное',
@@ -552,7 +552,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer30',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
     description: 'Светлое, Фильрованное',
@@ -571,7 +571,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer31',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -590,7 +590,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer32',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
     description: 'Светлое, Нефильрованное',
@@ -609,7 +609,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer33',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
     description: 'Светлое, Фильрованное',
@@ -628,7 +628,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer34',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -647,7 +647,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer35',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
     description: 'Светлое, Нефильрованное',
@@ -666,7 +666,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer36',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
     description: 'Светлое, Нефильрованное',
@@ -685,7 +685,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer37',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
     description: 'Светлое, Фильрованное',
@@ -704,7 +704,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer38',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -723,7 +723,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer39',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -742,7 +742,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer40',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
     description: 'Светлое, Фильрованное',
@@ -761,7 +761,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer41',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -780,7 +780,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer42',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
     description: 'Светлое, Нефильрованное',
@@ -799,7 +799,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer43',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
     description: 'Светлое, Фильрованное',
@@ -818,7 +818,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer44',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -837,7 +837,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer45',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
     description: 'Светлое, Нефильрованное',
@@ -856,7 +856,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer46',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
     description: 'Светлое, Фильрованное',
@@ -875,7 +875,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer47',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -894,7 +894,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer48',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
     description: 'Светлое, Нефильрованное',
@@ -913,7 +913,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer49',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
     description: 'Светлое, Нефильрованное',
@@ -932,7 +932,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer50',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
     description: 'Светлое, Фильрованное',
@@ -951,7 +951,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer51',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -970,7 +970,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer52',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -989,7 +989,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer53',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
     description: 'Светлое, Фильрованное',
@@ -1008,7 +1008,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer54',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -1027,7 +1027,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer55',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
     description: 'Светлое, Нефильрованное',
@@ -1046,7 +1046,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer56',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
     description: 'Светлое, Фильрованное',
@@ -1065,7 +1065,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer57',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -1084,7 +1084,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer58',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
     description: 'Светлое, Нефильрованное',
@@ -1103,7 +1103,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer59',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
     description: 'Светлое, Фильрованное',
@@ -1122,7 +1122,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer60',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -1141,7 +1141,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer61',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
     description: 'Светлое, Нефильрованное',
@@ -1160,7 +1160,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer62',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
     description: 'Светлое, Нефильрованное',
@@ -1179,7 +1179,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer63',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
     description: 'Светлое, Фильрованное',
@@ -1198,7 +1198,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer64',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -1217,7 +1217,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer65',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -1236,7 +1236,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer66',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
     description: 'Светлое, Фильрованное',
@@ -1255,7 +1255,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer67',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -1274,7 +1274,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer68',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
     description: 'Светлое, Нефильрованное',
@@ -1293,7 +1293,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer69',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
     description: 'Светлое, Фильрованное',
@@ -1312,7 +1312,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer70',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -1331,7 +1331,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer71',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
     description: 'Светлое, Нефильрованное',
@@ -1350,7 +1350,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer72',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
     description: 'Светлое, Фильрованное',
@@ -1369,7 +1369,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer73',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -1388,7 +1388,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer74',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
     description: 'Светлое, Нефильрованное',
@@ -1407,7 +1407,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer75',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
     description: 'Светлое, Нефильрованное',
@@ -1426,7 +1426,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer76',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
     description: 'Светлое, Фильрованное',
@@ -1445,7 +1445,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer77',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -1464,7 +1464,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer78',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -1483,7 +1483,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer79',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
     description: 'Светлое, Фильрованное',
@@ -1502,7 +1502,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer80',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -1521,7 +1521,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer81',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
     description: 'Светлое, Нефильрованное',
@@ -1540,7 +1540,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer82',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
     description: 'Светлое, Фильрованное',
@@ -1559,7 +1559,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer83',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -1578,7 +1578,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer84',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
     description: 'Светлое, Нефильрованное',
@@ -1597,7 +1597,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer85',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-1',
     title: 'Mild Lager',
     description: 'Светлое, Фильрованное',
@@ -1616,7 +1616,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer86',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-2',
     title: 'Golden Beer',
     description: 'Светлое, Фильрованное',
@@ -1635,7 +1635,7 @@ const mockCatalogCards = [
   },
   {
     productKey: 'beer87',
-    type: 'Пиво',
+    productType: 'Пиво',
     image: 'beer-3',
     title: 'Premium Beer',
     description: 'Светлое, Нефильрованное',

@@ -31,7 +31,10 @@ export default function ShoppingCartBlock() {
                   height={571}
                   alt={'Изображение пивной бутылки.'}
                 />
-                <span>{item.name}</span>
+                <h2>{item.name}</h2>
+                <span>{item.productType} {item.name}</span>
+                <span>{item.description}</span>
+                <span>{item.size}</span>
                 <span>Цена: {item.price} ₽</span>
                 <span>Количество: {item.quantity}</span>
               </li>
