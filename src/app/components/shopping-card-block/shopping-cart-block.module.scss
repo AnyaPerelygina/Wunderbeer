@@ -1,5 +1,6 @@
 @import '../../../style/variables.scss';
 @import '../../../style/mixins.scss';
+@import '../../../style/global/utils.scss';
 
 .root {
   display: flex;
@@ -8,7 +9,7 @@
   min-height: 47vh;
 }
 
-.wrapper {
+.emptyWrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -84,4 +85,108 @@
 .list {
   display: flex;
   flex-direction: column;
+}
+
+.fullWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  padding: 60px 0;
+  max-width: 1100px;
+}
+
+.table {
+  grid-column: span 6;
+  border-collapse: collapse;
+
+  tbody tr {
+    border-top: 1px solid $color-whisper;
+  }
+}
+
+.tabTitle {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+  color: $color-asparagus;
+  text-align: start;
+
+  padding: 0 0 10px;
+}
+
+.tabItem {
+  td {
+    padding: 20px 0;
+    vertical-align: top;
+  }
+}
+
+.productPrice {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 30px;
+  color: $color-default-black;
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+
+  span {
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 400;
+  }
+
+  span:first-child {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  span:last-child {
+    font-weight: 300;
+  }
+}
+
+.result {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+}
+
+.totalPrice {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+
+  border-radius: 50px;
+  background-color: $color-kournikova;
+  padding: 7px 59px;
+  width: 100%;
+  max-width: 825px;
+}
+
+.btnOrder {
+  width: fit-content;
+
+  a {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+
+    display: flex;
+    width: fit-content;
+    padding: 14px 65px;
+  }
 }

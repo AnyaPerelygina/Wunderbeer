@@ -1,5 +1,6 @@
 export interface CardsProps {
   productKey: string;
+  productType: string;
   type: string;
   image: string;
   title: string;
@@ -16,6 +17,7 @@ export interface CardsProps {
   new: boolean;
   tags: string;
   text: string;
+
 }
 
 export type CatalogListProps = {

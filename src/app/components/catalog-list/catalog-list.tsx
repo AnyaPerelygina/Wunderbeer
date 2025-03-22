@@ -92,6 +92,8 @@ export default function CatalogList({ filteredCards }: CatalogListProps) {
               isOnSale={card.discount}
               productKey={card.productKey}
               availability={card.availability}
+              productType={card.productType}
+              size={card.size}
             />
           ))}
         </ul>
@@ -143,6 +145,8 @@ export default function CatalogList({ filteredCards }: CatalogListProps) {
               isOnSale={card.discount}
               productKey={card.productKey}
               availability={card.availability}
+              productType={card.productType}
+              size={card.size}
             />
           ))}
         </ul>
