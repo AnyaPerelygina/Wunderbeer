@@ -66,9 +66,11 @@ export default function ShoppingCartBlock() {
                       <span>{item.size}</span>
                     </td>
                     <td className={styles.productQuantity}>
-                      <button onClick={() => handleDecrement(item.productKey)}>-</button>
-                      <span className={styles.counterNumber}>{item.quantity}</span>
-                      <button onClick={() => handleIncrement(item.productKey)}>+</button>
+                      <div className={styles.productQuantityWrapper}>
+                        <button onClick={() => handleDecrement(item.productKey)}></button>
+                        <span className={styles.counterNumber}>{item.quantity}</span>
+                        <button onClick={() => handleIncrement(item.productKey)}></button>
+                      </div>
                     </td>
                     <td className={styles.productPrice}>{item.price * item.quantity} ₽</td>
                     <td className={styles.productСalculation}>{item.price} ₽ * {item.quantity}</td>

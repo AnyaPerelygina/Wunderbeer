@@ -90,15 +90,15 @@
 .fullWrapper {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 0;
 
-  padding: 60px 0;
-  max-width: 1100px;
+  padding: 55px 0 101px;
+  max-width: 1111px;
 }
 
 .table {
-  grid-column: span 6;
   border-collapse: collapse;
+  margin: 0;
 
   tbody tr {
     border-top: 1px solid $color-whisper;
@@ -106,19 +106,23 @@
 }
 
 .tabTitle {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 30px;
   color: $color-asparagus;
   text-align: start;
 
-  padding: 0 0 10px;
+  padding: 0 0 0 6px;
 }
 
 .tabItem {
   td {
-    padding: 20px 0;
+    padding: 19px 0 19px 6px;
     vertical-align: top;
+
+    img {
+      margin: 0 auto;
+    }
   }
 }
 
@@ -149,32 +153,159 @@
   }
 }
 
+.productQuantityWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 70px;
+
+  span {
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 500;
+  }
+
+  button {
+    position: relative;
+    border: none;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    padding: 16px;
+
+    outline: none;
+
+    &:first-child {
+      &::after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 16px;
+        height: 4px;
+        border-radius: 5px;
+        background-color: $color-kournikova;
+      }
+    }
+
+    &:last-child {
+      &::before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%) rotate(90deg);
+        width: 16px;
+        height: 4px;
+        border-radius: 5px;
+        background-color: $color-kournikova;
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 16px;
+        height: 4px;
+        border-radius: 5px;
+        background-color: $color-kournikova;
+      }
+    }
+
+    @include hover-focus {
+      &:first-child {
+        &::after {
+          opacity: 0.8;
+        }
+      }
+
+      &:last-child {
+        &::before {
+          opacity: 0.8;
+        }
+
+        &::after {
+          opacity: 0.8;
+        }
+      }
+    }
+
+    &:active {
+      &:first-child {
+        &::after {
+          opacity: 0.5;
+        }
+      }
+
+      &:last-child {
+        &::before {
+          opacity: 0.8;
+        }
+
+        &::after {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+.productСalculation {
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 400;
+  color: $color-dark-gray;
+}
+
+.btnDeleteProduct button {
+  border: none;
+  background-color: transparent;
+
+  @include hover-focus {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
 .result {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
+  gap: 30px;
 
   width: 100%;
 }
 
 .totalPrice {
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 30px;
-
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  gap: 30px;
+  gap: 61px;
 
   border-radius: 50px;
   background-color: $color-kournikova;
-  padding: 7px 59px;
+  padding: 7px 73px;
   width: 100%;
   max-width: 825px;
+
+  span {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 0.8px;
+    color: $color-default-black;
+  }
 }
 
 .btnOrder {
@@ -188,5 +319,6 @@
     display: flex;
     width: fit-content;
     padding: 14px 65px;
+    white-space: pre;
   }
 }
