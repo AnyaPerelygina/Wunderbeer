@@ -91,7 +91,7 @@ export default function ShoppingCartBlock() {
                     <span>{items.reduce((total, item) => total + item.price * item.quantity, 0)} ₽</span>
                   </div>
                   <div className={styles.btnOrder}>
-                    <LinkNew href={"#"}>Перейти к оформлению</LinkNew>
+                    <LinkNew href={"/order"}>Перейти к оформлению</LinkNew>
                   </div>
                 </div>
               </div>
@@ -149,7 +149,7 @@ export default function ShoppingCartBlock() {
                   <span>{items.reduce((total, item) => total + item.price * item.quantity, 0)} ₽</span>
                 </div>
                 <div className={styles.btnOrder}>
-                  <LinkNew href={"#"}>Перейти к оформлению</LinkNew>
+                  <LinkNew href={"/order"}>Перейти к оформлению</LinkNew>
                 </div>
               </div>
             </div>
