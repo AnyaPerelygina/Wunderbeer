@@ -1,2 +1,20 @@
 @import '../../../style/variables.scss';
 @import '../../../style/mixins.scss';
+
+.root {
+  padding: 30px 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+}
+
+.title {
+  font-size: 30px;
+  line-height: 22px;
+  font-weight: 400;
+  color: $color-default-black;
+
+  grid-column: span 2;
+}
