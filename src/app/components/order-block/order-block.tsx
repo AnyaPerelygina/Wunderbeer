@@ -16,7 +16,7 @@ export default function OrderBlock() {
 
   const totalOrderPrice = items.reduce((total, item) => total + item.price * item.quantity, 0);
 
-  const deliveryCost = totalOrderPrice > 1000 ? 0 : 144;
+  const deliveryCost = selectedDelivery === 'delivery' && totalOrderPrice <= 1000 ? 144 : 0;
 
   const totalPriceWithDelivery = totalOrderPrice + deliveryCost;
 
