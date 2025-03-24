@@ -9,11 +9,11 @@ import Delivery from '@/assets/delivery.svg';
 import Pickup from '@/assets/pickup.svg';
 
 import styles from './form-orders.module.scss';
-import { CheckboxState, CheckboxChangeEvent } from './form-order.types';
+import { CheckboxState, CheckboxChangeEvent, FormOrdersProps } from './form-order.types';
 
-export default function FormOrders() {
+export default function FormOrders({ setSelectedDelivery }: FormOrdersProps) {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitted' | 'error'>('idle');
-  const [selectedDelivery, setSelectedDelivery] = useState<'delivery' | 'pickup'>('delivery');
+  const [selectedDelivery, setSelectedDeliveryLocal] = useState<'delivery' | 'pickup'>('delivery');
   const [isChecked, setIsChecked] = useState<CheckboxState>(false);
 
   const handleCheckboxChange = (event: CheckboxChangeEvent): void => {
@@ -192,7 +192,10 @@ export default function FormOrders() {
                 name="deliveryType"
                 className={styles.hiddenInput}
                 checked={selectedDelivery === 'delivery'}
-                onChange={() => setSelectedDelivery('delivery')}
+                onChange={() => {
+                  setSelectedDeliveryLocal('delivery');
+                  setSelectedDelivery('delivery');
+                }}
               />
               <Icon Icon={Delivery} width={30} height={37} />
               <span className={styles.customToggleText}>Доставка</span>
@@ -206,7 +209,10 @@ export default function FormOrders() {
                 name="deliveryType"
                 className={styles.hiddenInput}
                 checked={selectedDelivery === 'pickup'}
-                onChange={() => setSelectedDelivery('pickup')}
+                onChange={() => {
+                  setSelectedDeliveryLocal('pickup');
+                  setSelectedDelivery('pickup');
+                }}
               />
               <Icon Icon={Pickup} width={48} height={23} />
               <span className={styles.customToggleText}>Самовывоз</span>
