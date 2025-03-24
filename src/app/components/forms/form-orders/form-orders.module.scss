@@ -1,0 +1,29 @@
+@import '../../../../style/variables.scss';
+@import '../../../../style/mixins.scss';
+
+.hiddenInput {
+  display: none;
+}
+
+.customToggle {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 500;
+
+  width: fit-content;
+
+  .customLabel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    border: 1px solid #d7d7d7;
+    background-color: transparent;
+
+    cursor: pointer;
+
+    &.checked {
+      border: 1px solid $color-asparagus;
+    }
+  }
+}
