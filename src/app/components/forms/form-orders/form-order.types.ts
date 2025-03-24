@@ -4,4 +4,5 @@ export type CheckboxChangeEvent = React.ChangeEvent<HTMLInputElement>;
 
 export interface FormOrdersProps {
   setSelectedDelivery: (deliveryType: 'delivery' | 'pickup') => void;
+  clearCart: () => void;
 }

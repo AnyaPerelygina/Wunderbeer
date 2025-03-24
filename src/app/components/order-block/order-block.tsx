@@ -11,7 +11,7 @@ import FormOrders from '../forms/form-orders/form-orders';
 import styles from './order-block.module.scss';
 
 export default function OrderBlock() {
-  const { items } = useCart();
+  const { items, removeItemCompletely } = useCart();
   const [selectedDelivery, setSelectedDelivery] = useState<'delivery' | 'pickup'>('delivery');
 
   const totalOrderPrice = items.reduce((total, item) => total + item.price * item.quantity, 0);
@@ -20,11 +20,15 @@ export default function OrderBlock() {
 
   const totalPriceWithDelivery = totalOrderPrice + deliveryCost;
 
+  const clearCart = () => {
+    items.forEach((item) => removeItemCompletely(item.productKey));
+  };
+
   return (
     <section className={styles.root}>
       <Container className={styles.container}>
         <h2 className={styles.title}>Ваши контакты</h2>
-        <FormOrders setSelectedDelivery={setSelectedDelivery} />
+        <FormOrders setSelectedDelivery={setSelectedDelivery} clearCart={clearCart} />
         <div className={styles.shoppingCart}>
           <h3 className={styles.subTitle}>Выбранные товары</h3>
           <ul className={styles.list}>

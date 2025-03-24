@@ -1,24 +1,24 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 import Button from '@/ui/button/button';
 import Icon from '@/ui/icon/icon';
 import Delivery from '@/assets/delivery.svg';
 import Pickup from '@/assets/pickup.svg';
+import FormDonePopup from '@/app/components/popup/form-done/form-done';
 
 import styles from './form-orders.module.scss';
 import { CheckboxState, CheckboxChangeEvent, FormOrdersProps } from './form-order.types';
 
-export default function FormOrders({ setSelectedDelivery }: FormOrdersProps) {
+export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrdersProps) {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitted' | 'error'>('idle');
   const [selectedDelivery, setSelectedDeliveryLocal] = useState<'delivery' | 'pickup'>('delivery');
   const [isChecked, setIsChecked] = useState<CheckboxState>(false);
-
-  const handleCheckboxChange = (event: CheckboxChangeEvent): void => {
-    setIsChecked(event.target.checked);
-  };
+  const [showPopup, setShowPopup] = useState(false);
+  const router = useRouter();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -35,6 +35,10 @@ export default function FormOrders({ setSelectedDelivery }: FormOrdersProps) {
     message: false,
     adress: false
   });
+
+  const handleCheckboxChange = (event: CheckboxChangeEvent): void => {
+    setIsChecked(event.target.checked);
+  };
 
   const validateName = (name: string) => {
     const namePattern = /^[А-Яа-яЁё\s]+$/;
@@ -95,6 +99,7 @@ export default function FormOrders({ setSelectedDelivery }: FormOrdersProps) {
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000));
       setFormStatus('submitted');
+      clearCart();
 
       setFormData({
         name: '',
@@ -104,9 +109,13 @@ export default function FormOrders({ setSelectedDelivery }: FormOrdersProps) {
         adress: ''
       });
 
+      setShowPopup(true);
+
       setTimeout(() => {
-        setFormStatus('idle');
-      }, 2000);
+        setShowPopup(false);
+        router.push('/home');
+      }, 3000);
+
     } catch (error) {
       setFormStatus('error');
     }
@@ -229,6 +238,11 @@ export default function FormOrders({ setSelectedDelivery }: FormOrdersProps) {
             ></textarea>
           </label>
         </div>
+
+        {showPopup && (
+          <FormDonePopup />
+        )}
+
         {formStatus === 'submitted' ? (
           <span className={styles.statusSubmitted}>Отправлено!</span>
         ) : formStatus === 'error' ? (
