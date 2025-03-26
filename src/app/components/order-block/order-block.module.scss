@@ -2,7 +2,7 @@
 @import '../../../style/mixins.scss';
 
 .root {
-  padding: 30px 0;
+  padding: 33px 0;
 }
 
 .container {
@@ -15,8 +15,10 @@
   line-height: 22px;
   font-weight: 400;
   color: $color-default-black;
+  letter-spacing: -0.8px;
 
   grid-column: span 2;
+  margin: 0 0 35px;
 }
 
 .shoppingCart {

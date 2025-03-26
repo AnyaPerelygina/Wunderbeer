@@ -79,7 +79,7 @@ export default function ShoppingCartBlock() {
                       <div className={styles.productСalculation}>{item.price} ₽ * {item.quantity}</div>
                       <div className={styles.btnDeleteProduct}>
                         <button onClick={() => handleDelete(item.productKey)}>
-                          <Icon Icon={Trash} width={16} height={16} />
+                          <Icon link={Trash} width={16} height={16} />
                         </button>
                       </div>
                     </li>
@@ -136,7 +136,7 @@ export default function ShoppingCartBlock() {
                       <td className={styles.productСalculation}>{item.price} ₽ * {item.quantity}</td>
                       <td className={styles.btnDeleteProduct}>
                         <button onClick={() => handleDelete(item.productKey)}>
-                          <Icon Icon={Trash} width={16} height={16} />
+                          <Icon link={Trash} width={16} height={16} />
                         </button>
                       </td>
                     </tr>

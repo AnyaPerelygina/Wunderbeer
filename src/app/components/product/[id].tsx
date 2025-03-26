@@ -148,7 +148,7 @@ export default function Product({ params }: ProductProps) {
     <section className={styles.root}>
       <Container className={styles.container}>
         <Link href="/catalog" className={styles.linkReturn}>
-          <Icon Icon={Arrow} width={44} height={8} />
+          <Icon link={Arrow} width={44} height={8} />
           Вернуться в каталог
         </Link>
         <div className={styles.about} ref={aboutRef}>
