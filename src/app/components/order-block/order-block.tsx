@@ -16,7 +16,7 @@ export default function OrderBlock() {
 
   const totalOrderPrice = items.reduce((total, item) => total + item.price * item.quantity, 0);
 
-  const deliveryCost = selectedDelivery === 'delivery' && totalOrderPrice <= 1000 ? 144 : 0;
+  const deliveryCost = selectedDelivery === 'delivery' && totalOrderPrice < 999 ? 144 : 0;
 
   const totalPriceWithDelivery = totalOrderPrice + deliveryCost;
 
@@ -37,8 +37,8 @@ export default function OrderBlock() {
                 <div className={styles.productImg}>
                   <Image
                     src={`${basePath}/bottles/${item.image}.webp`}
-                    width={66}
-                    height={173}
+                    width={36}
+                    height={95}
                     alt={'Изображение пивной бутылки.'}
                   />
                 </div>
@@ -55,7 +55,7 @@ export default function OrderBlock() {
           <div className={styles.allInfo}>
             <div className={styles.allQuantity}>
               <span>Всего товаров:</span>
-              <span>{items.reduce((total, item) => total + item.quantity, 0)} шт.</span>
+              <span>{items.reduce((total, item) => total + item.quantity, 0)}</span>
             </div>
             <div className={styles.deliveryInfo}>
               <span>Доставка:</span>
@@ -64,7 +64,7 @@ export default function OrderBlock() {
           </div>
           <div className={styles.total}>
             <span>Итого:</span>
-            <span>{totalPriceWithDelivery} ₽</span>
+            <span>{totalPriceWithDelivery}₽</span>
           </div>
         </div>
       </Container>

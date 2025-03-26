@@ -40,8 +40,13 @@
 
   &:disabled {
     background-color: $color-light-grey;
+    border: 1px solid $color-light-grey;
     color: $color-default-white;
+
+    margin: 0;
+
     pointer-events: none;
+    user-select: none;
   }
 
   @include vp-767 {
