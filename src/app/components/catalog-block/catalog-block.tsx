@@ -45,7 +45,7 @@ export default function CatalogBlock() {
           <div className={styles.wrapperForm}>
             <FormForQuestions />
           </div>
-          <CatalogList filteredCards={[]} />
+          <CatalogList filteredCards={mockCatalogCards} />
         </div>
       </Container>
     </section>

@@ -1,7 +1,6 @@
 export interface CardsProps {
   productKey: string;
   productType: string;
-  type: string;
   image: string;
   title: string;
   description: string;
