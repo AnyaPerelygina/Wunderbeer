@@ -47,9 +47,9 @@ export default function Filter({ applyFilters }: FilterProps) {
         <div ref={filterRef} className={`${styles.wrapper} ${isOpen ? styles['is-opened'] : ''}`}>
           <button className={`${styles.toggle} ${isOpen ? styles['is-opened'] : ''}`} onClick={() => setIsOpen(!isOpen)}>
             <span className={styles.toggle__opened}>
-              <Icon link={WheatYellow} width={47} height={18} />
+              <Icon path={WheatYellow} width={47} height={18} />
                 Фильтр
-              <Icon link={WheatYellow} width={47} height={18} />
+              <Icon path={WheatYellow} width={47} height={18} />
             </span>
             <span className={styles.toggle__closed}>Закрыть</span>
           </button>

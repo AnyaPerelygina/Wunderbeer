@@ -52,9 +52,9 @@ export default function FilterBlock({ applyFilters }: FilterBlockProps) {
   return (
     <div className={styles.root}>
       <h3 className={styles.title}>
-        <Icon link={WheatYellow} width={47} height={18} />
+        <Icon path={WheatYellow} width={47} height={18} />
         Категории
-        <Icon link={WheatYellow} width={47} height={18} />
+        <Icon path={WheatYellow} width={47} height={18} />
         </h3>
       <div className={styles.categories}>
         {categories.map((cat) => (
@@ -87,9 +87,9 @@ export default function FilterBlock({ applyFilters }: FilterBlockProps) {
         ))}
       </div>
       <h3 className={styles.title}>
-        <Icon link={WheatYellow} width={47} height={18} />
+        <Icon path={WheatYellow} width={47} height={18} />
         Цена
-        <Icon link={WheatYellow} width={47} height={18} />
+        <Icon path={WheatYellow} width={47} height={18} />
       </h3>
       <div className={styles.priceFilter}>
         <input

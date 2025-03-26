@@ -1,9 +1,9 @@
 import React from 'react';
 import { IconProps } from './icon.types';
 
-const Icon: React.FC<IconProps> = ({ link, width = 47, height = 18 }) => {
+const Icon: React.FC<IconProps> = ({ path: Path, width = 47, height = 18 }) => {
   return (
-    <Icon link={link} width={width} height={height} />
+    <Path width={width} height={height} />
   );
 };
 

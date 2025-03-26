@@ -16,6 +16,8 @@ const nextConfig = {
       use: ['@svgr/webpack'],
     });
 
+    config.cache = false;
+
     return config;
   },
 };

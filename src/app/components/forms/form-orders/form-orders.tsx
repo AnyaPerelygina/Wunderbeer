@@ -206,7 +206,7 @@ export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrder
                   setSelectedDelivery('delivery');
                 }}
               />
-              <Icon link={Delivery} width={30} height={37} />
+              <Icon path={Delivery} width={30} height={37} />
               <span className={styles.customToggleText}>Доставка</span>
             </label>
           </div>
@@ -223,7 +223,7 @@ export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrder
                   setSelectedDelivery('pickup');
                 }}
               />
-              <Icon link={Pickup} width={48} height={23} />
+              <Icon path={Pickup} width={48} height={23} />
               <span className={styles.customToggleText}>Самовывоз</span>
             </label>
           </div>

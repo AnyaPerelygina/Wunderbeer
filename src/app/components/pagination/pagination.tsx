@@ -63,7 +63,7 @@ export default function Pagination({
         disabled={currentPage === 1 || isPageNumberOne}
         name="Назад"
       >
-        <Icon link={Wheat} width={47} height={18} />
+        <Icon path={Wheat} width={47} height={18} />
       </button>
       <ul className={styles.pageNumbers}>
         {pageNumbers.map((pageNumber, index) => (
@@ -88,7 +88,7 @@ export default function Pagination({
         disabled={currentPage === totalPages || isPageNumberZero || isPageNumberOne}
         name="Вперед"
       >
-        <Icon link={Wheat} width={47} height={18} />
+        <Icon path={Wheat} width={47} height={18} />
       </button>
     </div>
   );
