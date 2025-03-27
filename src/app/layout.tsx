@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import { usePathname } from 'next/navigation';
 import Layout from './components/layout/layout';
@@ -74,9 +74,9 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="ru">
+    <html lang="ru" className={font.className}>
       <MetaData />
-      <body className={font.className}>
+      <body suppressHydrationWarning={true}>
         <div className="wrapper">
           <CartProvider>
             {getHeaderContent()}
