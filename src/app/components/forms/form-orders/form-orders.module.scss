@@ -5,30 +5,217 @@
   display: none;
 }
 
-.customToggle {
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: 500;
+.input {
+  width: 100%;
+  margin: 0 0 27px;
 
-  width: fit-content;
+  @include vp-1023 {
+    margin: 0 0 15px;
+  }
 
-  .customLabel {
+  label {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: 8px;
+    justify-content: space-between;
+    width: 100%;
 
-    border: 1px solid #d7d7d7;
-    background-color: transparent;
-
-    cursor: pointer;
-
-    &.checked {
-      border: 1px solid $color-asparagus;
+    @include vp-1023 {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 6px;
     }
+  }
+
+  input,
+  textarea {
+    max-width: 540px;
+    width: 100%;
+    padding: 11px;
+    border-radius: 50px;
+    border: 1px solid $color-light-grey2;
+
+    @include vp-1023 {
+      max-width: 100%;
+      padding: 8px;
+    }
+  }
+
+  &:last-child {
+    margin: 0 0 33px;
+  }
+}
+
+.textarea {
+  @include vp-1023 {
+    margin: 0 0 38px;
+  }
+
+  span {
+    align-self: flex-start;
+  }
+
+  textarea {
+    border-radius: 20px;
+    min-height: 236px;
+    height: auto;
+
+    @include vp-1023 {
+      min-height: 153px;
+    }
+  }
+}
+
+.customLabel {
+  font-family: $ff-fira;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+
+  display: inline-block;
+  width: 150px;
+
+  @include vp-1023 {
+    width: 100%;
+    letter-spacing: -0.6px;
   }
 }
 
 .deliveryChange {
   display: flex;
   flex-direction: row;
+
+  @include vp-1023 {
+    margin: 0 0 36px;
+  }
+}
+
+.customWrapperRadio {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
+  max-width: 540px;
+  width: 100%;
+
+  @include vp-1023 {
+    max-width: 100%;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .customToggle {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 500;
+
+    width: 100%;
+    max-width: 255px;
+
+    @include vp-1023 {
+      max-width: 100%;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+
+      border: 1px solid $color-light-grey2;
+      background-color: transparent;
+      max-width: 255px;
+      width: 100%;
+      height: 48px;
+      border-radius: 50px;
+
+      cursor: pointer;
+
+      &.checked {
+        border: 1px solid $color-kournikova;
+      }
+
+      @include vp-1023 {
+        max-width: 100%;
+        flex-direction: row;
+      }
+    }
+  }
+}
+
+.btn {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 12px;
+
+  @include vp-1023 {
+    margin: 0 0 17px;
+  }
+
+  button {
+    font-family: $ff-fira;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+    color: $color-default-black;
+
+    background-color: $color-kournikova;
+    border-radius: 50px;
+    max-width: 350px;
+    width: 100%;
+    padding: 14px 20px;
+
+    @include vp-1023 {
+      font-size: 14px;
+
+      max-width: 100%;
+      padding: 15px 20px;
+    }
+  }
+}
+
+.customToggle .customLabelCheckbox {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: $color-default-black;
+
+  border: none;
+  max-width: 350px;
+  width: 100%;
+  margin: 0 0 0 auto;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 18px;
+
+  &.checked {
+    border: none;
+  }
+
+  @include vp-1023 {
+    max-width: 100%;
+    margin: 0;
+    gap: 16px;
+  }
+}
+
+.customInputCheckbox {
+  width: 20px;
+  min-width: 20px;
+  height: 20px;
+  border: 1px solid red;
+  border-radius: 3px;
+}
+
+.privacyPolicyLink {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  color: $color-kournikova;
+  text-decoration: underline;
 }

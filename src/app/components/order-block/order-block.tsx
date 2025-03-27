@@ -1,24 +1,29 @@
 'use client'
 
-import { useState } from 'react';
-import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
 import { useCart } from "@/context/cart-context";
-import { basePath } from '@/const';
 import { Container } from '@/ui/container/container';
 import FormOrders from '../forms/form-orders/form-orders';
+import ShoppingCartMini from '@/app/components/shopping-cart-mini/shopping-cart-mini';
 
 import styles from './order-block.module.scss';
 
 export default function OrderBlock() {
   const { items, removeItemCompletely } = useCart();
   const [selectedDelivery, setSelectedDelivery] = useState<'delivery' | 'pickup'>('delivery');
+  const [isMobileScreen, setIsMobileScreen] = useState(false);
 
-  const totalOrderPrice = items.reduce((total, item) => total + item.price * item.quantity, 0);
+  useEffect(() => {
+      const handleResize = () => {
+        setIsMobileScreen(window.innerWidth < 1024);
+      };
 
-  const deliveryCost = selectedDelivery === 'delivery' && totalOrderPrice < 999 ? 144 : 0;
+      handleResize();
 
-  const totalPriceWithDelivery = totalOrderPrice + deliveryCost;
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
   const clearCart = () => {
     items.forEach((item) => removeItemCompletely(item.productKey));
@@ -26,48 +31,18 @@ export default function OrderBlock() {
 
   return (
     <section className={styles.root}>
-      <Container className={styles.container}>
-        <h2 className={styles.title}>Ваши контакты</h2>
-        <FormOrders setSelectedDelivery={setSelectedDelivery} clearCart={clearCart} />
-        <div className={styles.shoppingCart}>
-          <h3 className={styles.subTitle}>Выбранные товары</h3>
-          <ul className={styles.list}>
-            {items.map((item) => (
-              <li key={item.productKey} className={styles.item}>
-                <div className={styles.productImg}>
-                  <Image
-                    src={`${basePath}/bottles/${item.image}.webp`}
-                    width={36}
-                    height={95}
-                    alt={'Изображение пивной бутылки.'}
-                  />
-                </div>
-                <div className={styles.productInfo}>
-                  <span>{item.name}</span>
-                  <span>{item.productType} {item.name}</span>
-                  <span>{item.description}</span>
-                  <span>{item.size} л</span>
-                  <span className={styles.quantity}>{item.quantity} шт.</span>
-                </div>
-              </li>
-            ))}
-          </ul>
-          <div className={styles.allInfo}>
-            <div className={styles.allQuantity}>
-              <span>Всего товаров:</span>
-              <span>{items.reduce((total, item) => total + item.quantity, 0)}</span>
-            </div>
-            <div className={styles.deliveryInfo}>
-              <span>Доставка:</span>
-              <span>{selectedDelivery === 'delivery' ? (deliveryCost === 0 ? 'Бесплатно' : '144₽') : 'Самовывоз'}</span>
-            </div>
-          </div>
-          <div className={styles.total}>
-            <span>Итого:</span>
-            <span>{totalPriceWithDelivery}₽</span>
-          </div>
-        </div>
-      </Container>
+      {isMobileScreen ? (
+        <Container className={styles.container}>
+          <h2 className={styles.title}>Ваши контакты</h2>
+          <FormOrders setSelectedDelivery={setSelectedDelivery} clearCart={clearCart} />
+        </Container>
+      ) : (
+        <Container className={styles.container}>
+          <h2 className={styles.title}>Ваши контакты</h2>
+          <FormOrders setSelectedDelivery={setSelectedDelivery} clearCart={clearCart} />
+          <ShoppingCartMini selectedDelivery={selectedDelivery} />
+        </Container>
+      )}
     </section>
   )
 }

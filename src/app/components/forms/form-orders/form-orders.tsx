@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
@@ -9,11 +9,13 @@ import Icon from '@/ui/icon/icon';
 import Delivery from '@/assets/delivery.svg';
 import Pickup from '@/assets/pickup.svg';
 import FormDonePopup from '@/app/components/popup/form-done/form-done';
+import ShoppingCartMini from '@/app/components/shopping-cart-mini/shopping-cart-mini';
 
 import styles from './form-orders.module.scss';
 import { CheckboxState, CheckboxChangeEvent, FormOrdersProps } from './form-order.types';
 
 export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrdersProps) {
+  const [isMobileScreen, setIsMobileScreen] = useState(false);
   const [formStatus, setFormStatus] = useState<'idle' | 'submitted' | 'error'>('idle');
   const [selectedDelivery, setSelectedDeliveryLocal] = useState<'delivery' | 'pickup'>('delivery');
   const [isChecked, setIsChecked] = useState<CheckboxState>(false);
@@ -145,6 +147,17 @@ export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrder
     return errors[field] ? `${styles.error}` : '';
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileScreen(window.innerWidth < 1024);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className={styles.form}>
       <form onSubmit={handleSubmit}>
@@ -181,9 +194,9 @@ export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrder
             />
           </label>
         </div>
-        <div className={`${styles.textarea} ${inputStyles('message')}`} data-validate-type="text">
+        <div className={`${styles.input} ${styles.textarea} ${inputStyles('message')}`} data-validate-type="text">
           <label>
-            <span className={styles.customLabel}>Комментарий к&nbsp;заказу:</span>
+            <span className={styles.customLabel}>Комментарии к&nbsp;заказу:</span>
             <textarea
               name='message'
               value={formData.message}
@@ -191,51 +204,56 @@ export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrder
             ></textarea>
           </label>
         </div>
-        <div className={styles.deliveryChange}>
-          <span className={styles.customLabel}>Способ доставки:</span>
-          <div className={styles.customToggle} data-validate-type="checkbox" data-message-base="Поле обязательно к заполнению">
-            <label className={`${styles.customLabel} ${selectedDelivery === 'delivery' ? styles.checked : ''}`}>
-              <input
-                type="radio"
-                value="delivery"
-                name="deliveryType"
-                className={styles.hiddenInput}
-                checked={selectedDelivery === 'delivery'}
-                onChange={() => {
-                  setSelectedDeliveryLocal('delivery');
-                  setSelectedDelivery('delivery');
-                }}
-              />
-              <Icon path={Delivery} width={30} height={37} />
-              <span className={styles.customToggleText}>Доставка</span>
-            </label>
-          </div>
-          <div className={styles.customToggle} data-validate-type="checkbox" data-message-base="Поле обязательно к заполнению">
-            <label className={`${styles.customLabel} ${selectedDelivery === 'pickup' ? styles.checked : ''}`}>
-              <input
-                type="radio"
-                value="pickup"
-                name="deliveryType"
-                className={styles.hiddenInput}
-                checked={selectedDelivery === 'pickup'}
-                onChange={() => {
-                  setSelectedDeliveryLocal('pickup');
-                  setSelectedDelivery('pickup');
-                }}
-              />
-              <Icon path={Pickup} width={48} height={23} />
-              <span className={styles.customToggleText}>Самовывоз</span>
-            </label>
-          </div>
+        <div className={`${styles.input} ${styles.deliveryChange}`}>
+          <label>
+            <span className={styles.customLabel}>Способ доставки:</span>
+            <div className={styles.customWrapperRadio}>
+              <div className={styles.customToggle} data-validate-type="checkbox" data-message-base="Поле обязательно к заполнению">
+                <label className={selectedDelivery === 'delivery' ? styles.checked : ''}>
+                  <input
+                    type="radio"
+                    value="delivery"
+                    name="deliveryType"
+                    className={styles.hiddenInput}
+                    checked={selectedDelivery === 'delivery'}
+                    onChange={() => {
+                      setSelectedDeliveryLocal('delivery');
+                      setSelectedDelivery('delivery');
+                    }}
+                  />
+                  <Icon path={Delivery} width={30} height={30} />
+                  <span className={styles.customToggleText}>Доставка</span>
+                </label>
+              </div>
+              <div className={styles.customToggle} data-validate-type="checkbox" data-message-base="Поле обязательно к заполнению">
+                <label className={selectedDelivery === 'pickup' ? styles.checked : ''}>
+                  <input
+                    type="radio"
+                    value="pickup"
+                    name="deliveryType"
+                    className={styles.hiddenInput}
+                    checked={selectedDelivery === 'pickup'}
+                    onChange={() => {
+                      setSelectedDeliveryLocal('pickup');
+                      setSelectedDelivery('pickup');
+                    }}
+                  />
+                  <Icon path={Pickup} width={48} height={23} />
+                  <span className={styles.customToggleText}>Самовывоз</span>
+                </label>
+              </div>
+            </div>
+          </label>
         </div>
-        <div className={`${styles.textarea} ${inputStyles('adress')}`} data-validate-type="text">
+        <div className={`${styles.input} ${inputStyles('adress')}`} data-validate-type="text">
           <label>
             <span className={styles.customLabel}>Адрес доставки:</span>
-            <textarea
+            <input
+              type='text'
               name='adress'
               value={formData.adress}
               onChange={handleChange}
-            ></textarea>
+            ></input>
           </label>
         </div>
 
@@ -243,20 +261,26 @@ export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrder
           <FormDonePopup />
         )}
 
-        {formStatus === 'submitted' ? (
-          <span className={styles.statusSubmitted}>Отправлено!</span>
-        ) : formStatus === 'error' ? (
-          <span className={styles.statusError}>Неверно, проверьте корректность введенных данных!</span>
-        ) : (
-          <Button type={'submit'}>Оформить заказ</Button>
+        {isMobileScreen && (
+          <ShoppingCartMini selectedDelivery={selectedDelivery} />
         )}
+
+        <div className={styles.btn}>
+          {formStatus === 'submitted' ? (
+            <span className={styles.statusSubmitted}>Отправлено!</span>
+          ) : formStatus === 'error' ? (
+            <span className={styles.statusError}>Неверно, проверьте корректность введенных данных!</span>
+          ) : (
+            <Button type={'submit'} >Оформить заказ</Button>
+          )}
+        </div>
         <div className={styles.customToggle} data-validate-type="checkbox" data-message-base="Поле обязательно к заполнению">
           <label className={`${styles.customLabelCheckbox} ${isChecked ? styles.checked : ''}`}>
             <input
               type="checkbox"
               value="agree"
               name="agree"
-              className={styles.customCheckbox}
+              className={styles.customInputCheckbox}
               checked={isChecked}
               onChange={handleCheckboxChange}
             />
