@@ -15,37 +15,37 @@ export default function Partners() {
   const PartnersImgList = [
     {
       id: 1,
-      link: 'partner-3@2x.webp',
+      image: 'partner-3@2x.webp',
       width: 149,
       height: 149,
     },
     {
       id: 2,
-      link: 'partner-1@2x.webp',
+      image: 'partner-1@2x.webp',
       width: 149,
       height: 149,
     },
     {
       id: 3,
-      link: 'partner-2@2x.webp',
+      image: 'partner-2@2x.webp',
       width: 81,
       height: 81,
     },
     {
       id: 4,
-      link: 'partner-3@2x.webp',
+      image: 'partner-3@2x.webp',
       width: 149,
       height: 149,
     },
     {
       id: 5,
-      link: 'partner-1@2x.webp',
+      image: 'partner-1@2x.webp',
       width: 149,
       height: 149,
     },
     {
       id: 6,
-      link: 'partner-2@2x.webp',
+      image: 'partner-2@2x.webp',
       width: 81,
       height: 81,
     }
@@ -110,9 +110,9 @@ export default function Partners() {
               }}
             >
               {PartnersImgList.map((item) => (
-                <SwiperSlide className={styles.swiperSlide} key={item.link}>
+                <SwiperSlide className={styles.swiperSlide} key={item.id}>
                   <Image
-                    src={`${basePath}/partners/${item.link}`}
+                    src={`${basePath}/partners/${item.image}`}
                     width={item.width}
                     height={item.height}
                     alt={'Логотип партнера.'}
@@ -135,9 +135,9 @@ export default function Partners() {
               }}
             >
               {PartnersImgList.map((item) => (
-                <SwiperSlide className={styles.swiperSlide} key={item.link}>
+                <SwiperSlide className={styles.swiperSlide} key={item.id}>
                   <Image
-                    src={`${basePath}/partners/${item.link}`}
+                    src={`${basePath}/partners/${item.image}`}
                     width={item.width}
                     height={item.height}
                     alt={'Логотип партнера.'}
@@ -160,9 +160,9 @@ export default function Partners() {
               }}
             >
               {PartnersImgList.map((item) => (
-                <SwiperSlide className={styles.swiperSlide} key={item.link}>
+                <SwiperSlide className={styles.swiperSlide} key={item.id}>
                   <Image
-                    src={`${basePath}/partners/${item.link}`}
+                    src={`${basePath}/partners/${item.image}`}
                     width={item.width}
                     height={item.height}
                     alt={'Логотип партнера.'}

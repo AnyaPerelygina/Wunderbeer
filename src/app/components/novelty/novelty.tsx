@@ -3,43 +3,17 @@
 import { useRef, useEffect, useState } from "react";
 import { Swiper, SwiperSlide, SwiperRef } from "swiper/react";
 import { Navigation } from 'swiper/modules';
+import Image from "next/image";
 
 import styles from './novelty.module.scss';
 
-import Image from "next/image";
 import { basePath } from "@/const";
 import { Container } from "../../../ui/container/container";
 import Title from '@/ui/title/title';
 
-export default function Novelty() {
-  const NoveltyImgList = [
-    {
-      link: 'beer-1@2x.webp',
-      title: 'Mild lager beer',
-      description: '4,6%, Светлое, Фильрованное'
-    },
-    {
-      link: 'beer-2@2x.webp',
-      title: 'Golden beer',
-      description: '8,5%, Светлое, Фильрованное'
-    },
-    {
-      link: 'beer-3@2x.webp',
-      title: 'Premium beer',
-      description: '4,6%, Светлое, Нефильрованное'
-    },
-    {
-      link: 'beer-2@2x.webp',
-      title: 'Golden beer',
-      description: '8,5%, Светлое, Фильрованное'
-    },
-    {
-      link: 'beer-3@2x.webp',
-      title: 'Premium beer',
-      description: '4,6%, Светлое, Нефильрованное'
-    }
-  ];
+import mockCatalogCards from '@/app/data/data';
 
+export default function Novelty() {
   const [isMobileScreen, setIsMobileScreen] = useState(false);
   const [isTabletScreen, setIsTabletScreen] = useState(false);
 
@@ -68,6 +42,8 @@ export default function Novelty() {
       });
     }
   }, []);
+
+  const noveltyItems = mockCatalogCards.filter(item => item.new === true).slice(0, 4);
 
   return (
     <section className={styles.root}>
@@ -99,10 +75,10 @@ export default function Novelty() {
                 nextEl: navigationNextRef.current,
               }}
             >
-              {NoveltyImgList.map((item) => (
-                <SwiperSlide className={styles.swiperSlide} key={item.link}>
+              {noveltyItems.map((item) => (
+                <SwiperSlide className={styles.swiperSlide} key={item.productKey}>
                   <Image
-                    src={`${basePath}/bottles/${item.link}`}
+                    src={`${basePath}/bottles/${item.image}.webp`}
                     width={214}
                     height={71}
                     alt={'Пивная бутылка.'}
@@ -126,10 +102,10 @@ export default function Novelty() {
                 nextEl: navigationNextRef.current,
               }}
             >
-              {NoveltyImgList.map((item) => (
-                <SwiperSlide className={styles.swiperSlide} key={item.link}>
+              {noveltyItems.map((item) => (
+                <SwiperSlide className={styles.swiperSlide} key={item.productKey}>
                   <Image
-                    src={`${basePath}/bottles/${item.link}`}
+                    src={`${basePath}/bottles/${item.image}.webp`}
                     width={214}
                     height={71}
                     alt={'Пивная бутылка.'}
@@ -153,10 +129,10 @@ export default function Novelty() {
                 nextEl: navigationNextRef.current,
               }}
             >
-              {NoveltyImgList.map((item) => (
-                <SwiperSlide className={styles.swiperSlide} key={item.link}>
+              {noveltyItems.map((item) => (
+                <SwiperSlide className={styles.swiperSlide} key={item.productKey}>
                   <Image
-                    src={`${basePath}/bottles/${item.link}`}
+                    src={`${basePath}/bottles/${item.image}.webp`}
                     width={214}
                     height={71}
                     alt={'Пивная бутылка.'}

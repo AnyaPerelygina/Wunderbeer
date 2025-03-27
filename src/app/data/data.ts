@@ -14,7 +14,7 @@ const mockCatalogCards = [
     price: 100,
     availability: true,
     discount: true,
-    new: false,
+    new: true,
     tags: 'пиво, светлое, фильтрованное',
     text: 'Пиво светлое фильтрованное пастеризованное Mild Lager 4.6%, 0.355мл, в стеклянной бутылке.'
   },
@@ -33,7 +33,7 @@ const mockCatalogCards = [
     price: 150,
     availability: true,
     discount: false,
-    new: false,
+    new: true,
     tags: 'пиво, светлое, фильтрованное',
     text: 'Пиво Golden Beer светлое, фильтрованное, 8.5%, 0.5мл, в стеклянной бутылке.'
   },
@@ -109,7 +109,7 @@ const mockCatalogCards = [
     price: 200,
     availability: true,
     discount: false,
-    new: true,
+    new: false,
     tags: 'пиво, светлое, нефильтрованное',
     text: 'Пиво светлое нефильтрованное Premium Beer 4.6%, 0.355мл, в стеклянной бутылке.'
   },
