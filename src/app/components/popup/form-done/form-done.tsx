@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
+import Image from "next/image";
+import { basePath } from "@/const";
+
 import styles from './form-done.module.scss';
 
 export default function FormDonePopup() {
@@ -36,6 +39,24 @@ export default function FormDonePopup() {
     <div className={`${styles.overlay}`} ref={overlayRef}>
       <div className={styles.popup} ref={popupRef}>
         <span>Ваш заказ отправлен!</span>
+        <div className={styles.images}>
+          <div className={styles.image1}>
+            <Image
+              src={`${basePath}/svg/popup/wheat-popup.svg`}
+              width={77}
+              height={120}
+              alt={'.'}
+            />
+          </div>
+          <div className={styles.image2}>
+            <Image
+              src={`${basePath}/svg/popup/glass-of-beer-popup.svg`}
+              width={124}
+              height={200}
+              alt={'.'}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
