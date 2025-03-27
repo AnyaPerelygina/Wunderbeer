@@ -7,6 +7,7 @@ import { Category } from './filter-block.types';
 import Button from '@/ui/button/button';
 import Icon from '@/ui/icon/icon';
 import WheatYellow from '@/assets/wheat-yellow.svg';
+import WheatGreenMini from '@/assets/wheat-green-mini.svg';
 
 const categories: Category[] = [
   { label: 'Пиво', options: ['Темное', 'Светлое', 'Фильтрованное', 'Нефильтрованное', 'Пшеничное'] },
@@ -66,6 +67,9 @@ export default function FilterBlock({ applyFilters }: FilterBlockProps) {
                 onChange={() => handleCategoryChange(cat.label)}
                 id={`checkbox-${cat.label}`}
               />
+              {selectedCategories.includes(cat.label) && (
+                <Icon path={WheatGreenMini} width={29} height={11} />
+              )}
               <h4>{cat.label}</h4>
             </label>
             {cat.options && (
@@ -78,6 +82,9 @@ export default function FilterBlock({ applyFilters }: FilterBlockProps) {
                       onChange={() => handleCategoryChange(option)}
                       id={`checkbox-${option}`}
                     />
+                    {selectedCategories.includes(cat.label) && (
+                      <Icon path={WheatGreenMini} width={29} height={11} />
+                    )}
                     <span className={styles.checkboxCustom}>{option}</span>
                   </label>
                 ))}

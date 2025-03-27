@@ -88,7 +88,12 @@
     color: $color-default-white;
     cursor: pointer;
 
-    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 5px;
 
     transition: all $trans-default;
 
@@ -96,32 +101,16 @@
       display: none;
     }
 
+    svg {
+      margin: 4px 0 0 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: all $trans-default;
+    }
+
     h4 {
       margin: 0 0 10px;
-      transition: margin $trans-default;
-
-      &::before {
-        position: absolute;
-        content: '';
-        top: 50%;
-        transform: translateY(-50%);
-        left: -3px;
-        width: 29px;
-        height: 11px;
-        background-image: url('/svg/wheat-green.svg');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-
-        opacity: 0;
-        visibility: hidden;
-
-        transition: opacity $trans-default;
-
-        @include vp-1023 {
-          left: 0;
-        }
-      }
+      transition: all $trans-default;
     }
 
     input[type="checkbox"]:checked + h4 {
@@ -132,7 +121,7 @@
       }
     }
 
-    input[type="checkbox"]:checked + h4::before {
+    input[type="checkbox"]:checked + svg {
       opacity: 1;
       visibility: visible;
     }
@@ -149,11 +138,10 @@
   opacity: 0;
   visibility: hidden;
 
-  transition: margin $trans-default, height $trans-default;
+  transition: all $trans-default;
 
   label {
     font-weight: 300;
-    position: relative;
 
     transition: all $trans-default;
 
@@ -161,26 +149,14 @@
       display: none;
     }
 
-    .checkboxCustom::before {
-      position: absolute;
-      content: '';
-      top: 50%;
-      transform: translateY(-50%);
-      left: -31px;
-      width: 29px;
-      height: 11px;
-      background-image: url('/svg/wheat-green.svg');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-
+    svg {
+      margin: 4px 0 0 0;
       opacity: 0;
       visibility: hidden;
-
-      transition: opacity $trans-default;
+      transition: all $trans-default;
     }
 
-    input[type="checkbox"]:checked ~ .checkboxCustom::before {
+    input[type="checkbox"]:checked + svg {
       opacity: 1;
       visibility: visible;
     }
@@ -193,11 +169,7 @@
     visibility: visible;
     height: auto;
 
-    margin: 0 0 17px 29px;
-
-    @include vp-1023 {
-      margin: 0 0 17px 39px;
-    }
+    margin: 0 0 17px;
   }
 }
 
