@@ -173,7 +173,7 @@
   }
 
   .swiperSlide {
-    background-color: $color-aubergine;
+    // background-color: $color-aubergine;
     position: relative;
 
     min-height: 1007px;
@@ -186,6 +186,7 @@
       width: 100%;
       min-height: 1007px;
       height: auto;
+      background-color: $color-aubergine;
     }
 
     &::after {

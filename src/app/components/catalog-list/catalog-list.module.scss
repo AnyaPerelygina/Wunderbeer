@@ -146,6 +146,7 @@
     width: 100%;
     height: 141px;
     object-fit: cover;
+    background-color: $color-aubergine;
 
     @include vp-767 {
       height: 100%;
