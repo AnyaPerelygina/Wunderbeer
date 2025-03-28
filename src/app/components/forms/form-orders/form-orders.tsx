@@ -266,9 +266,7 @@ export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrder
         )}
 
         <div className={styles.btn}>
-          {formStatus === 'submitted' ? (
-            <span className={styles.statusSubmitted}>Отправлено!</span>
-          ) : formStatus === 'error' ? (
+          {formStatus === 'error' ? (
             <span className={styles.statusError}>Неверно, проверьте корректность введенных данных!</span>
           ) : (
             <Button type={'submit'} >Оформить заказ</Button>
@@ -284,6 +282,7 @@ export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrder
               checked={isChecked}
               onChange={handleCheckboxChange}
             />
+            <span className={styles.customControlMark}></span>
             <span className={styles.customToggleText}>Я&nbsp;согласен на&nbsp;обработку моих&nbsp;<Link className={styles.privacyPolicyLink} href={'/privacy-policy'} target={'_blank'}>персональных данных</Link></span>
           </label>
         </div>

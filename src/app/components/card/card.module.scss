@@ -38,6 +38,11 @@
   left: -20px;
   z-index: 2;
 
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
+
   @include vp-767 {
     top: 24px;
     left: -62px;

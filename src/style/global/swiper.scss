@@ -37,6 +37,12 @@
     height: 11px;
     z-index: 1;
     cursor: pointer;
+
+    transition: background-color $trans-default;
+
+    @include hover-focus {
+      background-color: $color-kournikova;
+    }
   }
 
   .swiper-pagination-bullet-active {
