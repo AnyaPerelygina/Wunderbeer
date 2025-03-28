@@ -37,9 +37,6 @@ export default function Sitemap() {
         <li className={styles.item}>
           <Link href={'/privacy-policy'}>Политика конфиденциальности;</Link>
         </li>
-        <li className={styles.item}>
-          <Link href={'/error'}>Ошибка загрузки страницы;</Link>
-        </li>
       </ul>
     </div>
   )

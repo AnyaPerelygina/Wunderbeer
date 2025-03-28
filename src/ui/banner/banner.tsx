@@ -11,14 +11,16 @@ export default function Banner({image, title}: BannerProps) {
       <Container className={styles.container}>
         <h1 className={styles.title}>{title}</h1>
       </Container>
-      <div className={styles.background}>
-        <Image
-          src={`${basePath}/banner/${image}`}
-          width={1920}
-          height={390}
-          alt={'Фоновое изображение.'}
-        />
-      </div>
+      {image && (
+        <div className={styles.background}>
+          <Image
+            src={`${basePath}/banner/${image}`}
+            width={1920}
+            height={390}
+            alt={'Фоновое изображение.'}
+          />
+        </div>
+      )}
     </section>
   )
 }
