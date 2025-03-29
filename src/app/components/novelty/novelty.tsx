@@ -16,6 +16,10 @@ import mockCatalogCards from '@/app/data/data';
 export default function Novelty() {
   const [isMobileScreen, setIsMobileScreen] = useState(false);
   const [isTabletScreen, setIsTabletScreen] = useState(false);
+  const navigationPrevRef = useRef<HTMLDivElement>(null);
+  const navigationNextRef = useRef<HTMLDivElement>(null);
+  const swiperRef = useRef<SwiperRef>(null);
+  const noveltyItems = mockCatalogCards.filter(item => item.new === true);
 
   useEffect(() => {
     const handleResize = () => {
@@ -28,10 +32,6 @@ export default function Novelty() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const navigationPrevRef = useRef<HTMLDivElement>(null);
-  const navigationNextRef = useRef<HTMLDivElement>(null);
-  const swiperRef = useRef<SwiperRef>(null);
-
   useEffect(() => {
     if (navigationPrevRef.current && navigationNextRef.current) {
       navigationPrevRef.current.addEventListener('click', () => {
@@ -42,8 +42,6 @@ export default function Novelty() {
       });
     }
   }, []);
-
-  const noveltyItems = mockCatalogCards.filter(item => item.new === true).slice(0, 4);
 
   return (
     <section className={styles.root}>
