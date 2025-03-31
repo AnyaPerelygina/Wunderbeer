@@ -34,8 +34,8 @@ export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrder
     name: false,
     email: false,
     phone: false,
-    message: false,
-    adress: false
+    adress: false,
+    agree: false
   });
 
   const handleCheckboxChange = (event: CheckboxChangeEvent): void => {
@@ -57,10 +57,10 @@ export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrder
     return phonePattern.test(phone);
   };
 
-  const validateMessage = (message: string) => {
-    const scriptOrLinkPattern = /<script.*?>.*?<\/script>|<a.*?>.*?<\/a>/i;
-    return message.trim() !== '' && !scriptOrLinkPattern.test(message);
-  };
+  // const validateMessage = (message: string) => {
+  //   const scriptOrLinkPattern = /<script.*?>.*?<\/script>|<a.*?>.*?<\/a>/i;
+  //   return message.trim() !== '' && !scriptOrLinkPattern.test(message);
+  // };
 
   const validateAdress = (adress: string) => {
     const scriptOrLinkPattern = /<script.*?>.*?<\/script>|<a.*?>.*?<\/a>/i;
@@ -72,8 +72,9 @@ export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrder
       name: !validateName(formData.name),
       email: !validateEmail(formData.email),
       phone: !validatePhone(formData.phone),
-      message: !validateMessage(formData.message),
+      // message: !validateMessage(formData.message),
       adress: !validateAdress(formData.adress),
+      agree: !isChecked,
     };
 
     setErrors(newErrors);
@@ -88,12 +89,12 @@ export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrder
       return;
     }
 
-    if (!validatePhone(formData.phone) || !validateName(formData.name) || !validateEmail(formData.email) || !validateMessage(formData.message) || !validateAdress(formData.adress)) {
+    if (!validatePhone(formData.phone) || !validateName(formData.name) || !validateEmail(formData.email) || !validateAdress(formData.adress) || !isChecked) {
       setFormStatus('error');
       return;
     }
 
-    if (!formData.name || !formData.phone || !formData.email || !formData.message || !formData.adress) {
+    if (!formData.name || !formData.phone || !formData.email || !formData.adress || !isChecked) {
       setFormStatus('error');
       return;
     }
@@ -102,13 +103,14 @@ export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrder
       await new Promise((resolve) => setTimeout(resolve, 1000));
       setFormStatus('submitted');
       clearCart();
+      setIsChecked(false);
 
       setFormData({
         name: '',
         email: '',
         phone: '',
         message: '',
-        adress: ''
+        adress: '',
       });
 
       setShowPopup(true);
@@ -143,7 +145,7 @@ export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrder
     }
   };
 
-  const inputStyles = (field: 'name' | 'phone' | 'email' | 'message' | 'adress') => {
+  const inputStyles = (field: 'name' | 'phone' | 'email' | 'adress' | 'agree') => {
     return errors[field] ? `${styles.error}` : '';
   };
 
@@ -161,7 +163,7 @@ export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrder
   return (
     <div className={styles.form}>
       <form onSubmit={handleSubmit}>
-        <div className={`${styles.input} ${inputStyles('name')}`} data-validate-type="text" data-limitation="name" data-message-base="Поле обязательно к заполнению" data-message-extra="Проверьте корректность заполнения поля" data-required="data-required">
+        <div className={`${styles.input} ${inputStyles('name')}`} data-validate-type="text" data-limitation="name" data-required="data-required">
           <label>
             <span className={styles.customLabel}>ФИО*</span>
             <input
@@ -172,7 +174,7 @@ export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrder
             />
           </label>
         </div>
-        <div className={`${styles.input} ${inputStyles('email')}`} data-validate-type="email" data-message-base="Поле обязательно к заполнению" data-required="data-required">
+        <div className={`${styles.input} ${inputStyles('email')}`} data-validate-type="email" data-required="data-required">
           <label>
             <span className={styles.customLabel}>Email*</span>
             <input
@@ -183,7 +185,7 @@ export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrder
             />
           </label>
         </div>
-        <div className={`${styles.input} ${inputStyles('phone')}`} data-validate-type="phone" data-message-base="Поле обязательно к заполнению" data-required="data-required">
+        <div className={`${styles.input} ${inputStyles('phone')}`} data-validate-type="phone" data-required="data-required">
           <label>
             <span className={styles.customLabel}>Телефон*</span>
             <input
@@ -194,7 +196,7 @@ export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrder
             />
           </label>
         </div>
-        <div className={`${styles.input} ${styles.textarea} ${inputStyles('message')}`} data-validate-type="text">
+        <div className={`${styles.input} ${styles.textarea}`} data-validate-type="text">
           <label>
             <span className={styles.customLabel}>Комментарии к&nbsp;заказу:</span>
             <textarea
@@ -245,9 +247,9 @@ export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrder
             </div>
           </label>
         </div>
-        <div className={`${styles.input} ${inputStyles('adress')}`} data-validate-type="text">
+        <div className={`${styles.input} ${inputStyles('adress')}`} data-validate-type="text" data-required="data-required">
           <label>
-            <span className={styles.customLabel}>Адрес доставки:</span>
+            <span className={styles.customLabel}>Адрес доставки*</span>
             <input
               type='text'
               name='adress'
@@ -272,12 +274,12 @@ export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrder
             <Button type={'submit'} >Оформить заказ</Button>
           )}
         </div>
-        <div className={styles.customToggle} data-validate-type="checkbox" data-message-base="Поле обязательно к заполнению">
+        <div className={`${styles.customToggle} ${inputStyles('agree')}`} data-validate-type="checkbox" data-required="data-required">
           <label className={`${styles.customLabelCheckbox} ${isChecked ? styles.checked : ''}`}>
             <input
-              type="checkbox"
-              value="agree"
-              name="agree"
+              type='checkbox'
+              value='agree'
+              name='agree'
               className={styles.customInputCheckbox}
               checked={isChecked}
               onChange={handleCheckboxChange}

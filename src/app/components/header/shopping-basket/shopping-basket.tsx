@@ -6,11 +6,11 @@ import Link from 'next/link';
 import styles from './shopping-basket.module.scss';
 import { ToggleMenuType } from './shopping-basket.types';
 
-export default function ShoppingBasket({ toggleMenu }: ToggleMenuType) {
+export default function ShoppingBasket({ toggleMenu, className }: ToggleMenuType) {
   const { totalItems } = useCart();
 
   return (
-    <div className={styles.shoppingBasket} onClick={toggleMenu}>
+    <div className={`${styles.root} ${className}`} onClick={toggleMenu}>
       <Link href={'/shopping-card'}>
         <Image
           src={`${basePath}/svg/shopping-basket.svg`}

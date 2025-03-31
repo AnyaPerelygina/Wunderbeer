@@ -1,11 +1,14 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { basePath } from '@/const';
-import Image from 'next/image';
+
+import Logo from '@/ui/logo/logo';
+import Icon from '@/ui/icon/icon';
+
+import BurberOpen from '@/assets/burger-open.svg';
+import BurberClose from '@/assets/burger-close.svg';
 
 import Social from '../social/social';
-import Logo from '@/ui/logo/logo';
 import ShoppingBasket from './shopping-basket/shopping-basket';
 import Nav from '../nav/nav';
 import { Container } from "@/ui/container/container";
@@ -36,7 +39,6 @@ export default function Header() {
     }
   ]
 
-  const [isMobileScreen, setIsMobileScreen] = useState(typeof window !== "undefined" ? window.innerWidth < 1024 : true);
   const [isOpen, setIsOpen] = useState(false);
   const headerRef = useRef<HTMLDivElement>(null);
 
@@ -66,15 +68,6 @@ export default function Header() {
     };
   }, [headerRef]);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobileScreen(window.innerWidth < 1024);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   const handleLinkClick = () => {
     setIsOpen(false);
   };
@@ -86,37 +79,20 @@ export default function Header() {
     {isOpen && <div className={styles.overlay} />}
     <header className={`${styles.root} ${isOpen ? styles['is-opened'] : ''}`}>
       <Container className={styles.container}>
-        {isMobileScreen ? (
-          <div ref={headerRef} className={`${styles.wrapper} ${isOpen ? styles['is-opened'] : ''}`}>
-            <Logo />
-            <button className={`${styles.toggle} ${isOpen ? styles['is-opened'] : ''}`} onClick={() => setIsOpen(!isOpen)}>
-              <Image
-                className={styles.toggle__opened}
-                src={`${basePath}/svg/burger-open.svg`}
-                width={24}
-                height={15}
-                alt={'Открыть меню.'} />
-              <Image
-                className={styles.toggle__closed}
-                src={`${basePath}/svg/burger-close.svg`}
-                width={20}
-                height={21}
-                alt={'Закрыть меню.'} />
-            </button>
-            <div className={`${styles.menu} ${isOpen ? styles['is-opened'] : ''}`}>
-              <ShoppingBasket toggleMenu={toggleMenu} />
-              <Nav navLinks={navLinks} onLinkClick={handleLinkClick}/>
-              <Social SocialLinks={[]} onLinkClick={handleLinkClick} />
+        <div className={styles.wrapper}>
+          <Social SocialLinks={[]} onLinkClick={handleLinkClick} className={styles.social}/>
+          <Logo className={styles.logo} />
+          <ShoppingBasket toggleMenu={toggleMenu} className={styles.shoppingBasket} />
+          <Nav navLinks={navLinks} onLinkClick={handleLinkClick} className={styles.navigation}/>
+          <button className={`${styles.toggle} ${isOpen ? styles['is-opened'] : ''}`} onClick={() => setIsOpen(!isOpen)}>
+            <div className={styles.toggleClosed}>
+              <Icon path={BurberClose} width={21} height={20} />
             </div>
-          </div>
-        ) : (
-          <div className={styles.wrapper}>
-            <Social SocialLinks={[]} onLinkClick={handleLinkClick} />
-            <Logo />
-            <ShoppingBasket toggleMenu={toggleMenu} />
-            <Nav navLinks={navLinks} onLinkClick={handleLinkClick}/>
-          </div>
-        )}
+            <div className={styles.toggleOpened}>
+              <Icon path={BurberOpen} width={24} height={15} />
+            </div>
+          </button>
+        </div>
       </Container>
     </header>
     </>

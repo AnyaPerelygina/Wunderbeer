@@ -12,6 +12,10 @@ import styles from './footer.module.scss';
 export default function Footer() {
   const navLinks = [
     {
+      href: '/shopping-cart',
+      label: 'Корзина',
+    },
+    {
       href: '/catalog',
       label: 'Каталог',
     },

@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <React.Fragment>
       <EntrancePopup />
-      <h1 className='visually-hidden'>Wunderbeer - интернет-магазин пива.</h1>
+      <h1 className='visuallyHidden'>Wunderbeer - интернет-магазин пива.</h1>
       <Hero />
       <Assortment />
       <WhyUsHome />
