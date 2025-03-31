@@ -36,7 +36,7 @@ export default function Header() {
     }
   ]
 
-  const [isMobileScreen, setIsMobileScreen] = useState(false);
+  const [isMobileScreen, setIsMobileScreen] = useState(typeof window !== "undefined" ? window.innerWidth < 1024 : true);
   const [isOpen, setIsOpen] = useState(false);
   const headerRef = useRef<HTMLDivElement>(null);
 
@@ -58,7 +58,9 @@ export default function Header() {
         setIsOpen(false);
       }
     }
+
     document.addEventListener('mousedown', handleClickOutside);
+
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
@@ -69,7 +71,6 @@ export default function Header() {
       setIsMobileScreen(window.innerWidth < 1024);
     };
 
-    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -81,18 +82,9 @@ export default function Header() {
   return (
     <>
     {isOpen && <div className={styles.overlay} />}
-    <header className={`${styles.header} ${isOpen ? styles['is-opened'] : ''}`}>
+    <header className={`${styles.root} ${isOpen ? styles['is-opened'] : ''}`}>
       <Container className={styles.container}>
-        {!isMobileScreen && (
-          <div className={styles.wrapper}>
-            <Social SocialLinks={[]} onLinkClick={handleLinkClick}/>
-            <Logo />
-            <ShoppingBasket />
-            <Nav navLinks={navLinks} onLinkClick={handleLinkClick}/>
-          </div>
-        )}
-
-        {isMobileScreen && (
+        {isMobileScreen ? (
           <div ref={headerRef} className={`${styles.wrapper} ${isOpen ? styles['is-opened'] : ''}`}>
             <Logo />
             <button className={`${styles.toggle} ${isOpen ? styles['is-opened'] : ''}`} onClick={() => setIsOpen(!isOpen)}>
@@ -114,6 +106,13 @@ export default function Header() {
               <Nav navLinks={navLinks} onLinkClick={handleLinkClick}/>
               <Social SocialLinks={[]} onLinkClick={handleLinkClick} />
             </div>
+          </div>
+        ) : (
+          <div className={styles.wrapper}>
+            <Social SocialLinks={[]} onLinkClick={handleLinkClick}/>
+            <Logo />
+            <ShoppingBasket />
+            <Nav navLinks={navLinks} onLinkClick={handleLinkClick}/>
           </div>
         )}
       </Container>

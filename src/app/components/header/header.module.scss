@@ -1,7 +1,7 @@
 @import '../../../style/variables.scss';
 @import '../../../style/mixins.scss';
 
-.header {
+.root {
   background-color: transparent;
   padding: 12px 0;
 
@@ -13,26 +13,28 @@
   &.is-opened {
     background-color: $color-aubergine;
   }
+}
 
-  .wrapper {
-    max-width: 1120px;
+.wrapper {
+  max-width: 1120px;
 
-    display: grid;
-    grid-template-columns: 120px 250px auto;
-    justify-content: space-between;
-    align-items: center;
-    gap: 19px;
+  display: grid;
+  grid-template-columns: 120px 250px auto;
+  justify-content: space-between;
+  align-items: center;
+  gap: 19px;
 
-    margin: 0 auto;
+  margin: 0 auto;
 
-    @include vp-1023 {
-      grid-template-columns: auto;
-      justify-content: center;
-      min-height: 77px;
-    }
+  @include vp-1023 {
+    grid-template-columns: auto;
+    justify-content: center;
+    min-height: 77px;
   }
+}
 
-  .menu {
+.menu {
+  @include vp-1023 {
     position: absolute;
     top: 100px;
     left: 0;
@@ -44,16 +46,24 @@
     max-height: 0;
     opacity: 0;
     overflow-y: hidden;
-    transition: all $trans-default;
+    visibility: hidden;
+
+    transition: opacity $trans-default, max-height $trans-default, visibility 0s linear $trans-default;
 
     &.is-opened {
+      position: absolute;
+      top: 100px;
+      left: 0;
+      right: 0;
+      padding: 15px 18px 39px;
       width: 100%;
       height: 100vh;
       max-height: 478px;
       opacity: 1;
+      visibility: visible;
       overflow-y: visible;
       background-color: $color-aubergine;
-      z-index: 666;
+      z-index: 6;
     }
   }
 }

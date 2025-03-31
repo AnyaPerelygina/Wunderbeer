@@ -31,12 +31,12 @@ export default function Social({ onLinkClick, className }: SocialProps) {
   ];
 
   return (
-    <div className={`${styles.social} ${className}`}>
-      <ul className={styles.social__list}>
+    <div className={`${styles.root} ${className}`}>
+      <ul className={styles.list}>
         {SocialLinks.map(({ href, text, icon, width, height, }) => (
-          <li key={href} className={styles.social__item}>
-            <Link onClick={onLinkClick} href={href} className={styles.social__link}>
-              <div className={styles.social__icon}>
+          <li key={href} className={styles.item}>
+            <Link onClick={onLinkClick} href={href} className={styles.link}>
+              <div className={styles.sicon}>
                 <Image
                   src={`${basePath}/svg/${icon}`}
                   width={width}
