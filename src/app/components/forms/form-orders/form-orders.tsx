@@ -265,7 +265,7 @@ export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrder
           <ShoppingCartMini selectedDelivery={selectedDelivery} />
         )}
 
-        <div className={styles.btn}>
+        <div className={styles.btn} >
           {formStatus === 'error' ? (
             <span className={styles.statusError}>Неверно, проверьте корректность введенных данных!</span>
           ) : (

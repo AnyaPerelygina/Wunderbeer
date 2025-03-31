@@ -5,10 +5,10 @@ import { basePath } from '@/const';
 import Image from 'next/image';
 
 import Social from '../social/social';
-import Logo from '../../../ui/logo/logo';
+import Logo from '@/ui/logo/logo';
 import ShoppingBasket from './shopping-basket/shopping-basket';
 import Nav from '../nav/nav';
-import { Container } from "../../../ui/container/container";
+import { Container } from "@/ui/container/container";
 
 import styles from './header.module.scss';
 
@@ -79,6 +79,8 @@ export default function Header() {
     setIsOpen(false);
   };
 
+  const toggleMenu = () => setIsOpen(prev => !prev);
+
   return (
     <>
     {isOpen && <div className={styles.overlay} />}
@@ -102,16 +104,16 @@ export default function Header() {
                 alt={'Закрыть меню.'} />
             </button>
             <div className={`${styles.menu} ${isOpen ? styles['is-opened'] : ''}`}>
-              <ShoppingBasket />
+              <ShoppingBasket toggleMenu={toggleMenu} />
               <Nav navLinks={navLinks} onLinkClick={handleLinkClick}/>
               <Social SocialLinks={[]} onLinkClick={handleLinkClick} />
             </div>
           </div>
         ) : (
           <div className={styles.wrapper}>
-            <Social SocialLinks={[]} onLinkClick={handleLinkClick}/>
+            <Social SocialLinks={[]} onLinkClick={handleLinkClick} />
             <Logo />
-            <ShoppingBasket />
+            <ShoppingBasket toggleMenu={toggleMenu} />
             <Nav navLinks={navLinks} onLinkClick={handleLinkClick}/>
           </div>
         )}
