@@ -8,11 +8,11 @@
   position: relative;
   z-index: 10;
 
-  transition: background-color $trans-default;
+  // transition: background-color $trans-default;
 
-  &.is-opened {
-    background-color: $color-aubergine;
-  }
+  // &.is-opened {
+  //   background-color: $color-aubergine;
+  // }
 }
 
 .wrapper {
@@ -36,11 +36,10 @@
 .menu {
   @include vp-1023 {
     position: absolute;
-    top: 100px;
+    top: 0;
     left: 0;
     right: 0;
-
-    padding: 15px 18px 39px;
+    padding: 118px 18px 39px;
 
     height: 0;
     max-height: 0;
@@ -48,22 +47,18 @@
     overflow-y: hidden;
     visibility: hidden;
 
-    transition: opacity $trans-default, max-height $trans-default, visibility 0s linear $trans-default;
+    background-color: $color-aubergine;
+    z-index: -1;
+
+    transition: opacity $trans-default, visibility $trans-default, height $trans-default, max-height $trans-default;
 
     &.is-opened {
-      position: absolute;
-      top: 100px;
-      left: 0;
-      right: 0;
-      padding: 15px 18px 39px;
       width: 100%;
       height: 100vh;
-      max-height: 478px;
+      max-height: 100vh;
       opacity: 1;
       visibility: visible;
       overflow-y: visible;
-      background-color: $color-aubergine;
-      z-index: 6;
     }
   }
 }
