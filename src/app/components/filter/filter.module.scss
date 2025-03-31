@@ -15,64 +15,78 @@
 }
 
 .wrapper {
+  background-color: transparent;
+  max-height: 58px;
+  transition: background-color $trans-default, max-height $trans-default;
+
   &.is-opened {
     @include vp-1023 {
+      max-height: 689px;
       padding: 8px 13px 23px;
+      background-color: $color-aubergine;
     }
   }
 }
 
 .filterMenu {
-  height: 0;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity $trans-default, height $trans-default, visibility $trans-default;
+  @include vp-1023 {
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: opacity $trans-default, max-height $trans-default, visibility $trans-default;
 
-  &.is-opened {
-    width: 100%;
-    height: 100%;
-    opacity: 1;
-    visibility: visible;
+    &.is-opened {
+      width: 100%;
+      max-height: 689px;
+      opacity: 1;
+      visibility: visible;
+    }
   }
 }
 
 .toggle {
-  border: none;
-  background-color: transparent;
-  padding: 0;
-  width: 100%;
+  display: none;
 
-  &__closed {
-    display: none;
-  }
+  @include vp-1023 {
+    display: block;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    width: 100%;
 
-  &.is-opened {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    .toggleClosed {
+      display: none;
+    }
 
-    margin: 0 0 25px;
-    width: fit-content;
-  }
+    &.is-opened {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
 
-  &.is-opened .toggle__closed {
-    display: inline-block;
+      margin: 0 0 25px;
+      width: fit-content;
+    }
 
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 19px;
-    text-decoration: underline;
-    text-align: center;
-    text-transform: lowercase;
-    color: $color-default-white;
-  }
+    &.is-opened .toggleClosed {
+      display: inline-block;
 
-  &.is-opened .toggle__opened {
-    display: none;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 19px;
+      text-decoration: underline;
+      text-align: center;
+      text-transform: lowercase;
+      color: $color-default-white;
+    }
+
+    &.is-opened .toggleOpened {
+      display: none;
+    }
   }
 }
 
-.toggle__opened {
+.toggleOpened {
   font-weight: 500;
   font-size: 18px;
   line-height: 21px;
