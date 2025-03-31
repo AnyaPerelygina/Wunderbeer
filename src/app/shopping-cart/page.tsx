@@ -1,6 +1,6 @@
 import React from 'react';
 import Banner from '../../ui/banner/banner';
-import ShoppingCartBlock from '@/app/components/shopping-card-block/shopping-cart-block'
+import ShoppingCartBlock from '@/app/components/shopping-cart-block/shopping-cart-block'
 
 export default function ShoppingCart() {
   return (

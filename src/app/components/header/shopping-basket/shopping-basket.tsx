@@ -11,7 +11,7 @@ export default function ShoppingBasket({ toggleMenu, className }: ToggleMenuType
 
   return (
     <div className={`${styles.root} ${className}`} onClick={toggleMenu}>
-      <Link href={'/shopping-card'}>
+      <Link href={'/shopping-cart'}>
         <Image
           src={`${basePath}/svg/shopping-basket.svg`}
           width={28}
