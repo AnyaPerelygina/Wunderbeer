@@ -15,12 +15,12 @@
 }
 
 .wrapper {
-  background-color: transparent;
-  max-height: 58px;
-  transition: background-color $trans-default, max-height $trans-default;
+  @include vp-1023 {
+    background-color: transparent;
+    max-height: 58px;
+    transition: background-color $trans-default, max-height $trans-default;
 
-  &.is-opened {
-    @include vp-1023 {
+    &.is-opened {
       max-height: 689px;
       padding: 8px 13px 23px;
       background-color: $color-aubergine;
