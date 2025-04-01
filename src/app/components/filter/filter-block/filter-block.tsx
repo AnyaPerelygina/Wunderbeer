@@ -33,9 +33,8 @@ export default function FilterBlock({ applyFilters }: FilterBlockProps) {
       if (prevSelectedCategories.includes(category)) {
         const filteredCategories = prevSelectedCategories.filter((c) => {
           return c !== category &&
-             !categories.find(cat => cat.label === category)?.options?.includes(c);
+                 !categories.find(cat => cat.label === category)?.options?.includes(c);
         });
-
         return filteredCategories;
       }
 
@@ -79,7 +78,7 @@ export default function FilterBlock({ applyFilters }: FilterBlockProps) {
               )}
               <h4>{cat.label}</h4>
             </label>
-            {cat.options && selectedCategories.includes(cat.label) && (
+            {cat.options && (
               <div className={styles.subcategories}>
                 {cat.options.map((option) => (
                   <label key={option}>

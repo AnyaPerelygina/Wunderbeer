@@ -95,8 +95,6 @@
     align-items: flex-start;
     gap: 5px;
 
-    transition: all $trans-default;
-
     input[type="checkbox"] {
       display: none;
     }
@@ -105,12 +103,12 @@
       margin: 4px 0 0 0;
       opacity: 0;
       visibility: hidden;
-      transition: all $trans-default;
+      transition: opacity $trans-default, visibility $trans-default;
     }
 
     h4 {
       margin: 0 0 10px;
-      transition: all $trans-default;
+      transition: margin $trans-default;
     }
 
     input[type="checkbox"]:checked + h4 {
@@ -138,12 +136,12 @@
   opacity: 0;
   visibility: hidden;
 
-  transition: all $trans-default;
+  transition: opacity $trans-default, visibility $trans-default, height $trans-default;
 
   label {
     font-weight: 300;
 
-    transition: all $trans-default;
+    transition: font-weight $trans-default;
 
     input[type="checkbox"] {
       display: none;
@@ -153,7 +151,7 @@
       margin: 4px 0 0 0;
       opacity: 0;
       visibility: hidden;
-      transition: all $trans-default;
+      transition: opacity $trans-default, visibility $trans-default;
     }
 
     input[type="checkbox"]:checked + svg {
@@ -167,7 +165,7 @@
   .subcategories {
     opacity: 1;
     visibility: visible;
-    height: auto;
+    height: fit-content;
 
     margin: 0 0 17px;
   }
