@@ -1,12 +1,12 @@
 'use client'
 
 import Link from 'next/link';
+
 import { Container } from "@/ui/container/container";
 
 import styles from './404.module.scss';
 
 export default function Error404() {
-
   return (
     <section className={styles.root}>
       <Container>

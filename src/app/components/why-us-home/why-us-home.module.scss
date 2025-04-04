@@ -8,6 +8,17 @@
   @include vp-1023 {
     padding: 36px 0 70px;
   }
+
+  .reasonsList svg {
+    width: 100%;
+    max-width: 285px;
+    height: 185px;
+
+    @include vp-767 {
+      max-width: 139px;
+      height: 124px;
+    }
+  }
 }
 
 .img {
@@ -26,6 +37,10 @@
 }
 
 .title {
+  svg {
+    fill: $color-asparagus;
+  }
+
   @include vp-1023 {
     padding: 0 0 9px;
   }

@@ -1,20 +1,17 @@
-import Logo from '../../../ui/logo/logo';
-import Social from '../social/social';
-import Contacts from '../contacts/contacts';
-import { Container } from "../../../ui/container/container";
-import Nav from '../nav/nav';
+import Logo from '@/ui/logo/logo';
+import { Container } from '@/ui/container/container';
 
-import { basePath } from '@/const';
-import Image from 'next/image';
+import Icon from '@/ui/icon/icon';
+import Social from '@/app/components/social/social';
+import Contacts from '@/app/components/contacts/contacts';
+import Nav from '@/app/components/nav/nav';
 
 import styles from './footer.module.scss';
 
+import HopsLine from '@/assets/hops-line.svg';
+
 export default function Footer() {
   const navLinks = [
-    {
-      href: '/shopping-cart',
-      label: 'Корзина',
-    },
     {
       href: '/catalog',
       label: 'Каталог',
@@ -61,24 +58,11 @@ export default function Footer() {
         </div>
       </Container>
       <div className={styles.decoration}>
-        <Image
-          src={`${basePath}/svg/hops-line.svg`}
-          width={640}
-          height={196}
-          alt="Изображение хмеля."
-        />
-        <Image
-          src={`${basePath}/svg/hops-line.svg`}
-          width={640}
-          height={196}
-          alt="Изображение хмеля."
-        />
-        <Image
-          src={`${basePath}/svg/hops-line.svg`}
-          width={640}
-          height={196}
-          alt="Изображение хмеля."
-        />
+        <Icon path={HopsLine} width={640} height={195} />
+        <Icon path={HopsLine} width={640} height={195} />
+        <Icon path={HopsLine} width={640} height={195} />
+        <Icon path={HopsLine} width={640} height={195} />
+        <Icon path={HopsLine} width={640} height={195} />
       </div>
     </footer>
   )

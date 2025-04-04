@@ -3,13 +3,16 @@
 import { useRef, useEffect, useState } from "react";
 import { Swiper, SwiperSlide, SwiperRef } from "swiper/react";
 import { Navigation } from 'swiper/modules';
+import Image from "next/image";
+
+import { basePath } from "@/const";
+import { Container } from "@/ui/container/container";
+import Icon from '@/ui/icon/icon';
+import Title from '@/ui/title/title';
 
 import styles from './partners.module.scss';
 
-import Image from "next/image";
-import { basePath } from "@/const";
-import { Container } from "../../../ui/container/container";
-import Title from '@/ui/title/title';
+import ArrowShortGreenIcon from '@/assets/arrow-short-green.svg';
 
 export default function Partners() {
   const PartnersImgList = [
@@ -95,7 +98,7 @@ export default function Partners() {
           </picture>
         </div>
         <div className={styles.wrapper}>
-          <Title className={styles.partnersTitle} image="wheat-green" title="Наши партнеры"/>
+          <Title className={styles.partnersTitle} iconColor="green" title="Наши партнеры"/>
           {!isMobileScreen && !isTabletScreen && (
             <Swiper
               ref={swiperRef}
@@ -172,18 +175,10 @@ export default function Partners() {
             </Swiper>
           )}
           <div ref={navigationPrevRef} className={styles.navigationPrev}>
-            <Image
-              src={`${basePath}/svg/arrow-short-green.svg`}
-              width={23}
-              height={20}
-              alt={'Назад.'} />
+            <Icon path={ArrowShortGreenIcon} width={23} height={20} />
           </div>
           <div ref={navigationNextRef} className={styles.navigationNext}>
-            <Image
-              src={`${basePath}/svg/arrow-short-green.svg`}
-              width={23}
-              height={20}
-              alt={'Вперед.'} />
+            <Icon path={ArrowShortGreenIcon} width={23} height={20} />
           </div>
         </div>
       </Container>

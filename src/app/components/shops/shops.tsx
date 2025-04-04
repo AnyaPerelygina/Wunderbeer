@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import { basePath } from '@/const';
 
-import { Container } from '../../../ui/container/container';
+import { Container } from '@/ui/container/container';
 import styles from './shops.module.scss';
-import FormForMessages from '../forms/form-for-messages/form-for-messages';
+import FormForMessages from '@/app/components/forms/form-for-messages/form-for-messages';
 
 export default function Shops() {
   return (

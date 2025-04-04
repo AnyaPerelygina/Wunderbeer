@@ -40,6 +40,10 @@
 .partnersTitle {
   padding: 0 0 48px;
 
+  svg {
+    fill: $color-asparagus;
+  }
+
   @include vp-767 {
     padding: 0 0 35px;
   }
@@ -83,6 +87,13 @@
   width: 23px;
   cursor: pointer;
   z-index: 666;
+
+  opacity: 1;
+  transition: opacity $tf-default;
+
+  @include hover-focus {
+    opacity: 0.8;
+  }
 
   @include vp-767 {
     top: 55%;

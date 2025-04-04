@@ -3,14 +3,17 @@
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from 'next/image';
 
 import { basePath } from '@/const';
-import Image from 'next/image';
 
 import Title from '@/ui/title/title';
 import LinkNew from '@/ui/link/link';
+import Icon from "@/ui/icon/icon";
+import { Container } from '@/ui/container/container';
 
-import { Container } from '../../../ui/container/container';
+import Hops from '@/assets/hops.svg';
+import MugOfBeer from '@/assets/mug-of-beer.svg';
 
 import styles from './about.module.scss';
 
@@ -53,7 +56,7 @@ export default function About() {
           delay: 0.5,
           scrollTrigger: {
             trigger: aboutRef.current,
-            start: "top center",
+            start: "center center",
             toggleActions: "play none none none",
             onEnter: () => {
               gsap.to(aboutImg2Ref.current, { x: 0, opacity: 1, duration: 1, delay: 0.5 });
@@ -85,24 +88,14 @@ export default function About() {
           </div>
           <div className={styles.animation}>
             <div className={styles.img1} ref={aboutImg1Ref}>
-              <Image
-                  src={`${basePath}/svg/mug-of-beer.svg`}
-                  width={242}
-                  height={420}
-                  alt="Изображение кружки пива."
-                />
+              <Icon path={MugOfBeer} width={240} height={420} />
             </div>
             <div className={styles.img2} ref={aboutImg2Ref}>
-              <Image
-                src={`${basePath}/svg/hops.svg`}
-                width={205}
-                height={354}
-                alt="Изображение хмеля."
-              />
+              <Icon path={Hops} width={205} height={354} />
             </div>
           </div>
           <div className={styles.text}>
-            <Title className={styles.title} image="wheat-green" title="О компании"/>
+            <Title className={styles.title} iconColor="green" title="О компании" />
             <p>Приветствуем на&nbsp;официальном сайте компании «Вундербир» – опытного и&nbsp;квалифицированного производителя и&nbsp;поставщика вкусного, качественного пива! В&nbsp;ассортименте в&nbsp;большом разнообразии представлены хмельные напитки собственного изготовления, а&nbsp;также от&nbsp;проверенных и&nbsp;надёжных партнёров – приобрести пиво оптом Москве и&nbsp;Московской области можно на&nbsp;выгодных условиях, а&nbsp;главное, будучи уверенным в&nbsp;отличных вкусовых характеристиках!</p>
             <LinkNew className={styles.btn} href={'/about-us'}>Подробнее</LinkNew>
           </div>

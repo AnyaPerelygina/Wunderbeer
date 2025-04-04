@@ -12,11 +12,6 @@
     padding: 21px 0 19px;
   }
 
-  .container {
-    position: relative;
-    z-index: 2;
-  }
-
   .wrapper {
     max-width: 1111px;
 
@@ -24,6 +19,9 @@
     grid-template-columns: 350px 254px auto;
     justify-content: space-between;
     margin: 0 auto;
+
+    position: relative;
+    z-index: 2;
 
     @include vp-1023 {
       display: flex;
@@ -156,8 +154,9 @@
 
 .decoration {
   position: absolute;
-  content: "";
-  bottom: -50px;
+  content: '';
+  bottom: 0;
+  z-index: 1;
 
   display: flex;
   flex-direction: row;
@@ -165,16 +164,16 @@
   justify-content: center;
   align-items: flex-end;
   gap: 0;
-  width: 100%;
+  width: 2600px;
+  height: 195px;
 
   overflow: hidden;
 
-  img:first-child {
+  svg:first-child {
     transform: rotateY(180deg);
   }
 
-  img {
-    width: 100%;
-    object-fit: cover;
+  svg:nth-child(4n) {
+    transform: rotateY(180deg);
   }
 }

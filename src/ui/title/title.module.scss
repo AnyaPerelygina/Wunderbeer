@@ -16,7 +16,10 @@
     padding: 0 0 92px;
   }
 
-  img {
+  svg {
+    width: 47px;
+    height: 18px;
+
     &:first-child {
       justify-self: end;
     }

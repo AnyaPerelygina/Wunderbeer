@@ -1,20 +1,24 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide, SwiperRef } from "swiper/react";
 import { Navigation, Pagination, Autoplay} from 'swiper/modules';
-import { basePath } from "@/const";
-import MouseButton from "./mouse-button/mouse-button";
-import { Container } from "../../../ui/container/container";
+import Image from 'next/image';
+
+import Icon from '@/ui/icon/icon';
+import LinkNew from '@/ui/link/link';
+
+import { basePath } from '@/const';
+import MouseButton from './mouse-button/mouse-button';
+import { Container } from '@/ui/container/container';
+
+import styles from './hero.module.scss';
 
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 
-import Image from "next/image";
-import LinkNew from "../../../ui/link/link";
-
-import styles from './hero.module.scss';
+import ArrowShort from '@/assets/arrow-short.svg';
 
 export default function Hero() {
   const HeroImgList = [
@@ -136,18 +140,10 @@ export default function Hero() {
           )}
           <div className={styles.navigation}>
             <div ref={navigationPrevRef} className={styles.navigationPrev}>
-              <Image
-                src={`${basePath}/svg/arrow-short.svg`}
-                width={22}
-                height={22}
-                alt={'Назад.'} />
+              <Icon path={ArrowShort} width={22} height={22} />
             </div>
             <div ref={navigationNextRef} className={styles.navigationNext}>
-              <Image
-                src={`${basePath}/svg/arrow-short.svg`}
-                width={22}
-                height={22}
-                alt={'Вперед.'} />
+              <Icon path={ArrowShort} width={22} height={22} />
             </div>
             </div>
           <MouseButton />

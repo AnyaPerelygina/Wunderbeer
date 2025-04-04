@@ -1,9 +1,10 @@
 import Image from 'next/image';
-import { basePath } from '@/const';
 
+import { basePath } from '@/const';
 import { Container } from '../../../ui/container/container';
+import FormForMessages from '@/app/components/forms/form-for-messages/form-for-messages';
+
 import styles from './distribution-block.module.scss';
-import FormForMessages from '../forms/form-for-messages/form-for-messages';
 
 export default function DistributionBlock() {
   return (
@@ -23,7 +24,7 @@ export default function DistributionBlock() {
             <picture>
               <source type="image/webp" media="(min-width: 320px)" srcSet={`${basePath}/shops/shops-3.webp`} />
               <Image
-                src={`${basePath}//shops/shops-3.png`}
+                src={`${basePath}/shops/shops-3.png`}
                 width={540}
                 height={359}
                 alt="Изображение пивных бочек."
@@ -34,7 +35,7 @@ export default function DistributionBlock() {
             <picture>
               <source type="image/webp" media="(min-width: 320px)" srcSet={`${basePath}/shops/shops-4.webp`} />
               <Image
-                src={`${basePath}//shops/shops-4.png`}
+                src={`${basePath}/shops/shops-4.png`}
                 width={540}
                 height={359}
                 alt="Изображение пивных кег."

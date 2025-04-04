@@ -108,19 +108,25 @@
   transition: right $trans-default;
   transition: opacity $trans-default;
 
+  svg {
+    width: 224px;
+    height: 342px;
+  }
+
   @media (max-width: 1600px) {
     top: 20px;
   }
 
   @include vp-1023 {
-    right: -35px;
+    right: 0;
     opacity: 0.1;
   }
 
   @include vp-767 {
     top: 22.4%;
 
-    img {
+    svg {
+      width: 154px;
       height: 234px;
     }
   }

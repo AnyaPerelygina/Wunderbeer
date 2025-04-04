@@ -1,11 +1,11 @@
 import React, { useState, useMemo, ChangeEvent } from 'react';
 
-import styles from './filter-block.module.scss';
-import { FilterBlockProps } from './filter-block.types';
-
-import { Category } from './filter-block.types';
 import Button from '@/ui/button/button';
 import Icon from '@/ui/icon/icon';
+
+import styles from './filter-block.module.scss';
+import { Category, FilterBlockProps } from './filter-block.types';
+
 import WheatYellow from '@/assets/wheat-yellow.svg';
 import WheatGreenMini from '@/assets/wheat-green-mini.svg';
 

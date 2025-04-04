@@ -1,42 +1,39 @@
 import Image from 'next/image';
+
 import { basePath } from '@/const';
+import { Container } from "@/ui/container/container";
+import Reasons from '@/app/components/reasons/reasons';
 
 import styles from './why-us.module.scss';
 
-import { Container } from "../../../ui/container/container";
-import Reasons from '../reasons/reasons';
+import Wheats from '@/assets/wheats.svg';
+import HopsSimple from '@/assets/hops-simple.svg';
+import Molecules from '@/assets/molecules.svg';
+import Brewery from '@/assets/brewery.svg';
 
 export default function WhyUs() {
   const ReasonsList = [
     {
-      link: 'wheats.svg',
-      width: 130,
-      height: 130,
-      alt: 'Изображение колосьев.',
+      key: 'wheats',
+      link: Wheats,
       title: 'Солод',
       description: 'Отборный солод придаёт нашему пиву тот самый насыщенный вкус, который ценят истинные гурманы.'
     },
     {
-      link: 'hops-simple.svg',
-      width: 133,
-      height: 132,
-      alt: 'Изображение хмеля.',
+      key: 'hops-simple',
+      link: HopsSimple,
       title: 'Качественные материалы',
       description: 'Каждое зерно и каждый листок хмеля проходят тщательный отбор, чтобы обеспечить непревзойдённое качество.'
     },
     {
-      link: 'molecules.svg',
-      width: 128,
-      height: 135,
-      alt: 'Изображение химического элемента.',
+      key: 'molecules',
+      link: Molecules,
       title: 'Технологии',
       description: 'Современные технологии пивоварения позволяют нам сохранять традиции, улучшая рецепты.'
     },
     {
-      link: 'brewery.svg',
-      width: 127,
-      height: 126,
-      alt: 'Изображение пивоварни.',
+      key: 'brewery',
+      link: Brewery,
       title: 'Оборудование',
       description: 'Передовое оборудование помогает нам воплощать в жизнь самые амбициозные идеи.'
     }
@@ -57,7 +54,7 @@ export default function WhyUs() {
           </picture>
         </div>
         <h2 className={styles.title}>Почему мы</h2>
-        <Reasons reasonsList={ReasonsList} />
+        <Reasons reasonsList={ReasonsList} className={styles.reasonsList} />
       </Container>
     </section>
   )

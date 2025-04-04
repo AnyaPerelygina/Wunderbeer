@@ -3,29 +3,33 @@
 import { useRef, useEffect, useState } from "react";
 import { Swiper, SwiperSlide, SwiperRef } from "swiper/react";
 import { Navigation } from 'swiper/modules';
-
 import Image from "next/image";
-import WheatYellow from '@/assets/wheat-yellow.svg';
 import Link from "next/link";
-import { basePath } from "@/const";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import FormForQuestions from "../forms/form-for-questions/form-for-questions";
+import { basePath } from "@/const";
 import { Container } from "@/ui/container/container";
 import ButtonBuy from "@/ui/button-buy/button-buy";
 import Button from "@/ui/button/button";
 import Icon from "@/ui/icon/icon";
-import Card from "../card/card";
-import Arrow from "@/assets/arrow-long-black.svg";
+
+import Card from "@/app/components/card/card";
+import FormForQuestions from "@/app/components/forms/form-for-questions/form-for-questions";
 
 import styles from "./product.module.scss";
+import { ProductProps } from "./product.type";
+
 import "swiper/css";
 import "swiper/css/navigation";
 
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 import mockCatalogCards from "@/app/data/data";
-import { ProductProps } from "./product.type";
+import WheatYellow from '@/assets/wheat-yellow.svg';
+import Arrow from "@/assets/arrow-long-black.svg";
+import Hops from '@/assets/hops.svg';
+import MugOfBeer from '@/assets/mug-of-beer.svg';
+import GlassOfBeer from '@/assets/glass-of-beer.svg';
+import ArrowShortGreenIcon from '@/assets/arrow-short-green.svg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -154,20 +158,10 @@ export default function Product({ params }: ProductProps) {
         <div className={styles.about} ref={aboutRef}>
           <div className={styles.aboutAnimation}>
             <div className={styles.img1} ref={aboutImg1Ref}>
-              <Image
-                  src={`${basePath}/svg/mug-of-beer.svg`}
-                  width={245}
-                  height={364}
-                  alt="Изображение кружки пива."
-                />
+              <Icon path={MugOfBeer} />
             </div>
             <div className={styles.img2} ref={aboutImg2Ref}>
-              <Image
-                src={`${basePath}/svg/hops.svg`}
-                width={220}
-                height={266}
-                alt="Изображение хмеля."
-              />
+              <Icon path={Hops} />
             </div>
           </div>
           <div className={styles.aboutWrapper}>
@@ -258,12 +252,7 @@ export default function Product({ params }: ProductProps) {
         <div className={styles.more} ref={moreRef}>
           <div className={styles.moreAnimation}>
             <div className={styles.img} ref={moreImgRef}>
-              <Image
-                src={`${basePath}/svg/glass-of-beer.svg`}
-                width={224}
-                height={342}
-                alt="Изображение кружки пива."
-              />
+              <Icon path={GlassOfBeer} />
             </div>
           </div>
           <div className={styles.moreWrapper}>
@@ -306,18 +295,10 @@ export default function Product({ params }: ProductProps) {
                     ))}
                   </Swiper>
                   <div ref={navigationPrevRef} className={styles.navigationPrev}>
-                    <Image
-                      src={`${basePath}/svg/arrow-short-green.svg`}
-                      width={23}
-                      height={20}
-                      alt={'Назад.'} />
+                    <Icon path={ArrowShortGreenIcon} width={23} height={20} />
                   </div>
                   <div ref={navigationNextRef} className={styles.navigationNext}>
-                    <Image
-                      src={`${basePath}/svg/arrow-short-green.svg`}
-                      width={23}
-                      height={20}
-                      alt={'Вперед.'} />
+                    <Icon path={ArrowShortGreenIcon} width={23} height={20} />
                   </div>
                 </div>
               ) : (

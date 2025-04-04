@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 import { useCart } from "@/context/cart-context";
 import { Container } from '@/ui/container/container';
-import FormOrders from '../forms/form-orders/form-orders';
+import FormOrders from '@/app/components/forms/form-orders/form-orders';
 import ShoppingCartMini from '@/app/components/shopping-cart-mini/shopping-cart-mini';
 
 import styles from './order-block.module.scss';

@@ -30,20 +30,6 @@
   justify-content: flex-start;
   align-items: center;
 
-  &::after {
-    position: absolute;
-    content: "";
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    background-image: url('../../../../../public/svg/popup/wheats-popup.svg');
-    background-repeat: repeat-x;
-    background-size: 412px 100%;
-    background-position: center bottom;
-    height: 126px;
-    width: 100%;
-  }
-
   p {
     color: $color-default-white;
     z-index: 2;
@@ -189,6 +175,23 @@
       top: unset;
       right: -24px;
       bottom: -20px;
+    }
+  }
+
+  .image3 {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    @include vp-767 {
+      display: none;
     }
   }
 }

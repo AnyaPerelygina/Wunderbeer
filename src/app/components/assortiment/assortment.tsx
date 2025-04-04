@@ -1,57 +1,26 @@
 'use client';
 
-import gsap from "gsap";
-
-import { Container } from "../../../ui/container/container";
-import Image from "next/image";
-import Title from '@/ui/title/title';
-import styles from './assortment.module.scss';
-
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { basePath } from "@/const";
 import { useRef, useEffect } from "react";
+import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+import { basePath } from "@/const";
+import { Container } from "@/ui/container/container";
+import Title from '@/ui/title/title';
+import Icon from '@/ui/icon/icon';
+
+import Beers from '@/assets/beers.svg';
+import Beer from '@/assets/beer.svg';
+import Cider  from '@/assets/cider.svg';
+import BeerBottleAndGlass from '@/assets/beer-bottle-and-glass.svg';
+import Lemonade from '@/assets/lemonade.svg';
+
+import styles from './assortment.module.scss';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Assortment() {
-  const AssortmentList = [
-    {
-      link: 'beers.svg',
-      width: 115,
-      height: 129,
-      alt: 'Изображение пивных кружек.',
-      text: 'Пиво',
-    },
-    {
-      link: 'beer.svg',
-      width: 77,
-      height: 133,
-      alt: 'Изображение пивной кружки.',
-      text: 'Пивные напитки',
-    },
-    {
-      link: 'cider.svg',
-      width: 99,
-      height: 135,
-      alt: 'Изображение сидра.',
-      text: 'Сидр',
-    },
-    {
-      link: 'beer-bottle-and-glass.svg',
-      width: 120,
-      height: 129,
-      alt: 'Изображение кваса.',
-      text: 'Квас',
-    },
-    {
-      link: 'lemonade.svg',
-      width: 100,
-      height: 143,
-      alt: 'Изображение лимонада.',
-      text: 'Лимонад',
-    }
-  ];
-
   const assortmentRef = useRef<HTMLDivElement>(null);
   const assortmentImg1Ref = useRef<HTMLDivElement>(null);
   const assortmentImg2Ref = useRef<HTMLDivElement>(null);
@@ -131,19 +100,28 @@ export default function Assortment() {
             />
           </picture>
         </div>
-        <Title image="wheat-yellow" title="Наш ассортимент"/>
+        <Title iconColor="yellow" title="Наш ассортимент"/>
         <ul className={styles.list}>
-          {AssortmentList.map((img) => (
-            <li className={styles.item} key={img.link}>
-              <Image
-                src={`${basePath}/svg/${img.link}`}
-                width={img.width}
-                height={img.height}
-                alt={img.alt}
-              />
-              <span>{img.text}</span>
-            </li>
-          ))}
+          <li className={styles.item}>
+            <Icon path={Beers} />
+            <span>Пиво</span>
+          </li>
+          <li className={styles.item}>
+            <Icon path={Beer} />
+            <span>Пивные напитки</span>
+          </li>
+          <li className={styles.item}>
+            <Icon path={Cider} />
+            <span>Сидр</span>
+          </li>
+          <li className={styles.item}>
+            <Icon path={BeerBottleAndGlass} />
+            <span>Квас</span>
+          </li>
+          <li className={styles.item}>
+            <Icon path={Lemonade} />
+            <span>Лимонад</span>
+          </li>
         </ul>
         <div className={styles.img1} ref={assortmentImg1Ref}>
           <picture>

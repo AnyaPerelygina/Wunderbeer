@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 
-import { Container } from '../../../ui/container/container';
+import { Container } from '@/ui/container/container';
 import FilterResults from '@/app/components/filter/filter-results/filter-results';
 import Filter from '@/app/components/filter/filter';
-import FormForQuestions from '../forms/form-for-questions/form-for-questions';
+import FormForQuestions from '@/app/components/forms/form-for-questions/form-for-questions';
 import CatalogList from '@/app/components/catalog-list/catalog-list';
 
 import styles from './catalog-block.module.scss';

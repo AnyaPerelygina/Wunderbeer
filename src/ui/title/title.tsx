@@ -1,24 +1,18 @@
-import Image from 'next/image';
-import { basePath } from '@/const';
+import Icon from '../icon/icon';
 
 import styles from './title.module.scss';
 import { TitleProps } from './title.types';
 
-export default function Title( { image, title, className }: TitleProps) {
+import WheatYellow from '@/assets/wheat-yellow.svg';
+import WheatGreen from '@/assets/wheat-green.svg';
+
+export default function Title( { title, className, iconColor }: TitleProps) {
+  const iconPath = iconColor === 'green' ? WheatGreen : WheatYellow;
+
   return (
     <div className={`${styles.title} ${className}`}>
-      <Image
-        src={`${basePath}/svg/${image}.svg`}
-        width={47}
-        height={18}
-        alt="Изображение колосьев."
-      />
-      <Image
-        src={`${basePath}/svg/${image}.svg`}
-        width={47}
-        height={18}
-        alt="Изображение колосьев."
-      />
+      <Icon path={iconPath} />
+      <Icon path={iconPath} />
       <h2>{title}</h2>
     </div>
   )

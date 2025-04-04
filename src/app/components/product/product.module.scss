@@ -84,14 +84,25 @@
 .aboutAnimation {
   position: absolute;
   top: 0;
-  max-width: 200px;
 
   @include vp-1023 {
     display: none;
   }
 
+  .img1 {
+    svg {
+      width: 242px;
+      height: 420px;
+    }
+  }
+
   .img2 {
-    margin: -86px 0 0;
+    margin: -98px 0 0;
+
+    svg {
+      width: 205px;
+      height: 354px;
+    }
   }
 }
 
@@ -379,10 +390,6 @@
   transform: rotate(180deg);
   left: 60px;
 
-  @include vp-1023 {
-    left: 40px;
-  }
-
   @include vp-767 {
     left: 0;
   }
@@ -390,21 +397,27 @@
 
 .navigationPrev,
 .navigationNext {
+  width: 23px;
+  height: 20px;
+
+  opacity: 1;
+  transition: opacity $tf-default;
+
+  @include hover-focus {
+    opacity: 0.8;
+  }
+
   @include vp-767 {
     position: absolute;
     top: 38%;
-    width: 23px;
-    cursor: pointer;
     z-index: 2;
+
+    cursor: pointer;
   }
 }
 
 .navigationNext {
   right: 60px;
-
-  @include vp-1023 {
-    right: 40px;
-  }
 
   @include vp-767 {
     right: 0;
@@ -422,9 +435,18 @@
   transition: right $trans-default;
   transition: opacity $trans-default;
 
+  .img svg {
+    width: 224px;
+    height: 342px;
+
+    @include vp-767 {
+      width: 154px;
+      height: 234px;
+    }
+  }
+
   @include vp-1023 {
-    bottom: -130px;
+    bottom: -100px;
     opacity: 0.1;
-    height: 351px;
   }
 }

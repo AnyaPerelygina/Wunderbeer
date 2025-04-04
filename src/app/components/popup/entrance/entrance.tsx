@@ -1,13 +1,16 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react';
-import Image from "next/image";
 import { gsap } from 'gsap';
+
+import Button from '@/ui/button/button';
+import Icon from '@/ui/icon/icon';
 
 import styles from './entrance.module.scss';
 
-import Button from '@/ui/button/button';
-import { basePath } from "@/const";
+import WheatPopup from '@/assets/popup/wheat-popup.svg';
+import GlassOfBeerPopup from '@/assets/popup/glass-of-beer-popup.svg';
+import WheatsPopup from '@/assets/popup/wheats-popup.svg';
 
 export default function EntrancePopup() {
   const [isVisible, setIsVisible] = useState(false);
@@ -64,20 +67,14 @@ export default function EntrancePopup() {
         </div>
         <div className={styles.images}>
           <div className={styles.image1}>
-            <Image
-              src={`${basePath}/svg/popup/wheat-popup.svg`}
-              width={77}
-              height={120}
-              alt={'.'}
-            />
+            <Icon path={WheatPopup} width={77} height={120} />
           </div>
           <div className={styles.image2}>
-            <Image
-              src={`${basePath}/svg/popup/glass-of-beer-popup.svg`}
-              width={124}
-              height={200}
-              alt={'.'}
-            />
+            <Icon path={GlassOfBeerPopup} width={124} height={200} />
+          </div>
+          <div className={styles.image3}>
+            <Icon path={WheatsPopup} width={414} height={126} />
+            <Icon path={WheatsPopup} width={414} height={126} />
           </div>
         </div>
       </div>

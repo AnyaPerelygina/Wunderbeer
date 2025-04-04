@@ -1,21 +1,15 @@
-import Image from 'next/image';
-import { basePath } from '@/const';
-
 import styles from './reasons.module.scss';
 import { ReasonsProps } from './reasons.type';
 
-export default function Reasons({ reasonsList }: ReasonsProps) {
+import Icon from '@/ui/icon/icon';
+
+export default function Reasons({ reasonsList, className }: ReasonsProps) {
   return (
-    <ul className={styles.list}>
+    <ul className={`${styles.list} ${className}`}>
       {reasonsList.map((reasosns) => (
-        <li className={styles.item} key={reasosns.link}>
+        <li className={styles.item} key={reasosns.key}>
           <div className={styles.image}>
-            <Image
-              src={`${basePath}/svg/${reasosns.link}`}
-              width={reasosns.width}
-              height={reasosns.height}
-              alt={reasosns.alt}
-            />
+            <Icon path={reasosns.link} />
           </div>
           <span>{reasosns.title}</span>
           {reasosns.description && <p>{reasosns.description}</p>}

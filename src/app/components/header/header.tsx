@@ -4,16 +4,16 @@ import React, { useState, useEffect, useRef } from 'react';
 
 import Logo from '@/ui/logo/logo';
 import Icon from '@/ui/icon/icon';
+import { Container } from "@/ui/container/container";
+
+import Social from '@/app/components/social/social';
+import ShoppingBasket from '@/app/components/header/shopping-basket/shopping-basket';
+import Nav from '@/app/components/nav/nav';
+
+import styles from './header.module.scss';
 
 import BurberOpen from '@/assets/burger-open.svg';
 import BurberClose from '@/assets/burger-close.svg';
-
-import Social from '../social/social';
-import ShoppingBasket from './shopping-basket/shopping-basket';
-import Nav from '../nav/nav';
-import { Container } from "@/ui/container/container";
-
-import styles from './header.module.scss';
 
 export default function Header() {
   const navLinks = [

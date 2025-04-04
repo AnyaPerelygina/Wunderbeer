@@ -3,15 +3,17 @@
 import { useRef, useEffect, useState } from "react";
 import { Swiper, SwiperSlide, SwiperRef } from "swiper/react";
 import { Navigation } from 'swiper/modules';
-import Image from "next/image";
+import Image from 'next/image';
+
+import { basePath } from '@/const';
+import Icon from '@/ui/icon/icon';
+import { Container } from '@/ui/container/container';
+import Title from '@/ui/title/title';
 
 import styles from './novelty.module.scss';
 
-import { basePath } from "@/const";
-import { Container } from "../../../ui/container/container";
-import Title from '@/ui/title/title';
-
 import mockCatalogCards from '@/app/data/data';
+import ArrowShortGreenIcon from '@/assets/arrow-short-green.svg';
 
 export default function Novelty() {
   const [isMobileScreen, setIsMobileScreen] = useState(false);
@@ -58,7 +60,7 @@ export default function Novelty() {
           </picture>
         </div>
         <div className={styles.wrapper}>
-          <Title className={styles.noveltyTitle} image="wheat-green" title="Новинки"/>
+          <Title className={styles.noveltyTitle} iconColor="yellow" title="Новинки"/>
           <p>Откройте для себя наше пиво</p>
           {!isMobileScreen && !isTabletScreen && (
             <Swiper
@@ -142,18 +144,10 @@ export default function Novelty() {
             </Swiper>
           )}
           <div ref={navigationPrevRef} className={styles.navigationPrev}>
-            <Image
-              src={`${basePath}/svg/arrow-short-green.svg`}
-              width={23}
-              height={20}
-              alt={'Назад.'} />
+            <Icon path={ArrowShortGreenIcon} width={23} height={20} />
           </div>
           <div ref={navigationNextRef} className={styles.navigationNext}>
-            <Image
-              src={`${basePath}/svg/arrow-short-green.svg`}
-              width={23}
-              height={20}
-              alt={'Вперед.'} />
+            <Icon path={ArrowShortGreenIcon} width={23} height={20} />
           </div>
         </div>
       </Container>

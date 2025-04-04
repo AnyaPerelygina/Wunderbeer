@@ -1,17 +1,18 @@
 import { basePath } from '@/const';
 import Image from 'next/image';
 
-import styles from './services.module.scss';
 import Title from '@/ui/title/title';
 import LinkNew from '@/ui/link/link';
-import { Container } from "../../../ui/container/container";
+import { Container } from "@/ui/container/container";
+
+import styles from './services.module.scss';
 
 export default function Services() {
   return (
     <section className={styles.services}>
       <Container className={styles.container}>
         <div className={styles.wrapper}>
-          <Title className={styles.servicesTitle} image="wheat-yellow" title="Услуги" />
+          <Title className={styles.servicesTitle} iconColor="yellow" title="Услуги" />
           <div className={styles.distribution}>
             <div className={styles.img}>
               <picture>

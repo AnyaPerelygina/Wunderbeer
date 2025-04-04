@@ -1,14 +1,16 @@
 'use client'
 
 import { useState, useEffect } from 'react';
+import Image from "next/image";
+
+import { basePath } from "@/const";
 import { useCart } from "@/context/cart-context";
-import { Container } from '../../../ui/container/container';
+import { Container } from '@/ui/container/container';
 import LinkNew from '@/ui/link/link';
+import Icon from "@/ui/icon/icon";
+
 import styles from './shopping-cart-block.module.scss';
 
-import Image from "next/image";
-import { basePath } from "@/const";
-import Icon from "@/ui/icon/icon";
 import Trash from '@/assets/trash.svg';
 
 export default function ShoppingCartBlock() {

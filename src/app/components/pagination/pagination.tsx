@@ -1,9 +1,11 @@
 'use client';
 
 import Icon from '@/ui/icon/icon';
-import Wheat from '@/assets/wheat-green.svg';
+
 import styles from './pagination.module.scss';
 import { PaginationProps } from './pagination.types';
+
+import Wheat from '@/assets/wheat-green.svg';
 
 export default function Pagination({
   currentPage,

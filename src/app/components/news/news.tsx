@@ -3,16 +3,17 @@
 import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-import { basePath } from '@/const';
 import Image from 'next/image';
 
+import { basePath } from '@/const';
+import { Container } from '@/ui/container/container';
 import Title from '@/ui/title/title';
 import Button from "@/ui/button/button";
 
-import { Container } from '../../../ui/container/container';
-
 import styles from './news.module.scss';
+import Icon from "@/ui/icon/icon";
+
+import GlassOfBeer from '@/assets/glass-of-beer.svg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -79,7 +80,7 @@ export default function News() {
     <section className={styles.root} ref={newsRef}>
       <Container className={styles.container}>
         <div className={styles.wrapper}>
-          <Title className={styles.title} image="wheat-yellow" title="Новости" />
+          <Title className={styles.title} iconColor="yellow" title="Новости" />
           <ul className={styles.list}>
             {NewsList.slice(0, visibleNewsCount).map((img) => (
               <li className={styles.item} key={img.link}>
@@ -105,12 +106,7 @@ export default function News() {
           ) : null}
           <div className={styles.animation}>
             <div className={styles.img} ref={newsImgRef}>
-              <Image
-                src={`${basePath}/svg/glass-of-beer.svg`}
-                width={224}
-                height={342}
-                alt="Изображение кружки пива."
-              />
+              <Icon path={GlassOfBeer} />
             </div>
           </div>
         </div>

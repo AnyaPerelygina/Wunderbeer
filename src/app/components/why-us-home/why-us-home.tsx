@@ -1,39 +1,38 @@
 import Image from 'next/image';
+
 import { basePath } from '@/const';
+import Title from '@/ui/title/title';
+import { Container } from "@/ui/container/container";
+
+import Reasons from '@/app/components/reasons/reasons';
 
 import styles from './why-us-home.module.scss';
-import Title from '@/ui/title/title';
-import { Container } from "../../../ui/container/container";
-import Reasons from '../reasons/reasons';
+
+import Wheat from '@/assets/wheat.svg';
+import HopWithBranches from '@/assets/hops-with-branches.svg';
+import Barell from '@/assets/barell.svg';
+import ModernBrewery from '@/assets/modern-brewery.svg';
 
 export default function WhyUsHome() {
   const ReasonsList = [
     {
-      link: 'wheat.svg',
-      width: 106,
-      height: 185,
-      alt: 'Изображение колосьев.',
+      key: 'wheat',
+      link: Wheat,
       title: 'Отборный солод',
     },
     {
-      link: 'hops-with-branches.svg',
-      width: 138,
-      height: 172,
-      alt: 'Изображение хмеля.',
+      key: 'hops-with-branches',
+      link: HopWithBranches,
       title: 'Качественный хмель',
     },
     {
-      link: 'barell.svg',
-      width: 159,
-      height: 187,
-      alt: 'Изображение барелли.',
+      key: 'barell',
+      link: Barell,
       title: 'Специальная вода',
     },
     {
-      link: 'modern-brewery.svg',
-      width: 285,
-      height: 181,
-      alt: 'Изображение пивоварни.',
+      key: 'modern-brewery',
+      link: ModernBrewery,
       title: 'Современное оборудование',
     }
   ];
@@ -52,8 +51,8 @@ export default function WhyUsHome() {
             />
           </picture>
         </div>
-        <Title className={styles.title} image="wheat-green" title="Почему мы"/>
-        <Reasons reasonsList={ReasonsList} />
+        <Title className={styles.title} iconColor="green" title="Почему мы"/>
+        <Reasons reasonsList={ReasonsList} className={styles.reasonsList} />
       </Container>
     </section>
   )

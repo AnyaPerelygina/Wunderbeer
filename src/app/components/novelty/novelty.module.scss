@@ -119,6 +119,13 @@
   cursor: pointer;
   z-index: 666;
 
+  opacity: 1;
+  transition: opacity $tf-default;
+
+  @include hover-focus {
+    opacity: 0.8;
+  }
+
   @include vp-767 {
     top: 51%;
   }

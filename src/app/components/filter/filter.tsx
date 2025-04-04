@@ -2,11 +2,12 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 
+import Icon from '@/ui/icon/icon';
+import FilterBlock from '@/app/components/filter/filter-block/filter-block';
+
 import styles from './filter.module.scss';
 import { FilterProps } from './filter.types';
 
-import FilterBlock from '@/app/components/filter/filter-block/filter-block';
-import Icon from '@/ui/icon/icon';
 import WheatYellow from '@/assets/wheat-yellow.svg';
 
 export default function Filter({ applyFilters }: FilterProps) {

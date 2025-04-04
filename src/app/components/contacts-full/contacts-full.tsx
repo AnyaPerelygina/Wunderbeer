@@ -3,11 +3,15 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { Container } from '../../../ui/container/container';
-import FormForMessages from '@/app/components/forms/form-for-messages/form-for-messages';
 import { basePath } from "@/const";
+import { Container } from '@/ui/container/container';
+import Icon from '@/ui/icon/icon';
+import FormForMessages from '@/app/components/forms/form-for-messages/form-for-messages';
 
 import styles from './contacts-full.module.scss';
+
+import Phone from '@/assets/phone-green.svg';
+import Mail from '@/assets/mail-green.svg';
 
 export default function ContactsFull() {
   return (
@@ -36,31 +40,19 @@ export default function ContactsFull() {
               <h2 className={styles.title}>Свяжитесь с нами</h2>
               <Link className={styles.link} href={'tel:+7 (495) 740-40-51'} target={'_blank'}>
                 <div className={styles.icon}>
-                  <Image
-                    src={`${basePath}/svg/phone-green.svg`}
-                    width={20}
-                    height={21}
-                    alt={'.'}/>
+                  <Icon path={Phone} width={20} height={21} />
                 </div>
                 <span>+7 (495) 740-40-51</span>
               </Link>
               <Link className={styles.link} href={'tel:+7 (925) 924-07-00'} target={'_blank'}>
                 <div className={styles.icon}>
-                  <Image
-                    src={`${basePath}/svg/phone-green.svg`}
-                    width={20}
-                    height={21}
-                    alt={'.'}/>
+                  <Icon path={Phone} width={20} height={21} />
                 </div>
                 <span>+7 (925) 924-07-00</span>
               </Link>
               <Link className={styles.link} href={'mailto:wunderbeer@mail.ru'} target={'_blank'}>
                 <div className={styles.icon}>
-                  <Image
-                    src={`${basePath}/svg/mail-green.svg`}
-                    width={20}
-                    height={16}
-                    alt={'.'}/>
+                  <Icon path={Mail} width={20} height={16} />
                 </div>
                 <span>wunderbeer@mail.ru</span>
               </Link>

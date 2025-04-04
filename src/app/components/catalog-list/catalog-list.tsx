@@ -1,17 +1,19 @@
 'use client'
 
 import { useState, useEffect } from 'react';
-
 import Image from 'next/image';
+
 import { basePath } from '@/const';
 
+import Icon from '@/ui/icon/icon';
 import Card from '@/app/components/card/card';
-import Pagination from '../pagination/pagination';
+import Pagination from '@/app/components/pagination/pagination';
 
 import styles from './catalog-list.module.scss';
+import { CatalogListProps } from './catalog-list.types';
 
 import mockCatalogCards from '@/app/data/data';
-import { CatalogListProps } from './catalog-list.types';
+import WheatYellow from '@/assets/wheat-yellow.svg';
 
 export default function CatalogList({ filteredCards }: CatalogListProps) {
   const [isMobileScreen, setIsMobileScreen] = useState(false);
@@ -101,19 +103,9 @@ export default function CatalogList({ filteredCards }: CatalogListProps) {
         <div className={styles.banner}>
           <div className={styles.bannerContent}>
             <span>
-              <Image
-                src={`${basePath}/svg/wheat-yellow.svg`}
-                width={37}
-                height={14}
-                alt="Изображение колосьев."
-                />
+              <Icon path={WheatYellow} />
               Скидки 50%
-              <Image
-                src={`${basePath}/svg/wheat-yellow.svg`}
-                width={37}
-                height={14}
-                alt="Изображение колосьев."
-              />
+              <Icon path={WheatYellow} />
             </span>
             <p>На весь лимонад при покупки оптом</p>
           </div>
@@ -122,11 +114,11 @@ export default function CatalogList({ filteredCards }: CatalogListProps) {
             <source type="image/webp" media="(max-width: 767px)" srcSet={`${basePath}/news/news-1.webp`} />
             <source type="image/webp" media="(min-width: 768px)" srcSet={`${basePath}/catalog/banner-catalog.webp`} ></source>
             <Image
-                src={`${basePath}/catalog/banner-catalog.png`}
-                width={825}
-                height={141}
-                alt={'Фоновое изображение пивного крана.'}
-              />
+              src={`${basePath}/catalog/banner-catalog.png`}
+              width={825}
+              height={141}
+              alt={'Фоновое изображение пивного крана.'}
+            />
             </picture>
           </div>
         </div>
