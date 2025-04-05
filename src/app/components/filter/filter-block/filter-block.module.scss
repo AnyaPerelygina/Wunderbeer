@@ -21,17 +21,17 @@
     padding: 12px;
     margin: 36px 0 0;
 
-    transition: outline $trans-default, background-color $trans-default;
+    transition: border $trans-default, background-color $trans-default;
 
     @include hover-focus {
       color: $color-kournikova;
       background-color: transparent;
 
-      outline: 1px solid $color-kournikova;
+      border: 1px solid $color-kournikova;
     }
 
     @include vp-1023 {
-      outline: 1px solid $color-kournikova;
+      border: 1px solid $color-kournikova;
     }
   }
 }

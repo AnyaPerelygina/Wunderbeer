@@ -8,12 +8,18 @@ import { ToggleMenuType } from './shopping-basket.types';
 
 import ShoppingBasketIcon from '@/assets/shopping-basket.svg';
 
-export default function ShoppingBasket({ toggleMenu, className }: ToggleMenuType) {
+export default function ShoppingBasket({ toggleMenu, isMobile, onLinkClick, className }: ToggleMenuType) {
   const { totalItems } = useCart();
 
+  const handleClick = () => {
+    if (isMobile) {
+      toggleMenu();
+    }
+  };
+
   return (
-    <div className={`${styles.root} ${className}`} onClick={toggleMenu}>
-      <Link href={'/shopping-cart'}>
+    <div className={`${styles.root} ${className}`} onClick={handleClick}>
+      <Link href={'/shopping-cart'} onClick={onLinkClick}>
         <Icon path={ShoppingBasketIcon} />
         {totalItems > 0 && <span className={styles.count}>{totalItems}</span>}
       </Link>
