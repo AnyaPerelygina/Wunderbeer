@@ -23,7 +23,7 @@ export default function CatalogBlock() {
 
       // Фильтрация по категориям и подкатегориям
       const inCategory = selectedCategories.length === 0 || selectedCategories.every(category => {
-        // Проверяем, что тег карточки содержит хотя бы одну выбранную категорию
+        // Проверяем, что тег карточки содержит выбранную категорию и подкатегорию
         return cardTags.some(tag => tag.includes(category.trim().toLowerCase()));
       });
 
@@ -45,7 +45,7 @@ export default function CatalogBlock() {
           <div className={styles.wrapperForm}>
             <FormForQuestions />
           </div>
-          <CatalogList filteredCards={mockCatalogCards} />
+          <CatalogList filteredCards={filteredCards} />
         </div>
       </Container>
     </section>
