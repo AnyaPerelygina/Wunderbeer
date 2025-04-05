@@ -79,6 +79,11 @@
       text-align: center;
       text-transform: lowercase;
       color: $color-default-white;
+      transition: color $tf-default;
+
+      @include hover-focus {
+        color: $color-kournikova;
+      }
     }
 
     &.is-opened .toggleOpened {

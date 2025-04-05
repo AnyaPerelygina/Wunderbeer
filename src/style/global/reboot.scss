@@ -57,6 +57,28 @@ video {
   user-select: none;
 }
 
+input {
+  &:hover {
+    outline: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:focus-within {
+    outline: none;
+  }
+
+  &:active {
+    outline: none;
+  }
+}
+
 textarea {
   resize: none;
 }

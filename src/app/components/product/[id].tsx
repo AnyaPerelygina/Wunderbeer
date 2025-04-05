@@ -207,7 +207,7 @@ export default function Product({ params }: ProductProps) {
           <div className={styles.infoWrapper}>
             <div className={styles.controls}>
               <Button
-                className={styles.button}
+                className={styles.btnProduct}
                 type={'button'}
                 onClick={() => handleTabChange('description')}
                 disabled={activeTab === 'description'}
@@ -217,7 +217,7 @@ export default function Product({ params }: ProductProps) {
                 {activeTab === 'description' && <WheatYellow />}
               </Button>
               <Button
-                className={styles.button}
+                className={styles.btnProduct}
                 type={'button'}
                 onClick={() => handleTabChange('characteristics')}
                 disabled={activeTab === 'characteristics'}
