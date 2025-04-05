@@ -44,7 +44,7 @@ export default function WhyUsHome() {
           <picture>
             <source type="image/webp" media="(min-width: 320px)" srcSet={`${basePath}/background-img/paper-background.webp, ${basePath}/background-img/paper-background@2x.webp 2x`} />
             <Image
-              src={`${basePath}/background-img/paper-background.png`}
+              src={`${basePath}/background-img/paper-background@2x.png`}
               width={1920}
               height={604}
               alt="Фоновое изображение."

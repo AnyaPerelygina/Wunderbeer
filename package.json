@@ -2,9 +2,11 @@
   "name": "wunderbeer",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
+    "optimize:images": "node --loader ts-node/esm scripts/optimize-images.ts",
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run optimize:images && next build",
     "start": "next start",
     "lint": "next lint",
     "stylelint": "stylelint src/**/*.scss",
@@ -48,10 +50,12 @@
     "eslint-config-next": "14.2.3",
     "eslint-config-prettier": "^9.1.0",
     "prettier": "^3.2.5",
+    "sharp": "^0.34.0",
     "stylelint": "^16.5.0",
     "stylelint-config-standard-scss": "^13.1.0",
     "stylelint-scss": "^6.3.0",
-    "typescript": "^5.5.3"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   },
   "engines": {
     "node": "^20"

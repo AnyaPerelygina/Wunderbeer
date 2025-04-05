@@ -93,7 +93,7 @@ export default function Assortment() {
             <source type="image/webp" media="(max-width: 767px)" srcSet={`${basePath}/assortment/wood-mobile.webp, ${basePath}/assortment/wood-mobile@2x.webp 2x`} />
             <source type="image/webp" media="(min-width: 768px)" srcSet={`${basePath}/assortment/wood.webp, ${basePath}/assortment/wood@2x.webp 2x`} />
             <Image
-              src={`${basePath}/assortment/wood-mobile.png`}
+              src={`${basePath}/assortment/wood-mobile@2x.png`}
               width={1920}
               height={604}
               alt="Изображение древесной доски."
@@ -127,7 +127,7 @@ export default function Assortment() {
           <picture>
             <source type="image/webp" media="(min-width: 768px)" srcSet={`${basePath}/assortment/leaf.webp, ${basePath}/assortment/leaf@2x.webp 2x`} />
             <Image
-              src={`${basePath}/assortment/leaf.png`}
+              src={`${basePath}/assortment/leaf@2x.png`}
               width={516}
               height={458}
               alt="Изображение колосьев хмеля."
@@ -138,7 +138,7 @@ export default function Assortment() {
           <picture>
             <source type="image/webp" media="(min-width: 768px)" srcSet={`${basePath}/assortment/wheat.webp, ${basePath}/assortment/wheat@2x.webp 2x`} />
             <Image
-              src={`${basePath}/assortment/wheat.png`}
+              src={`${basePath}/assortment/wheat@2x.png`}
               width={516}
               height={458}
               alt="Изображение колосьев пшеницы."
@@ -149,7 +149,7 @@ export default function Assortment() {
           <picture>
             <source type="image/webp" media="(min-width: 768px)" srcSet={`${basePath}/assortment/beer.webp, ${basePath}/assortment/beer@2x.webp 2x`} />
             <Image
-              src={`${basePath}/assortment/beer.png`}
+              src={`${basePath}/assortment/beer@2x.png`}
               width={585}
               height={541}
               alt="Изображение кружки пива."

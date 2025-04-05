@@ -101,7 +101,7 @@ export default function About() {
           </div>
           <div className={styles.img}>
             <Image
-              src={`${basePath}/about/men-drink-beer.png`}
+              src={`${basePath}/about/men-drink-beer@2x.webp`}
               width={994}
               height={611}
               alt="Мужчина пьет пиво."

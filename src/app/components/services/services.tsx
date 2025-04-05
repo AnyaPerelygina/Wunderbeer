@@ -19,7 +19,7 @@ export default function Services() {
                 <source type="image/webp" media="(max-width: 767px)" srcSet={`${basePath}/services/kegs-mobile.webp, ${basePath}/services/kegs-mobile@2x.webp 2x`} />
                 <source type="image/webp" media="(min-width: 768px)" srcSet={`${basePath}/services/kegs.webp, ${basePath}/services/kegs@2x.webp 2x`} />
                 <Image
-                  src={`${basePath}/services/kegs.png`}
+                  src={`${basePath}/services/kegs@2x.png`}
                   width={960}
                   height={447}
                   alt="Пивные кеги."
@@ -38,7 +38,7 @@ export default function Services() {
                 <source type="image/webp" media="(max-width: 767px)" srcSet={`${basePath}/services/beer-bar-mobile.webp, ${basePath}/services/beer-bar-mobile@2x.webp 2x`} />
                 <source type="image/webp" media="(min-width: 768px)" srcSet={`${basePath}/services/beer-bar.webp, ${basePath}/services/beer-bar@2x.webp 2x`} />
                 <Image
-                  src={`${basePath}/services/beer-bar.png`}
+                  src={`${basePath}/services/beer-bar@2x.png`}
                   width={960}
                   height={447}
                   alt="Пивной кран и бокал пива."
