@@ -12,7 +12,7 @@ import FormDonePopup from '@/app/components/popup/form-done/form-done';
 import ShoppingCartMini from '@/app/components/shopping-cart-mini/shopping-cart-mini';
 
 import styles from './form-orders.module.scss';
-import { CheckboxState, CheckboxChangeEvent, FormOrdersProps } from './form-order.types';
+import { CheckboxState, CheckboxChangeEvent, FormOrdersProps, FormState } from './form-order.types';
 
 export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrdersProps) {
   const [isMobileScreen, setIsMobileScreen] = useState(false);
@@ -22,7 +22,7 @@ export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrder
   const [showPopup, setShowPopup] = useState(false);
   const router = useRouter();
 
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormState>({
     name: '',
     email: '',
     phone: '',
@@ -40,6 +40,10 @@ export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrder
 
   const handleCheckboxChange = (event: CheckboxChangeEvent): void => {
     setIsChecked(event.target.checked);
+
+    if (formStatus === 'error' && isFormValid(formData, event.target.checked)) {
+      setFormStatus('idle');
+    }
   };
 
   const validateName = (name: string) => {
@@ -67,14 +71,14 @@ export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrder
     return adress.trim() !== '' && !scriptOrLinkPattern.test(adress);
   };
 
-  const validateForm = () => {
+  const isFormValid = (formState: FormState, isAgreed: boolean) => {
     const newErrors = {
-      name: !validateName(formData.name),
-      email: !validateEmail(formData.email),
-      phone: !validatePhone(formData.phone),
+      name: !validateName(formState.name),
+      email: !validateEmail(formState.email),
+      phone: !validatePhone(formState.phone),
       // message: !validateMessage(formData.message),
-      adress: !validateAdress(formData.adress),
-      agree: !isChecked,
+      adress: !validateAdress(formState.adress),
+      agree: !isAgreed,
     };
 
     setErrors(newErrors);
@@ -84,17 +88,7 @@ export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrder
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    if (!validateForm()) {
-      setFormStatus('error');
-      return;
-    }
-
-    if (!validatePhone(formData.phone) || !validateName(formData.name) || !validateEmail(formData.email) || !validateAdress(formData.adress) || !isChecked) {
-      setFormStatus('error');
-      return;
-    }
-
-    if (!formData.name || !formData.phone || !formData.email || !formData.adress || !isChecked) {
+    if (!isFormValid(formData, isChecked)) {
       setFormStatus('error');
       return;
     }
@@ -128,10 +122,12 @@ export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrder
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = event.target;
 
-    setFormData({
+    const newState = {
       ...formData,
       [name]: value
-    });
+    };
+
+    setFormData(newState);
 
     if (errors[name as keyof typeof errors]) {
       setErrors({
@@ -140,7 +136,7 @@ export default function FormOrders({ setSelectedDelivery, clearCart }: FormOrder
       });
     }
 
-    if (formStatus === 'error') {
+    if (formStatus === 'error' && isFormValid(newState, isChecked)) {
       setFormStatus('idle');
     }
   };
