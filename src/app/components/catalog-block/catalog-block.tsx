@@ -11,23 +11,38 @@ import CatalogList from '@/app/components/catalog-list/catalog-list';
 import styles from './catalog-block.module.scss';
 
 import mockCatalogCards from '@/app/data/data';
+import { categories } from '@/app/components/filter/filter-block/filter-block';
 
 export default function CatalogBlock() {
   const [filteredCards, setFilteredCards] = useState(mockCatalogCards);
 
+  const getEffectiveCategories = (selectedCategories: string[]) => {
+    const effective = new Set(selectedCategories);
+
+    categories.forEach(cat => {
+      if (cat.options) {
+        const hasSubSelected = cat.options.some(opt => selectedCategories.includes(opt));
+        if (hasSubSelected) {
+          effective.delete(cat.label);
+        }
+      }
+    });
+
+    return Array.from(effective);
+  };
+
   const applyFilters = (selectedCategories: string[], minPrice: number, maxPrice: number) => {
+    const effectiveCategories = getEffectiveCategories(selectedCategories);
+
     const filtered = mockCatalogCards.filter(card => {
       const cardTags = card.tags
         .split(',')
         .map(tag => tag.trim().toLowerCase());
 
-      // Фильтрация по категориям и подкатегориям
-      const inCategory = selectedCategories.length === 0 || selectedCategories.every(category => {
-        // Проверяем, что тег карточки содержит выбранную категорию и подкатегорию
-        return cardTags.some(tag => tag.includes(category.trim().toLowerCase()));
-      });
+      const inCategory = effectiveCategories.length === 0 || effectiveCategories.some(category =>
+        cardTags.some(tag => tag.includes(category.trim().toLowerCase()))
+      );
 
-      // Фильтрация по цене
       const inPriceRange = card.price >= minPrice && card.price <= maxPrice;
 
       return inCategory && inPriceRange;

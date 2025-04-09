@@ -9,7 +9,7 @@ import { Category, FilterBlockProps } from './filter-block.types';
 import WheatYellow from '@/assets/wheat-yellow.svg';
 import WheatGreenMini from '@/assets/wheat-green-mini.svg';
 
-const categories: Category[] = [
+export const categories: Category[] = [
   { label: 'Пиво', options: ['Темное', 'Светлое', 'Фильтрованное', 'Нефильтрованное', 'Пшеничное'] },
   { label: 'Квас' },
   { label: 'Лимонады' },
