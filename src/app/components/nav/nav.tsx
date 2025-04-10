@@ -12,7 +12,7 @@ export default function Nav({ onLinkClick, className, navLinks }: NavProps) {
       <ul className={styles.nav__list}>
         {navLinks.map(({ href, label }) => (
           <li key={href} className={styles.nav__item}>
-            <Link onClick={onLinkClick} href={href} className={'nav__link' + (pathname === href ? ' active' : '')} target={'_blank'}>
+            <Link onClick={onLinkClick} href={href} className={'nav__link' + (pathname === href ? ' active' : '')}>
               <span data-hover={label}>{label}</span>
             </Link>
           </li>

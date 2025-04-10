@@ -97,7 +97,7 @@ export default function About() {
           <div className={styles.text}>
             <Title className={styles.title} iconColor="green" title="О компании" />
             <p>Приветствуем на&nbsp;официальном сайте компании «Вундербир» – опытного и&nbsp;квалифицированного производителя и&nbsp;поставщика вкусного, качественного пива! В&nbsp;ассортименте в&nbsp;большом разнообразии представлены хмельные напитки собственного изготовления, а&nbsp;также от&nbsp;проверенных и&nbsp;надёжных партнёров – приобрести пиво оптом Москве и&nbsp;Московской области можно на&nbsp;выгодных условиях, а&nbsp;главное, будучи уверенным в&nbsp;отличных вкусовых характеристиках!</p>
-            <LinkNew className={styles.btn} href={'/about-us'} target={'_blank'}>Подробнее</LinkNew>
+            <LinkNew className={styles.btn} href={'/about-us'}>Подробнее</LinkNew>
           </div>
           <div className={styles.img}>
             <Image

@@ -29,7 +29,7 @@ export default function Services() {
             <div className={styles.text}>
               <h3 className={styles.subtitle}>Дистрибуция</h3>
               <p>Предоставляем услуги по комплектации магазинов разливного пива &quot;под ключ&quot;</p>
-              <LinkNew className={styles.btn} href={'/distribution'} target={'_blank'}>Подробнее</LinkNew>
+              <LinkNew className={styles.btn} href={'/distribution'}>Подробнее</LinkNew>
             </div>
           </div>
           <div className={styles.equipment}>
@@ -48,7 +48,7 @@ export default function Services() {
             <div className={styles.text}>
               <h3 className={styles.subtitle}>Комплектация магазинов</h3>
               <p>Дистрибьюция по Москве и Москвоской области региональных производителей пива, пивных напитков</p>
-              <LinkNew className={styles.btn} href={'/equipment-of-shops'} target={'_blank'}>Подробнее</LinkNew>
+              <LinkNew className={styles.btn} href={'/equipment-of-shops'}>Подробнее</LinkNew>
             </div>
           </div>
         </div>

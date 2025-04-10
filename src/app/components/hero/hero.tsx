@@ -81,7 +81,7 @@ export default function Hero() {
             <div className={styles.description}>
               <p>В&nbsp;ассортименте в&nbsp;большом разнообразии представлены хмельные напитки собственного изготовления, а&nbsp;также от&nbsp;проверенных и&nbsp;надёжных партнёров – приобрести пиво оптом Москве и&nbsp;Московской области можно на&nbsp;выгодных условиях, а&nbsp;главное, будучи уверенным в&nbsp;отличных вкусовых характеристиках!</p>
             </div>
-            <LinkNew className={styles.button} href={'/catalog'} target={'_blank'}>Перейти в&nbsp;каталог</LinkNew>
+            <LinkNew className={styles.button} href={'/catalog'}>Перейти в&nbsp;каталог</LinkNew>
           </div>
           {!isMobileScreen && (
             <Swiper
