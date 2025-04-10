@@ -332,6 +332,7 @@
 .input.error input,
 .textarea.error textarea {
   border-color: $color-free-speech-red;
+  caret-color: $color-free-speech-red;
 
   &::placeholder {
     color: $color-free-speech-red;
@@ -339,6 +340,7 @@
 
   @include hover-focus {
     border-color: $color-free-speech-red;
+    caret-color: $color-free-speech-red;
 
     &::placeholder {
       color: $color-free-speech-red;
