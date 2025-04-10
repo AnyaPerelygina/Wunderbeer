@@ -11,8 +11,10 @@ export default function Title( { title, className, iconColor }: TitleProps) {
 
   return (
     <div className={`${styles.title} ${className}`}>
-      <Icon path={iconPath} />
-      <Icon path={iconPath} />
+      <div className={styles.wrapperIcon}>
+        <Icon path={iconPath} />
+        <Icon path={iconPath} />
+      </div>
       <h2>{title}</h2>
     </div>
   )
