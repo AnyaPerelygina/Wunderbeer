@@ -56,7 +56,7 @@ export default function News() {
           duration: 1,
           scrollTrigger: {
             trigger: newsRef.current,
-            start: "top center",
+            start: "40% center",
             toggleActions: "play none none none",
             onEnter: () => {
               gsap.to(newsImgRef.current, { x: 0, opacity: 1, duration: 1 });

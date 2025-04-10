@@ -25,6 +25,8 @@ export default function About() {
   const aboutImg2Ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const isMobile = window.innerWidth < 1024;
+
     if (aboutImg1Ref.current) {
       gsap.fromTo(
         aboutImg1Ref.current,
@@ -35,7 +37,7 @@ export default function About() {
           duration: 1,
           scrollTrigger: {
             trigger: aboutRef.current,
-            start: "top center",
+            start: isMobile ? "center center" : "top center",
             toggleActions: "play none none none",
             onEnter: () => {
               gsap.to(aboutImg1Ref.current, { x: 0, opacity: 1, duration: 1 });

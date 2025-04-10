@@ -27,6 +27,8 @@ export default function Assortment() {
   const assortmentImg3Ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const isMobile = window.innerWidth < 1024;
+
     if (assortmentImg1Ref.current) {
       gsap.fromTo(
         assortmentImg1Ref.current,
@@ -77,7 +79,7 @@ export default function Assortment() {
           duration: 1,
           scrollTrigger: {
             trigger: assortmentRef.current,
-            start: "top center",
+            start: isMobile ? "center center" : "top center",
             toggleActions: "play none none none",
           },
         }
