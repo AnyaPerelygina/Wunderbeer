@@ -19,12 +19,12 @@ export default function Social({ onLinkClick, className }: SocialProps) {
     {
       href: 'https://vk.com/wunderbeer?ysclid=lyiltfdom7544979718',
       text: 'vk',
-      icon: FacebookIcon,
+      icon: VkIcon,
     },
     {
       href: '#',
       text: 'facebook',
-      icon: VkIcon,
+      icon: FacebookIcon,
     }
   ];
 

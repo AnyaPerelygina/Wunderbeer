@@ -242,7 +242,7 @@ export default function Product({ params }: ProductProps) {
                     <li className={styles.contentItem}>Объем: {product.size} л</li>
                     <li className={styles.contentItem}>Хранить в холодном сухом месте при температуре +5 - +20&apos;С.</li>
                     <li className={styles.contentItem}>Чрезмерное употребление алкогольной продукции вредит вашему здоровью.</li>
-                    <li className={styles.contentItem}>Срок годности 9 месяцев.</li>
+                    <li className={styles.contentItem}>Срок годности: 9 месяцев.</li>
                   </ul>
                 </div>
               )}

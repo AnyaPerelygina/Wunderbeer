@@ -19,7 +19,7 @@ export default function ShoppingBasket({ toggleMenu, isMobile, onLinkClick, clas
 
   return (
     <div className={`${styles.root} ${className}`} onClick={handleClick}>
-      <Link href={'/shopping-cart'} onClick={onLinkClick} target={'_blank'}>
+      <Link href={'/shopping-cart'} onClick={onLinkClick}>
         <Icon path={ShoppingBasketIcon} />
         {totalItems > 0 && <span className={styles.count}>{totalItems}</span>}
       </Link>
