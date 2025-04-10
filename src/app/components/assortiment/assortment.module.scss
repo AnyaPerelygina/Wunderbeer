@@ -17,6 +17,14 @@
       padding: 52px 0 94px;
     }
 
+    .title {
+      padding: 0 0 35px;
+
+      @include vp-1023 {
+        padding: 0 0 92px;
+      }
+    }
+
     h2 {
       color: $color-default-white;
     }

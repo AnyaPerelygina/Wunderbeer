@@ -11,11 +11,6 @@
   justify-content: flex-start;
   row-gap: 5px;
   margin: 0 auto;
-  padding: 0 0 35px;
-
-  @include vp-1023 {
-    padding: 0 0 92px;
-  }
 
   h2 {
     font-size: 35px;

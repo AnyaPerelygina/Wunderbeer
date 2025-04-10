@@ -102,7 +102,7 @@ export default function Assortment() {
             />
           </picture>
         </div>
-        <Title iconColor="yellow" title="Наш ассортимент"/>
+        <Title className={styles.title} iconColor="yellow" title="Наш ассортимент"/>
         <ul className={styles.list}>
           <li className={styles.item}>
             <Icon path={Beers} />
