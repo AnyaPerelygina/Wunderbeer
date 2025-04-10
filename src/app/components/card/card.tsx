@@ -27,7 +27,7 @@ export default function Card({
 }: CardProps) {
 
   return (
-    <Link className={styles.root} href={`/product-page/${id}`} passHref>
+    <Link className={styles.root} href={`/product-page/${id}`} target={'_blank'} passHref>
       <div className={styles.img}>
         <div className={styles.badges}>
           {isNew && <span className={`${styles.badge} ${styles.badgeNew}`}>Новинка</span>}

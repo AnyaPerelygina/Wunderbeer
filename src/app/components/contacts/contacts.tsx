@@ -47,7 +47,7 @@ export default function Contacts({ onLinkClick }: ContactsProps) {
       <ul className={styles.contacts__list}>
         {ContactsLinks.map(({ href, text, icon, width, height }) => (
           <li key={href} className={styles.contacts__item}>
-            <Link onClick={onLinkClick} href={href} className={styles.contacts__link}>
+            <Link onClick={onLinkClick} href={href} className={styles.contacts__link} target={'_blank'}>
               <div className={styles.contacts__icon}>
                 <Icon path={icon} width={width} height={height} />
               </div>

@@ -33,7 +33,7 @@ export default function Social({ onLinkClick, className }: SocialProps) {
       <ul className={styles.list}>
         {SocialLinks.map(({ href, icon, text }) => (
           <li key={href} className={styles.item}>
-            <Link onClick={onLinkClick} href={href} className={styles.link}>
+            <Link onClick={onLinkClick} href={href} className={styles.link} target={'_blank'}>
               <div className={styles.icon}>
                 <Icon path={icon} width={30} height={30} />
                 <span className={styles.visuallyHidden}>{text}</span>
