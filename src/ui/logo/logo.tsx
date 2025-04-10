@@ -1,12 +1,14 @@
-import { basePath } from "@/const";
 import Image from "next/image";
+import Link from "next/link";
+
+import { basePath } from "@/const";
 
 import { LogoProps } from "./logo.types";
 import styles from './logo.module.scss';
 
 export default function Logo({ className }: LogoProps) {
   return (
-    <a className={`${styles.root} ${className}`} href="/home">
+    <Link className={`${styles.root} ${className}`} href="/home">
       <Image
         src={`${basePath}/logo/logo.webp`}
         width={94}
@@ -14,6 +16,6 @@ export default function Logo({ className }: LogoProps) {
         alt="Логотип Wunderbeer."
       />
       <span>Wunderbeer</span>
-    </a>
+    </Link>
   );
 }
