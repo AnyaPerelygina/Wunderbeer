@@ -8,7 +8,7 @@ import styles from './logo.module.scss';
 
 export default function Logo({ className }: LogoProps) {
   return (
-    <Link className={`${styles.root} ${className}`} href="/home">
+    <Link className={`${styles.root} ${className}`} href={`${basePath}/home`}>
       <Image
         src={`${basePath}/logo/logo.webp`}
         width={94}
