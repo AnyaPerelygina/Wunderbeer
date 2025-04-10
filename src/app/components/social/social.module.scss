@@ -23,6 +23,7 @@
 }
 
 .icon {
+  opacity: 1;
   transition: opacity $trans-default;
 
   @include hover-focus {
