@@ -41,7 +41,6 @@ export default function Header() {
 
   const [isOpen, setIsOpen] = useState(false);
   const headerRef = useRef<HTMLDivElement>(null);
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
@@ -54,19 +53,6 @@ export default function Header() {
       document.body.classList.remove('scroll-lock');
     };
   }, [isOpen]);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);  // Условие для мобильных устройств
-    };
-
-    handleResize();  // Проверяем сразу при монтировании
-    window.addEventListener('resize', handleResize);  // Слушаем изменения размера окна
-
-    return () => {
-      window.removeEventListener('resize', handleResize);  // Очистка при размонтировании
-    };
-  }, []);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -86,8 +72,6 @@ export default function Header() {
     setIsOpen(false);
   };
 
-  const toggleMenu = () => setIsOpen(prev => !prev);
-
   return (
     <>
     {isOpen && <div className={styles.overlay} />}
@@ -96,7 +80,7 @@ export default function Header() {
         <div className={styles.wrapper}>
           <Social SocialLinks={[]} onLinkClick={handleLinkClick} className={styles.social}/>
           <Logo className={styles.logo} />
-          <ShoppingBasket toggleMenu={toggleMenu} onLinkClick={handleLinkClick} isMobile={isMobile} className={styles.shoppingBasket} />
+          <ShoppingBasket onLinkClick={handleLinkClick} className={styles.shoppingBasket} />
           <Nav navLinks={navLinks} onLinkClick={handleLinkClick} className={styles.navigation}/>
           <button className={`${styles.toggle} ${isOpen ? styles['is-opened'] : ''}`} onClick={() => setIsOpen(!isOpen)}>
             <div className={styles.toggleClosed}>
