@@ -12,7 +12,7 @@ export default function Logo({ onLinkClick, className }: LogoProps) {
       className={`${styles.root} ${className}`}
       href={'/home'}
       onClick={() => {
-        onLinkClick()
+        onLinkClick?.()
     }}>
       <Image
         src={`${basePath}/logo/logo.webp`}
