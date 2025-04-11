@@ -79,7 +79,7 @@ export default function Header() {
       <Container className={styles.container}>
         <div className={styles.wrapper}>
           <Social SocialLinks={[]} onLinkClick={handleLinkClick} className={styles.social}/>
-          <Logo className={styles.logo} />
+          <Logo className={styles.logo} onLinkClick={handleLinkClick} />
           <ShoppingBasket onLinkClick={handleLinkClick} className={styles.shoppingBasket} />
           <Nav navLinks={navLinks} onLinkClick={handleLinkClick} className={styles.navigation}/>
           <button className={`${styles.toggle} ${isOpen ? styles['is-opened'] : ''}`} onClick={() => setIsOpen(!isOpen)}>
